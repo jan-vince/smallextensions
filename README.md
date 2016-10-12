@@ -38,4 +38,11 @@ So the the very first extension is about replacing default MD editor with built 
 	* If on, WYSIWIG editor is used for blog post editing.
 
 ---- 
-Created by [Jan Vince](http://www.vince.cz), a sentimental web designer and frontend developer from Czech Republic
+> My special thanks goes to:    
+> [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
+> [Ray Hennessy](https://unsplash.com/@rayhennessy) for his photo I have used in the plugin banner.    
+> [Font Awesome](http://www.fontawesome.io) for Universal access symbol.
+
+
+Created by [Jan Vince](http://www.vince.cz), a sentimental web designer and frontend developer from Czech Republic.
+
