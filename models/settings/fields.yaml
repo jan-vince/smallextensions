@@ -3,7 +3,7 @@ tabs:
     fields:
         blog_wysiwyg:
             label: 'janvince.smallextensions::lang.labels.enable_wysiwyg'
-            span: left
+            span: full
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_description'
