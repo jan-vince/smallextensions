@@ -7,4 +7,11 @@ tabs:
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_description'
-            tab: Blog
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+        static_pages_menu_notes:
+            label: 'janvince.smallextensions::lang.labels.enable_menu_notes'
+            span: full
+            default: false
+            type: switch
+            comment: 'janvince.smallextensions::lang.labels.enable_menu_notes_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'

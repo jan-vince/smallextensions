@@ -2,6 +2,7 @@
 
 namespace JanVince\SmallExtensions;
 
+use \Illuminate\Support\Facades\Event;
 use System\Classes\PluginBase;
 use JanVince\SmallExtensions\Models\Settings;
 
@@ -33,7 +34,7 @@ class Plugin extends PluginBase {
 		 */
 		if (Settings::get('blog_wysiwyg')) {
 
-			\Illuminate\Support\Facades\Event::listen('backend.form.extendFields', function($widget) {
+			Event::listen('backend.form.extendFields', function($widget) {
 
 				if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Posts) {
 					return;
@@ -52,17 +53,42 @@ class Plugin extends PluginBase {
 				]);
 			});
 		}
+
+		/*
+		 * Add Static.Menu fields
+		 */
+		if (Settings::get('static_pages_menu_notes')) {
+
+			Event::listen('backend.form.extendFields', function ($widget) {
+
+				if (
+						!$widget->getController() instanceof \RainLab\Pages\Controllers\Index ||
+						!$widget->model instanceof \RainLab\Pages\Classes\MenuItem
+				) {
+					return;
+				}
+
+				$widget->addTabFields([
+					'viewBag[note]' => [
+						'tab' => 'janvince.smallextensions::lang.static_menu.notes',
+						'label' => 'janvince.smallextensions::lang.static_menu.add_note',
+						'commentAbove' => 'janvince.smallextensions::lang.static_menu.add_note_comment',
+						'type' => 'textarea'
+					]
+				]);
+			});
+		}
 	}
 
 	public function registerSettings() {
 
 		return [
 			'settings' => [
-				'label' => 'janvince.smallextensions::lang.blog.label',
-				'description' => 'janvince.smallextensions::lang.blog.description',
-				'category' => 'janvince.smallextensions::lang.plugin.name',
-				'icon' => 'icon-newspaper-o',
+				'label' => 'janvince.smallextensions::lang.plugin.name',
+				'description' => 'janvince.smallextensions::lang.plugin.description',
+				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
+				'keywords' => 'extension extensions blog static pages menu',
 				'order' => 10
 			]
 		];

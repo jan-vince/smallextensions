@@ -12,15 +12,17 @@ OctoberCMS is great system, but we all have a little bit different needs. So I h
 git clone https://github.com/jan-vince/smallextensions
 ```
 
-**OctoberCMS plugins page**
-> Will be posted soon
+**OctoberCMS backend**
+
+Just look for 'Small Extensions' in search field in the:
+> Settings > Updates&Plugins > Install plugins
 
 
 ## Extensions
 
 ### Rainlab.Blog Extension
 
-*OctoberCMS > Backend > Settings > Small Extensions > Blog*
+> *OctoberCMS > Backend > Settings > Small Extensions > Blog*
 
 > *Depends on: [Rainlab.Blog](https://octobercms.com/plugin/rainlab-blog) plugin!*
 
@@ -36,6 +38,23 @@ So the the very first extension is about replacing default MD editor with built 
 
 	* Switch between default MarkDown or OctoberCMS's Rich editor.
 	* If on, WYSIWIG editor is used for blog post editing.
+
+### Rainlab.Pages Extension
+
+> *OctoberCMS > Backend > Settings > Small Extensions > Static pages*
+
+> *Depends on: [Rainlab.Pages](https://octobercms.com/index.php/plugin/rainlab-pages) plugin!*
+
+
+Sometimes an extra Menu item note is needed.
+
+
+#### Settings
+
+* **Enable Menu notes**
+
+	* If on, new tab Notes and a field Note is added to Menu items editing popup window.
+	* text is then accessible from page/layout from {{item.viewBag.note}}.
 
 ---- 
 > My special thanks goes to:    

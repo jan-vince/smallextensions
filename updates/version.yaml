@@ -1,2 +1,5 @@
 1.0.1: First version of Small Extensions
 1.0.2: Added Rainlab.Blog WYSIWYG editor extension.
+1.0.3: 
+    - Added extra Notes tab to Static Menu items in Rainlab.Pages 
+    - Changed backend Settings labels and tabs
