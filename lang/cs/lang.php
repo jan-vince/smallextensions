@@ -20,7 +20,7 @@ return [
 	'static_menu' => [
 		'notes' => 'Poznámky',
 		'add_note' => 'Přidat poznámku k položce menu',
-		'add_note_comment' => 'Přidá poznámku k této položce menu. ta pak bude přístupná ze stránky/layoutu pomocí: {{item.viewBag.note}}.',
+		'add_note_comment' => 'Přidá poznámku k této položce menu. Ta pak bude přístupná ze stránky/layoutu pomocí: {{item.viewBag.note}}.',
 	],
 	'permissions' => [
 		'settings_tab' => 'Drobná rozšíření',
