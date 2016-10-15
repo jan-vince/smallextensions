@@ -19,7 +19,7 @@ Just look for 'Small Extensions' in search field in the:
  
 ### Permissions
 
-If your users need this plugin Settings access, you can grant them permission to do that.
+You can set permissions to restrict settings page of this plugin.
 
 
 ## Extensions
@@ -63,7 +63,7 @@ Sometimes an extra Menu item note is needed.
 ---- 
 > My special thanks goes to:    
 > [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
-> [Ray Hennessy](https://unsplash.com/@rayhennessy) for his photo I have used in the plugin banner.    
+> [Joel kyber](https://unsplash.com/@jtkyber1) for his photo I have used in the plugin banner.    
 > [Font Awesome](http://www.fontawesome.io) for Universal access symbol.
 
 
