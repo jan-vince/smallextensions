@@ -16,6 +16,10 @@ git clone https://github.com/jan-vince/smallextensions
 
 Just look for 'Small Extensions' in search field in the:
 > Settings > Updates&Plugins > Install plugins
+ 
+### Permissions
+
+If your users need this plugin Settings access, you can grant them permission to do that.
 
 
 ## Extensions

@@ -5,6 +5,6 @@ plugin:
     icon: oc-icon-universal-access
     homepage: 'http://www.vince.cz'
 permissions:
-    blog:
-        tab: 'janvince.smallextensions::lang.permissions.blog'
-        label: 'janvince.smallextensions::lang.permissions.blog_description'
+    janvince.smallextensions.settings:
+        tab: 'janvince.smallextensions::lang.permissions.settings_tab'
+        label: 'janvince.smallextensions::lang.permissions.settings_description'

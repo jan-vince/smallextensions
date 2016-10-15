@@ -3,3 +3,4 @@
 1.0.3: 
     - Added extra Notes tab to Static Menu items in Rainlab.Pages 
     - Changed backend Settings labels and tabs
+    - Added permissions to access backend settings

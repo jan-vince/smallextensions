@@ -89,7 +89,8 @@ class Plugin extends PluginBase {
 				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
 				'keywords' => 'extension extensions blog static pages menu',
-				'order' => 10
+				'order' => 10,
+				'permission' => ['janvince.smallextensions.settings'],
 			]
 		];
 	}

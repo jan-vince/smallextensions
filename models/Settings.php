@@ -7,7 +7,9 @@ use Model;
 class Settings extends Model
 {
 
-    public $implement = ['System.Behaviors.SettingsModel'];
+    public $requiredPerrmision = ['janvince.smallextensions.settings'];
+ 
+	public $implement = ['System.Behaviors.SettingsModel'];
 
     public $settingsCode = 'janvince_smallextensions_settings';
 

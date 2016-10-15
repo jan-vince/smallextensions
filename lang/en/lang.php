@@ -23,7 +23,7 @@ return [
 		'add_note_comment' => 'Add note to this menu item. It will be accessible from page/layout with: {{item.viewBag.note}}.',
 	],
 	'permissions' => [
-		'blog' => 'Edit Blog extensions',
-		'blog_description' => 'Allows user to edit Rainlab.Blog extensions.',
+		'settings_tab' => 'Small Extensions',
+		'settings_description' => 'Manage backend preferences.',
 	],
 ];

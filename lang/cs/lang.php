@@ -23,7 +23,7 @@ return [
 		'add_note_comment' => 'Přidá poznámku k této položce menu. ta pak bude přístupná ze stránky/layoutu pomocí: {{item.viewBag.note}}.',
 	],
 	'permissions' => [
-		'blog' => 'Editovat rozšíření Blogu',
-		'blog_description' => 'Přidělí uživateli oprávnění měnit rozšíření Railab.Blog',
+		'settings_tab' => 'Drobná rozšíření',
+		'settings_description' => 'Správa nastavení v administraci.',
 	],
 ];
