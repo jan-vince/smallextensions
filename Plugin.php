@@ -44,13 +44,22 @@ class Plugin extends PluginBase {
 					return;
 				}
 
-				$widget->addSecondaryTabFields([
-					'content' => [
-						'tab' => 'rainlab.blog::lang.post.tab_edit',
-						'type' => 'richeditor',
-						'stretch' => 'true'
-					]
-				]);
+
+				$content = [
+					'tab' => 'rainlab.blog::lang.post.tab_edit',
+					'stretch' => 'true'
+				];
+
+				/*
+				 * Check the Rainlab.Translate plugin is installed
+				 */
+				if (class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+					$content['type'] = 'mlricheditor';
+				} else {
+					$content['type'] = 'richeditor';
+				}
+
+				$widget->addSecondaryTabFields(['content' => $content]);
 			});
 		}
 

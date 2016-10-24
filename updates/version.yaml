@@ -4,3 +4,4 @@
     - Added extra Notes tab to Static Menu items in Rainlab.Pages 
     - Changed backend Settings labels and tabs
     - Added permissions to access backend settings
+1.0.4: Detect Rainlab.Translate plugin and support translatable WYSIWYG editor
