@@ -4,6 +4,7 @@ namespace JanVince\SmallExtensions;
 
 use \Illuminate\Support\Facades\Event;
 use System\Classes\PluginBase;
+use System\Classes\PluginManager;
 use JanVince\SmallExtensions\Models\Settings;
 
 class Plugin extends PluginBase {
@@ -51,9 +52,17 @@ class Plugin extends PluginBase {
 				];
 
 				/*
+				 * Custom toolbar?
+				 */
+				if (trim(Settings::get('blog_wysiwyg_toolbar'))) {
+					$content['toolbarButtons'] = str_replace(' ', '', trim(Settings::get('blog_wysiwyg_toolbar')) );
+				}
+
+				/*
 				 * Check the Rainlab.Translate plugin is installed
 				 */
-				if (class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+				$pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+				if ($pluginManager && !$pluginManager->disabled) {
 					$content['type'] = 'mlricheditor';
 				} else {
 					$content['type'] = 'richeditor';
