@@ -108,7 +108,7 @@ class Plugin extends PluginBase {
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
 				'keywords' => 'extension extensions blog static pages menu',
 				'order' => 10,
-				'permission' => ['janvince.smallextensions.settings'],
+				'permissions' => ['janvince.smallextensions.settings'],
 			]
 		];
 	}

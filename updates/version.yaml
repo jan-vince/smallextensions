@@ -8,3 +8,5 @@
 1.0.5:
     - Field to set editor custom toolbar buttons
     - More better detection of Rainlab.Translate plugin availability
+1.0.6:
+    - Fixed typo in permissions code (thanks Christopher19815)
