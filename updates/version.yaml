@@ -11,5 +11,5 @@
 1.0.6:
     - Fixed typo in permissions code (thanks Christopher19815)
 1.0.7:
-    - Added Custom fields for Blog posts
+    - Added Custom fields for Blog posts (API code, string, switch and datetime)
     - smallextensions_tables.php
