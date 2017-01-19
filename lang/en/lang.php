@@ -3,17 +3,49 @@
 return [
 	'plugin' => [
 		'name' => 'Small Extensions',
-		'description' => 'Set of very simple extensions for OctoberCMS and it\'s plugins.',
+		'description' => 'Extensions for Rainlab Blog and Pages',
 	],
 	'labels' => [
+		'wysiwyg_section' => 'WYSIWYG editor',
 		'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
 		'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
 		'enable_wysiwyg_toolbar' => 'Editor toolbar buttons (leave blank for default set)',
-		'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a></small></p><p><small>Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
+		'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a><br>Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
+
+		'custom_fields_section' => 'Custom fields',
+		'custom_fields_section_description' => '',
+
+		'custom_fields_hint_title' => 'How to use custom fields',
+		'custom_fields_hint_line1' => 'Custom fields will have generic names in Blog post form, but you can easily <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">override their names and comments</a>.',
+		'custom_fields_hint_line2' => 'You can access posts\'s custom fields values in Twig like {{post.custom_fields.api_code}}.',
+
+		'custom_fields_hint_title2' => 'Limitations',
+		'custom_fields_hint_line3' => 'Translation of strings is not working right now. I am looking for a solution.',
+
+		'custom_fields_api_code' => 'API code',
+		'custom_fields_api_code_description' => '',
+		'enable_custom_fields_api_code' => 'Add API code field',
+		'enable_custom_fields_api_code_description' => 'Twig: {{post.custom_fields.api_code}}',
+
+		'custom_fields_string' => 'Short text',
+		'custom_fields_string_description' => '',
+		'enable_custom_fields_string' => 'Add STRING',
+		'enable_custom_fields_string_description' => 'Twig: {{post.custom_fields.string}}',
+
+		'custom_fields_switch' => 'Switch',
+		'custom_fields_switch_description' => '',
+		'enable_custom_fields_switch' => 'Add SWITCH',
+		'enable_custom_fields_switch_description' => 'Twig: {{post.custom_fields.switch}}',
+
+		'custom_fields_datetime' => 'Date & Time',
+		'custom_fields_datetime_description' => '',
+		'enable_custom_fields_datetime' => 'Add DATE&TIME',
+		'enable_custom_fields_datetime_description' => 'Twig: {{post.custom_fields.datetime}}',
+
 		'tab_blog' => 'Blog',
-		'tab_static_pages' => 'Static pages',
+		'tab_static_pages' => 'Static Pages',
 	],
 	'blog' => [
 		'label' => 'Blog',
@@ -28,4 +60,7 @@ return [
 		'settings_tab' => 'Small Extensions',
 		'settings_description' => 'Manage backend preferences.',
 	],
+	'tabs' => [
+		'custom_fields' => 'More',
+	]
 ];

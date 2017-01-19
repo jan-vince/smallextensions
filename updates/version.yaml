@@ -10,3 +10,6 @@
     - More better detection of Rainlab.Translate plugin availability
 1.0.6:
     - Fixed typo in permissions code (thanks Christopher19815)
+1.0.7:
+    - Added Custom fields for Blog posts
+    - smallextensions_tables.php

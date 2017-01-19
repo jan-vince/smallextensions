@@ -16,7 +16,7 @@ git clone https://github.com/jan-vince/smallextensions
 
 Just look for 'Small Extensions' in search field in the:
 > Settings > Updates&Plugins > Install plugins
- 
+
 ### Permissions
 
 You can set permissions to restrict settings page of this plugin.
@@ -31,17 +31,21 @@ You can set permissions to restrict settings page of this plugin.
 > *Depends on: [Rainlab.Blog](https://octobercms.com/plugin/rainlab-blog) plugin!*
 
 
-This is a great plugin, but none of my clients is happy with MarkDown syntax to edit posts.
-
-So the the very first extension is about replacing default MD editor with built in Richtext editor.
+Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown syntax to edit posts.
 
 
 #### Settings
 
-* **Enable WYSIWYG editor**
+* **WYSIWYG editor**
 
-	* Switch between default MarkDown or OctoberCMS's Rich editor.
-	* If on, WYSIWIG editor is used for blog post editing.
+	* Enable to switch between default MarkDown or OctoberCMS's Rich editor.
+	* Allows you to add custom toolbar buttons.
+
+* **Custom fields**
+
+	* Enable extra fields to show up on Blog post editor tab.
+	* You can access custom fields values like {{post.custom_fields.api_code}}
+
 
 ### Rainlab.Pages Extension
 
@@ -60,7 +64,7 @@ Sometimes an extra Menu item note is needed.
 	* If on, new tab Notes and a field Note is added to Menu items editing popup window.
 	* text is then accessible from page/layout from {{item.viewBag.note}}.
 
----- 
+----
 > My special thanks goes to:    
 > [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
 > [Joel kyber](https://unsplash.com/@jtkyber1) for his photo I have used in the plugin banner.    
@@ -68,4 +72,3 @@ Sometimes an extra Menu item note is needed.
 
 
 Created by [Jan Vince](http://www.vince.cz), a sentimental web designer and frontend developer from Czech Republic.
-

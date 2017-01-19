@@ -1,21 +1,71 @@
 fields: {  }
 tabs:
     fields:
+        ## WYSIWYG
         blog_wysiwyg:
             label: 'janvince.smallextensions::lang.labels.enable_wysiwyg'
-            span: full
+            span: left
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
         blog_wysiwyg_toolbar:
             label: 'janvince.smallextensions::lang.labels.enable_wysiwyg_toolbar'
-            span: full
+            span: right
             default: false
             type: text
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_toolbar_description'
             commentHtml: 'true'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        ## Custom fields
+        blog_custom_fields_section:
+            type: section
+            label: 'janvince.smallextensions::lang.labels.custom_fields_section'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_custom_fields_hint:
+            type: partial
+            span: right
+            path: $/janvince/smallextensions/models/settings/_blog_custom_fields_hint.htm
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_custom_fields_api_code:
+            label: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code'
+            span: left
+            default: false
+            type: switch            
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_custom_fields_string:
+            label: 'janvince.smallextensions::lang.labels.enable_custom_fields_string'
+            span: left
+            default: false
+            type: switch
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_string_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_custom_fields_switch:
+            label: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch'
+            span: left
+            default: false
+            type: switch
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_custom_fields_datetime:
+            label: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime'
+            span: left
+            default: false
+            type: switch
+            commentHtml: 'true'
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+
+        ## Static pages
         static_pages_menu_notes:
             label: 'janvince.smallextensions::lang.labels.enable_menu_notes'
             span: full
