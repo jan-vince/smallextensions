@@ -18,11 +18,11 @@ return [
 		'custom_fields_section_description' => '',
 
 		'custom_fields_hint_title' => 'Jak používat vlastní pole',
-		'custom_fields_hint_line1' => 'Vlastní pole mají ve formuláři článku Blogu výchozí názvy, ty se ale dají  <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">jednoduše upravit pomocí překladů</a>.',
-		'custom_fields_hint_line2' => 'Ve Twigu lze hodnoty vlastních polí článku zobrazit pomocí {{post.custom_fields.api_code}}.',
+		'custom_fields_hint_line2' => 'Vlastní pole mají ve formuláři článku Blogu výchozí názvy, ty se ale dají  <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">jednoduše upravit pomocí překladů</a>.',
+		'custom_fields_hint_line1' => 'Ve Twigu lze hodnoty vlastních polí článku zobrazit pomocí {{post.custom_fields.api_code}}.',
 
 		'custom_fields_hint_title2' => 'Omezení',
-		'custom_fields_hint_line3' => 'Nefungují překlady pro vlastní pole. Řešení hledám.',
+		'custom_fields_hint_line3' => 'Nelze použít pole pro více jazyků. Řešení hledám.',
 
 		'custom_fields_api_code' => 'API kód',
 		'custom_fields_api_code_description' => '',
