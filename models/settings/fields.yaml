@@ -35,7 +35,7 @@ tabs:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code'
             span: left
             default: false
-            type: switch            
+            type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
@@ -66,6 +66,19 @@ tabs:
 
 
         ## Static pages
+        static_pages_hide_content:
+            label: 'janvince.smallextensions::lang.labels.hide_content'
+            span: left
+            default: false
+            type: switch
+            comment: 'janvince.smallextensions::lang.labels.hide_content_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
+
+        static_pages_section:
+            type: section
+            label: 'janvince.smallextensions::lang.labels.static_pages_section'
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
+
         static_pages_menu_notes:
             label: 'janvince.smallextensions::lang.labels.enable_menu_notes'
             span: full

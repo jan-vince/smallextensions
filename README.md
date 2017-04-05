@@ -1,7 +1,5 @@
 # Small Extensions
-> Set of very simple extensions for [OctoberCMS](http://www.octobercms.com) and it's plugins.
-
-OctoberCMS is great system, but we all have a little bit different needs. So I have started this.
+> Set of small tools for Rainlab.Pages and Rainlab.Blog plugins .
 
 
 ## Installation
@@ -14,7 +12,7 @@ git clone https://github.com/jan-vince/smallextensions
 
 **OctoberCMS backend**
 
-Just look for 'Small Extensions' in search field in the:
+Just look for 'Small Extensions' in search field in:
 > Settings > Updates&Plugins > Install plugins
 
 ### Permissions
@@ -22,9 +20,7 @@ Just look for 'Small Extensions' in search field in the:
 You can set permissions to restrict settings page of this plugin.
 
 
-## Extensions
-
-### Rainlab.Blog Extension
+## Rainlab.Blog Extension
 
 > *OctoberCMS > Backend > Settings > Small Extensions > Blog*
 
@@ -42,20 +38,22 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 	* Allows you to add custom toolbar buttons.
 
 * **Custom fields**
-	* Enable extra fields to show up on Blog post editor tab (API code, string, switch, date&time)
+	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch or date&time)
 
 
-### Rainlab.Pages Extension
+## Rainlab.Pages Extension
 
 > *OctoberCMS > Backend > Settings > Small Extensions > Static pages*
 
 > *Depends on: [Rainlab.Pages](https://octobercms.com/index.php/plugin/rainlab-pages) plugin!*
 
 
-Sometimes an extra Menu item note is needed.
-
-
 #### Settings
+
+* **Hide Content field**
+
+	* Allow to hide default Content tab and field from Pages editing page.
+	* Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.
 
 * **Enable Menu notes**
 
@@ -69,4 +67,4 @@ Sometimes an extra Menu item note is needed.
 > [Font Awesome](http://www.fontawesome.io) for Universal access symbol.
 
 
-Created by [Jan Vince](http://www.vince.cz), a sentimental web designer and frontend developer from Czech Republic.
+Created by [Jan Vince](http://www.vince.cz), freelance web designer and frontend developer from Czech Republic.

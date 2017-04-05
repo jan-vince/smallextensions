@@ -14,15 +14,21 @@ return [
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
+		'static_pages_section' => 'Extra fields',
+
+		'hide_content' => 'Hide Content tab',
+		'hide_content_description' => 'Hides Content tab when editing Static Page. Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.',
+
 		'custom_fields_section' => 'Custom fields',
 		'custom_fields_section_description' => '',
 
-		'custom_fields_hint_title' => 'How to use custom fields',
-		'custom_fields_hint_line1' => 'Custom fields will have generic names in Blog post form, but you can easily <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">override their names and comments</a>.',
-		'custom_fields_hint_line2' => 'You can access posts\'s custom fields values in Twig like {{post.custom_fields.api_code}}.',
+		'custom_fields_hint_title' => 'What are custom fields',
+		'custom_fields_hint_line1' => 'Custom fields are added to Blog post edit page on <strong>More tab</strong>.',
+		'custom_fields_hint_line2' => 'You can access custom fields values in Twig with eg. {{post.custom_fields.api_code}}.',
+		'custom_fields_hint_line3' => 'You can easily <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">override custom fields names and comments</a>.',
 
 		'custom_fields_hint_title2' => 'Limitations',
-		'custom_fields_hint_line3' => 'Translation of strings is not working right now. I am looking for a solution.',
+		'custom_fields_hint_line4' => 'Translation of strings is not working right now. I am looking for a solution.',
 
 		'custom_fields_api_code' => 'API code',
 		'custom_fields_api_code_description' => '',

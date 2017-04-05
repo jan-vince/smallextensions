@@ -224,6 +224,32 @@ class Plugin extends PluginBase {
 				]);
 			});
 		}
+
+		/*
+		 * Hide CONTENT field tab
+		 */
+		if (Settings::get('static_pages_hide_content')) {
+
+			Event::listen('backend.form.extendFields', function($widget) {
+
+				if (!$widget->getController() instanceof \RainLab\Pages\Controllers\Index) {
+					return;
+				}
+
+				if (!$widget->model instanceof \RainLab\Pages\Classes\Page) {
+					return;
+				}
+
+				$tabs = $widget->getTabs();
+
+				$tabs->primary->stretch = true;
+				$tabs->secondary->stretch = NULL;
+				$tabs->secondary->cssClass = 'hidden';
+
+			});
+
+		}
+
 	}
 
 	public function registerSettings() {
@@ -235,7 +261,7 @@ class Plugin extends PluginBase {
 				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
 				'keywords' => 'extension extensions blog static pages menu',
-				'order' => 10,
+				'order' => 990,
 				'permissions' => ['janvince.smallextensions.settings'],
 			]
 		];

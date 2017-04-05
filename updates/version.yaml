@@ -13,3 +13,8 @@
 1.0.7:
     - Added Custom fields for Blog posts (API code, string, switch and datetime)
     - smallextensions_tables.php
+1.0.8:
+    - Changed menu order number
+    - Added option to hide content tab on Rainlab.Pages page
+    - Changed settings layout
+    - Added docs for custom fields 

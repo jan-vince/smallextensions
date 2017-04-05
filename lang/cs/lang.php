@@ -14,12 +14,18 @@ return [
 		'enable_menu_notes' => 'Povolit poznámky v Menu',
 		'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
 
+		'static_pages_section' => 'Nová pole',
+
+		'hide_content' => 'Skrýt záložku OBSAH',
+		'hide_content_description' => 'Skryje záložku Obsah při editaci statické Stránky. Užitečné pro ty, kteří používají pro editaci obsahu stránek části definované pomocí {variable} a záložka Obsah v druhém panelu je trochu mate.',
+
 		'custom_fields_section' => 'Vlastní pole',
 		'custom_fields_section_description' => '',
 
 		'custom_fields_hint_title' => 'Jak používat vlastní pole',
-		'custom_fields_hint_line2' => 'Vlastní pole mají ve formuláři článku Blogu výchozí názvy, ty se ale dají  <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">jednoduše upravit pomocí překladů</a>.',
-		'custom_fields_hint_line1' => 'Ve Twigu lze hodnoty vlastních polí článku zobrazit pomocí {{post.custom_fields.api_code}}.',
+		'custom_fields_hint_line1' => 'Vlastní pole se zobrazí v editačním okně příspěvku Blogu na <strong>záložce Další</strong>.',
+		'custom_fields_hint_line2' => 'Ve Twigu lze hodnoty vlastních polí článku zobrazit pomocí {{post.custom_fields.api_code}}.',
+		'custom_fields_hint_line3' => 'Vlastním polím lze  <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">jednoduše upravit názvy a popisky pomocí překladů</a>.',
 
 		'custom_fields_hint_title2' => 'Omezení',
 		'custom_fields_hint_line3' => 'Nelze použít pole pro více jazyků. Řešení hledám.',
