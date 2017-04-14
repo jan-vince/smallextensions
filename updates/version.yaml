@@ -21,3 +21,6 @@
 1.0.9:
     - Added option to hide content tab on Rainlab.Pages page
     - Added docs and preview images to October CMS plugin detail page
+1.0.10:
+    - Added extra blog image column
+    - smallextensions_tables_update_01.php

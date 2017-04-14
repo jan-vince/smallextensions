@@ -50,6 +50,11 @@ return [
 		'enable_custom_fields_datetime' => 'Add DATE&TIME',
 		'enable_custom_fields_datetime_description' => 'Twig: {{post.custom_fields.datetime}}',
 
+		'custom_fields_image' => 'Image',
+		'custom_fields_image_description' => '',
+		'enable_custom_fields_image' => 'Add image',
+		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.image|media}}',
+
 		'tab_blog' => 'Blog',
 		'tab_static_pages' => 'Static Pages',
 	],

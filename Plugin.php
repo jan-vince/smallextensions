@@ -198,6 +198,28 @@ class Plugin extends PluginBase {
 
 			}
 
+			/*
+			* Image field
+			*/
+			if(Settings::get('blog_custom_fields_image') && $widget->model->id) {
+
+				$image = [
+					'label' => 'janvince.smallextensions::lang.labels.custom_fields_image',
+					'comment' => 'janvince.smallextensions::lang.labels.custom_fields_image_description',
+					'type' => 'mediafinder',
+					'span' => 'left',
+					'deferredBinding' => 'true',
+					'mode' => 'image',
+					'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+				];
+
+				$widget->addSecondaryTabFields([
+	                'custom_fields[image]' => $image
+	            ]);
+
+			}
+
+
 		});
 
 		/*

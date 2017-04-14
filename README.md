@@ -38,7 +38,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 	* Allows you to add custom toolbar buttons.
 
 * **Custom fields**
-	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch or date&time)
+	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
 
 
 ## Rainlab.Pages Extension

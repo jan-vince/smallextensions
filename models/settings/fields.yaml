@@ -64,6 +64,15 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
+        blog_custom_fields_image:
+            label: 'janvince.smallextensions::lang.labels.enable_custom_fields_image'
+            span: left
+            default: false
+            type: switch
+            commentHtml: 'true'
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
 
         ## Static pages
         static_pages_hide_content:
