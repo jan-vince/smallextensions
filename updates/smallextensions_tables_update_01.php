@@ -5,7 +5,7 @@ namespace JanVince\SmallExtensions\Updates;
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class SmallExtensionsTables extends Migration
+class SmallExtensionsTables01 extends Migration
 {
     public function up()
     {
