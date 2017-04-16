@@ -31,3 +31,5 @@
     - Added own plugin category (Small plugins)
     - Finally started to use semantic versioning 2.0.0 (http://semver.org) :)
     - smallextensions_tables_update_02.php
+1.1.1:
+    - All custom fields allowed while creating new blog post (previously allowed only on existing records)

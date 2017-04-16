@@ -54,6 +54,7 @@ class Plugin extends PluginBase {
 
 		Event::listen('backend.form.extendFields', function($widget) {
 
+
 			if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Posts) {
 				return;
 			}
@@ -128,7 +129,7 @@ class Plugin extends PluginBase {
 			/*
 			* String field
 			*/
-			if(Settings::get('blog_custom_fields_string') && $widget->model->id) {
+			if(Settings::get('blog_custom_fields_string')) {
 
 				$string = [
 					'label' => 'janvince.smallextensions::lang.labels.custom_fields_string',
@@ -159,7 +160,7 @@ class Plugin extends PluginBase {
 			/*
 			* Datetime field
 			*/
-			if(Settings::get('blog_custom_fields_datetime') && $widget->model->id) {
+			if(Settings::get('blog_custom_fields_datetime')) {
 
 				$datetime = [
 					'label' => 'janvince.smallextensions::lang.labels.custom_fields_datetime',
@@ -183,7 +184,7 @@ class Plugin extends PluginBase {
 			/*
 			* Switch field
 			*/
-			if(Settings::get('blog_custom_fields_switch') && $widget->model->id) {
+			if(Settings::get('blog_custom_fields_switch')) {
 
 				$widget->addSecondaryTabFields([
 	                'custom_fields[switch]' => [
@@ -201,7 +202,7 @@ class Plugin extends PluginBase {
 			/*
 			* Image field
 			*/
-			if(Settings::get('blog_custom_fields_image') && $widget->model->id) {
+			if(Settings::get('blog_custom_fields_image')) {
 
 				$image = [
 					'label' => 'janvince.smallextensions::lang.labels.custom_fields_image',
@@ -222,7 +223,7 @@ class Plugin extends PluginBase {
 			/*
 			* Featured image field
 			*/
-			if(Settings::get('blog_featured_image') && $widget->model->id) {
+			if(Settings::get('blog_featured_image')) {
 
 				$featuredImage = [
 					'label' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image',
