@@ -26,3 +26,8 @@
     - smallextensions_tables_update_01.php
 1.0.11:
     - Changed update class name to prevent installation exception
+1.1.0:
+    - Added option to replace Blog featured images with one featured image selectable from Media manager
+    - Added own plugin category (Small plugins)
+    - Finally started to use semantic versioning 2.0.0 (http://semver.org) :)
+    - smallextensions_tables_update_02.php

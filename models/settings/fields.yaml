@@ -19,6 +19,16 @@ tabs:
             commentHtml: 'true'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
+        blog_featured_image:
+            label: 'janvince.smallextensions::lang.labels.enable_featured_image'
+            span: full
+            default: false
+            type: switch
+            comment: 'janvince.smallextensions::lang.labels.enable_featured_image_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+
+
         ## Custom fields
         blog_custom_fields_section:
             type: section

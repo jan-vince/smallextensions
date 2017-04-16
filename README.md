@@ -39,6 +39,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 
 * **Custom fields**
 	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
+	* Allow to replace original featured images upload field with one featured image selectable from Media manager
 
 
 ## Rainlab.Pages Extension

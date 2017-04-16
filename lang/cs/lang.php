@@ -4,6 +4,7 @@ return [
 	'plugin' => [
 		'name' => 'Drobná rozšíření',
 		'description' => 'Rozšíření pro pluginy Rainlab Blog a Pages',
+		'category' => 'Small plugins',
 	],
 	'labels' => [
 		'wysiwyg_section' => 'WYSIWYG editor',
@@ -11,6 +12,8 @@ return [
 		'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
 		'enable_wysiwyg_toolbar' => 'Tlačítka nástrojové lišty editoru (nechte prázdné pro výchozí sadu)',
 		'enable_wysiwyg_toolbar_description' => '<p><small>Zde můžete změnit tlačítka zobrazená v liště editoru. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Podívejte se, která tlačítka jsou dostupná.</a></small></p><p><small>Nebo můžete zkusit <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">vytvořit svá vlastní tlačítka.</a></small></p>',
+		'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
+		'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
 		'enable_menu_notes' => 'Povolit poznámky v Menu',
 		'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
 
@@ -54,6 +57,9 @@ return [
 		'custom_fields_image_description' => '',
 		'enable_custom_fields_image' => 'Přidat obrázek',
 		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.image|media}}',
+
+		'custom_fields_featured_image' => 'Obrázek',
+		'custom_fields_featured_image_description' => '',
 
 		'tab_blog' => 'Blog',
 		'tab_static_pages' => 'Statické stránky',

@@ -4,6 +4,7 @@ return [
 	'plugin' => [
 		'name' => 'Small Extensions',
 		'description' => 'Extensions for Rainlab Blog and Pages',
+		'category' => 'Small plugins',
 	],
 	'labels' => [
 		'wysiwyg_section' => 'WYSIWYG editor',
@@ -11,6 +12,8 @@ return [
 		'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
 		'enable_wysiwyg_toolbar' => 'Editor toolbar buttons (leave blank for default set)',
 		'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a><br>Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
+		'enable_featured_image' => 'Post featured image from media manager',
+		'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
@@ -54,6 +57,9 @@ return [
 		'custom_fields_image_description' => '',
 		'enable_custom_fields_image' => 'Add image',
 		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.image|media}}',
+
+		'custom_fields_featured_image' => 'Featured image',
+		'custom_fields_featured_image_description' => '',
 
 		'tab_blog' => 'Blog',
 		'tab_static_pages' => 'Static Pages',

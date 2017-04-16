@@ -219,6 +219,29 @@ class Plugin extends PluginBase {
 
 			}
 
+			/*
+			* Featured image field
+			*/
+			if(Settings::get('blog_featured_image') && $widget->model->id) {
+
+				$featuredImage = [
+					'label' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image',
+					'comment' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_description',
+					'type' => 'mediafinder',
+					'span' => 'left',
+					'deferredBinding' => 'true',
+					'mode' => 'image',
+					'tab' => 'rainlab.blog::lang.post.tab_manage'
+				];
+
+				$widget->removeField('featured_images');
+
+				$widget->addSecondaryTabFields([
+	                'custom_fields[featured_image]' => $featuredImage
+	            ]);
+
+			}
+
 
 		});
 
@@ -280,9 +303,10 @@ class Plugin extends PluginBase {
 			'settings' => [
 				'label' => 'janvince.smallextensions::lang.plugin.name',
 				'description' => 'janvince.smallextensions::lang.plugin.description',
+				'category'    => 'janvince.smallextensions::lang.plugin.category',
 				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
-				'keywords' => 'extension extensions blog static pages menu',
+				'keywords' => 'extension extensions blog static pages menu small',
 				'order' => 990,
 				'permissions' => ['janvince.smallextensions.settings'],
 			]
