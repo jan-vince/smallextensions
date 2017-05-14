@@ -304,7 +304,7 @@ class Plugin extends PluginBase {
 			'settings' => [
 				'label' => 'janvince.smallextensions::lang.plugin.name',
 				'description' => 'janvince.smallextensions::lang.plugin.description',
-				'category'    => 'janvince.smallextensions::lang.plugin.category',
+				'category'    => 'Small plugins',
 				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
 				'keywords' => 'extension extensions blog static pages menu small',
