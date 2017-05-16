@@ -1,0 +1,1 @@
+$('.primary-tabs').removeClass('collapsed');

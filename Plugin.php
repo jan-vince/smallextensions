@@ -288,9 +288,24 @@ class Plugin extends PluginBase {
 
 				$tabs = $widget->getTabs();
 
+				foreach( $tabs->secondary->fields as $name => $field ) {
+
+					if($name <> 'rainlab.pages::lang.editor.content'){
+						$tabs->primary->fields[$name] = $field;
+						unset($tabs->secondary->fields[$name]);
+					}
+
+
+				}
+
 				$tabs->primary->stretch = true;
 				$tabs->secondary->stretch = NULL;
 				$tabs->secondary->cssClass = 'hidden';
+
+				// Make sure, primary tabs are not collapsed
+				$widget->addJs('/plugins/janvince/smallextensions/assets/js/primary-tabs.js');
+
+
 
 			});
 
