@@ -40,7 +40,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 * **Custom fields**
 	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
 	* Allow to replace original featured images upload field with one featured image selectable from Media manager
-	
+
 
 ## Rainlab.Pages Extension
 
@@ -55,7 +55,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 
 	* Allow to hide default Content tab and field from Pages editing page.
 	* Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.
-	* As of **version 1.2.7 of Rainlab.Pages plugin** custom fields are placed in secondary tabs container by default - by allow *Hide Content field*, all custom fields will be moved to primary tabs container.
+	* As of **version 1.2.17 of Rainlab.Pages plugin** custom fields are placed in secondary tabs container by default - by allow *Hide Content field*, all custom fields will be moved to primary tabs container.
 
 * **Enable Menu notes**
 

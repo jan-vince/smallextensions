@@ -35,4 +35,5 @@
     - All custom fields allowed while creating new blog post (previously allowed only on existing records)
 1.1.2:
     - Small change in plugin category name
-1.1.3: !!! As of version 1.2.7 of Rainlab.Pages, custom fields are moved to secondary tabs area by default. If "Hide Content tab" setting of this plugin is set, custom fields will be moved back to primary tabs and secondary tabs container will be hidden. 
+1.1.3:
+    - As of version 1.2.17 of Rainlab.Pages, custom fields are moved to secondary tabs area by default. If "Hide Content tab" setting of this plugin is set, custom fields will be moved back to primary tabs and secondary tabs container will be hidden. 
