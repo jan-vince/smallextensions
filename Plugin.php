@@ -31,10 +31,10 @@ class Plugin extends PluginBase {
 		 * Add relation
 		 */
 
-		 // Check for Rainlab.Blog plugin
-         $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Blog');
+		// Check for Rainlab.Blog plugin
+		 $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Blog');
 
-         if ($pluginManager && !$pluginManager->disabled) {
+		if ($pluginManager && !$pluginManager->disabled) {
 
 			\RainLab\Blog\Models\Post::extend(function($model) {
 				$model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
