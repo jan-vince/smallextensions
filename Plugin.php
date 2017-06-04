@@ -7,17 +7,9 @@ use System\Classes\PluginBase;
 use System\Classes\PluginManager;
 use JanVince\SmallExtensions\Models\Settings;
 use JanVince\SmallExtensions\Models\BlogFields;
-use RainLab\Blog\Models\Post as PostModel;
-use RainLab\Blog\Controllers\Posts as PostsController;
 use Config;
 
-
 class Plugin extends PluginBase {
-
-	/**
-	 * @var array Plugin dependencies
-	 */
-	public $require = ['RainLab.Blog'];
 
 	/**
 	 * Returns information about this plugin.
@@ -36,24 +28,31 @@ class Plugin extends PluginBase {
 	public function boot() {
 
 		/**
-         * Add relation
-         */
-        PostModel::extend(function($model) {
-            $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
+		 * Add relation
+		 */
 
-			/*
-			*	Deferred bind doesn't work with extended models?
-			*	I haven't found a better way yet :(
-			*/
-			$model->bindEvent('model.afterSave', function() use ($model) {
-				$model->custom_fields->post_id = $model->id;
-				$model->custom_fields->save();
+		// Check for Rainlab.Blog plugin
+		$pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Blog');
+
+		if ($pluginManager && !$pluginManager->disabled) {
+
+			\RainLab\Blog\Models\Post::extend(function($model) {
+				$model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
+
+				/*
+				* Deferred bind doesn't work with extended models?
+				* I haven't found a better way yet :(
+				*/
+				$model->bindEvent('model.afterSave', function() use ($model) {
+					$model->custom_fields->post_id = $model->id;
+					$model->custom_fields->save();
+				});
+
 			});
 
-        });
+		}
 
 		Event::listen('backend.form.extendFields', function($widget) {
-
 
 			if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Posts) {
 				return;
@@ -98,7 +97,7 @@ class Plugin extends PluginBase {
 			}
 
 			/*
-			*	Custom fields model deferred bind
+			* Custom fields model deferred bind
 			*/
 			if (!$widget->model->custom_fields) {
 				$sessionKey = uniqid('session_key', true);
@@ -113,7 +112,7 @@ class Plugin extends PluginBase {
 			if(Settings::get('blog_custom_fields_api_code')) {
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[api_code]' => [
+					'custom_fields[api_code]' => [
 						'label' => 'janvince.smallextensions::lang.labels.custom_fields_api_code',
 						'comment' => 'janvince.smallextensions::lang.labels.custom_fields_api_code_description',
 						'span' => 'full',
@@ -121,10 +120,9 @@ class Plugin extends PluginBase {
 						'deferredBinding' => 'true',
 						'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
 					]
-	            ]);
+				]);
 
 			}
-
 
 			/*
 			* String field
@@ -152,8 +150,8 @@ class Plugin extends PluginBase {
 				}
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[string]' => $string
-	            ]);
+					'custom_fields[string]' => $string
+				]);
 
 			}
 
@@ -176,8 +174,8 @@ class Plugin extends PluginBase {
 				}
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[datetime]' => $datetime
-	            ]);
+					'custom_fields[datetime]' => $datetime
+				]);
 
 			}
 
@@ -187,15 +185,15 @@ class Plugin extends PluginBase {
 			if(Settings::get('blog_custom_fields_switch')) {
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[switch]' => [
-	                    'label' => 'janvince.smallextensions::lang.labels.custom_fields_switch',
-	                    'comment' => 'janvince.smallextensions::lang.labels.custom_fields_switch_description',
+					'custom_fields[switch]' => [
+						'label' => 'janvince.smallextensions::lang.labels.custom_fields_switch',
+						'comment' => 'janvince.smallextensions::lang.labels.custom_fields_switch_description',
 						'type' => 'switch',
 						'span' => 'left',
 						'deferredBinding' => 'true',
-	                    'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
-	                ]
-	            ]);
+						'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+					]
+				]);
 
 			}
 
@@ -215,8 +213,8 @@ class Plugin extends PluginBase {
 				];
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[image]' => $image
-	            ]);
+					'custom_fields[image]' => $image
+				]);
 
 			}
 
@@ -238,11 +236,10 @@ class Plugin extends PluginBase {
 				$widget->removeField('featured_images');
 
 				$widget->addSecondaryTabFields([
-	                'custom_fields[featured_image]' => $featuredImage
-	            ]);
+					'custom_fields[featured_image]' => $featuredImage
+				]);
 
 			}
-
 
 		});
 
@@ -254,8 +251,8 @@ class Plugin extends PluginBase {
 			Event::listen('backend.form.extendFields', function ($widget) {
 
 				if (
-						!$widget->getController() instanceof \RainLab\Pages\Controllers\Index ||
-						!$widget->model instanceof \RainLab\Pages\Classes\MenuItem
+					!$widget->getController() instanceof \RainLab\Pages\Controllers\Index ||
+					!$widget->model instanceof \RainLab\Pages\Classes\MenuItem
 				) {
 					return;
 				}
@@ -305,8 +302,6 @@ class Plugin extends PluginBase {
 				// Make sure, primary tabs are not collapsed
 				$widget->addJs('/plugins/janvince/smallextensions/assets/js/primary-tabs.js');
 
-
-
 			});
 
 		}
@@ -319,7 +314,7 @@ class Plugin extends PluginBase {
 			'settings' => [
 				'label' => 'janvince.smallextensions::lang.plugin.name',
 				'description' => 'janvince.smallextensions::lang.plugin.description',
-				'category'    => 'Small plugins',
+				'category' => 'Small plugins',
 				'icon' => 'icon-universal-access',
 				'class' => 'JanVince\SmallExtensions\Models\Settings',
 				'keywords' => 'extension extensions blog static pages menu small',
