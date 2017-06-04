@@ -39,3 +39,4 @@
     - As of version 1.2.17 of Rainlab.Pages, custom fields are moved to secondary tabs area by default. If "Hide Content tab" setting of this plugin is set, custom fields will be moved back to primary tabs and secondary tabs container will be hidden.
 1.1.4:
     - Removed Rainlab Blog code dependency
+    - Better Settings fields placement

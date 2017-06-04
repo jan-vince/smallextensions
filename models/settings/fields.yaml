@@ -19,6 +19,10 @@ tabs:
             commentHtml: 'true'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
+        blog_featured_image_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
         blog_featured_image:
             label: 'janvince.smallextensions::lang.labels.enable_featured_image'
             span: full
@@ -30,16 +34,11 @@ tabs:
 
 
         ## Custom fields
-        blog_custom_fields_section:
-            type: section
-            label: 'janvince.smallextensions::lang.labels.custom_fields_section'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
-
         blog_custom_fields_hint:
             type: partial
             span: right
             path: $/janvince/smallextensions/models/settings/_blog_custom_fields_hint.htm
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_api_code:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code'
@@ -47,7 +46,7 @@ tabs:
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_string:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_string'
@@ -55,7 +54,7 @@ tabs:
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_string_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_switch:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch'
@@ -63,7 +62,7 @@ tabs:
             default: false
             type: switch
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_datetime:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime'
@@ -72,7 +71,7 @@ tabs:
             type: switch
             commentHtml: 'true'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_image:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_image'
@@ -81,7 +80,7 @@ tabs:
             type: switch
             commentHtml: 'true'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
 
         ## Static pages
@@ -95,7 +94,6 @@ tabs:
 
         static_pages_section:
             type: section
-            label: 'janvince.smallextensions::lang.labels.static_pages_section'
             tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
 
         static_pages_menu_notes:

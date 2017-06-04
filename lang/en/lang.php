@@ -62,6 +62,7 @@ return [
 		'custom_fields_featured_image_description' => '',
 
 		'tab_blog' => 'Blog',
+		'tab_blog_fields' => 'Blog custom fields',
 		'tab_static_pages' => 'Static Pages',
 	],
 	'blog' => [

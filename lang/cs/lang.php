@@ -62,6 +62,7 @@ return [
 		'custom_fields_featured_image_description' => '',
 
 		'tab_blog' => 'Blog',
+		'tab_blog_fields' => 'Vlastní pole příspěvku',
 		'tab_static_pages' => 'Statické stránky',
 	],
 	'blog' => [
