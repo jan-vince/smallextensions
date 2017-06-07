@@ -40,3 +40,5 @@
 1.1.4:
     - Removed Rainlab Blog code dependency
     - Better Settings fields placement
+1.1.5:
+    - Editor toolbar buttons input field changed to textarea to support larger input (thanks kealsera)

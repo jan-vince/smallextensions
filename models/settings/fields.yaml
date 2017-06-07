@@ -14,7 +14,8 @@ tabs:
             label: 'janvince.smallextensions::lang.labels.enable_wysiwyg_toolbar'
             span: right
             default: false
-            type: text
+            type: textarea
+            size: small
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_toolbar_description'
             commentHtml: 'true'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
