@@ -59,12 +59,21 @@ class Plugin extends PluginBase {
 
 				if(Settings::get('blog_author')) {
 
-					$users = UserModel::get();
+					/**
+					*	Other users only for user with correct permission
+					*/
+					if( BackendAuth::getUser()->hasAccess('rainlab.blog.access_other_posts') ) {
+						$users = UserModel::get();
 
-					$usersFormated = [];
+						$usersFormated = [];
 
-					foreach($users as $user){
-							$usersFormated[$user->id] = ($user->last_name . ' ' . $user->first_name);
+						foreach($users as $user){
+								$usersFormated[$user->id] = ($user->last_name . ' ' . $user->first_name);
+						}
+
+					} else {
+						$user = BackendAuth::getUser();
+						$usersFormated[ $user->id ] = ($user->last_name . ' ' . $user->first_name);
 					}
 
 					$model->addDynamicMethod('listUsers', function() use($usersFormated) {
@@ -134,19 +143,36 @@ class Plugin extends PluginBase {
 			/*
 			* Author field
 			*/
-			if(Settings::get('blog_author')) {
+			if( Settings::get('blog_author') ) {
 
-				$widget->addSecondaryTabFields([
+				$user = BackendAuth::getUser();
+
+				if( !empty($user->id) ) {
+					$defaultValue = $user->id;
+				} else {
+					$defaultValue = NULL;
+				}
+
+				$field = [
 					'user_id' => [
 						'label' => 'janvince.smallextensions::lang.labels.author',
 						'comment' => 'janvince.smallextensions::lang.labels.author_comment',
 						'span' => 'left',
 						'type' => 'dropdown',
 						'options' => 'listUsers',
-						'emptyOption' => 'janvince.smallextensions::lang.labels.author_empty',
+						'default' => $defaultValue,
 						'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
-					]
-				]);
+					],
+				];
+
+				/**
+				*	Empty option only for user with correct permission
+				*/
+				if( BackendAuth::getUser()->hasAccess('rainlab.blog.access_other_posts') ) {
+					$field['user_id']['emptyOption'] = 'janvince.smallextensions::lang.labels.author_empty';
+				}
+
+				$widget->addSecondaryTabFields( $field );
 
 			}
 
