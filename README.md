@@ -73,4 +73,4 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 > [Font Awesome](http://www.fontawesome.io) for Universal access symbol.
 
 
-Created by [Jan Vince](http://www.vince.cz), freelance web designer and frontend developer from Czech Republic.
+Created by [Jan Vince](http://www.vince.cz), freelance web designer from Czech Republic.
