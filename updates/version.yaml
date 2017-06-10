@@ -44,3 +44,5 @@
     - Editor toolbar buttons input field changed to textarea to support larger input (thanks kealsera)
 1.2.0:
     - Added post author field with administrators dropdown
+1.2.1:
+    - Disabled is_activated check for backend user as this is not needed

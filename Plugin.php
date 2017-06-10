@@ -59,7 +59,7 @@ class Plugin extends PluginBase {
 
 				if(Settings::get('blog_author')) {
 
-					$users = UserModel::where('is_activated', 1)->get();
+					$users = UserModel::get();
 
 					$usersFormated = [];
 
@@ -70,7 +70,7 @@ class Plugin extends PluginBase {
 					$model->addDynamicMethod('listUsers', function() use($usersFormated) {
 			            return $usersFormated;
 			        });
-					
+
 				}
 
 			});
