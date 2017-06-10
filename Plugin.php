@@ -9,6 +9,10 @@ use JanVince\SmallExtensions\Models\Settings;
 use JanVince\SmallExtensions\Models\BlogFields;
 use Config;
 
+use BackendAuth;
+use Backend\Models\User as UserModel;
+
+
 class Plugin extends PluginBase {
 
 	/**
@@ -23,6 +27,11 @@ class Plugin extends PluginBase {
 			'author' => 'Jan Vince',
 			'icon' => 'icon-universal-access'
 		];
+	}
+
+	public function listUsers($fieldName, $value, $formData)
+	{
+	    return ['published' => 'Published'];
 	}
 
 	public function boot() {
@@ -47,6 +56,22 @@ class Plugin extends PluginBase {
 					$model->custom_fields->post_id = $model->id;
 					$model->custom_fields->save();
 				});
+
+				if(Settings::get('blog_author')) {
+
+					$users = UserModel::where('is_activated', 1)->get();
+
+					$usersFormated = [];
+
+					foreach($users as $user){
+							$usersFormated[$user->id] = ($user->last_name . ' ' . $user->first_name);
+					}
+
+					$model->addDynamicMethod('listUsers', function() use($usersFormated) {
+			            return $usersFormated;
+			        });
+					
+				}
 
 			});
 
@@ -104,6 +129,25 @@ class Plugin extends PluginBase {
 
 				$custom_fields = new BlogFields;
 				$widget->model->custom_fields = $custom_fields;
+			}
+
+			/*
+			* Author field
+			*/
+			if(Settings::get('blog_author')) {
+
+				$widget->addSecondaryTabFields([
+					'user_id' => [
+						'label' => 'janvince.smallextensions::lang.labels.author',
+						'comment' => 'janvince.smallextensions::lang.labels.author_comment',
+						'span' => 'left',
+						'type' => 'dropdown',
+						'options' => 'listUsers',
+						'emptyOption' => 'janvince.smallextensions::lang.labels.author_empty',
+						'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+					]
+				]);
+
 			}
 
 			/*

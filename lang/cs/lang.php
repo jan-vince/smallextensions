@@ -17,6 +17,13 @@ return [
 		'enable_menu_notes' => 'Povolit poznámky v Menu',
 		'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
 
+		'enable_blog_author' => 'Umožnit změnu autora příspěvku',
+		'enable_blog_author_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr autora',
+
+		'author' => 'Autor',
+		'author_comment' => 'Nastavit autora tohoto příspěvku',
+		'author_empty' => 'Není přiřazen',
+
 		'static_pages_section' => 'Nová pole',
 
 		'hide_content' => 'Skrýt záložku OBSAH',

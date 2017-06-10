@@ -42,3 +42,5 @@
     - Better Settings fields placement
 1.1.5:
     - Editor toolbar buttons input field changed to textarea to support larger input (thanks kealsera)
+1.2.0:
+    - Added post author field with administrators dropdown

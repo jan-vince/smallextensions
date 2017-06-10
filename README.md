@@ -37,6 +37,10 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 	* Enable to switch between default MarkDown or OctoberCMS's Rich editor.
 	* Allows you to add custom toolbar buttons.
 
+* **Change post author**
+
+	* Adds post author field with administrators dropdown
+
 * **Custom fields**
 	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
 	* Allow to replace original featured images upload field with one featured image selectable from Media manager

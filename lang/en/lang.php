@@ -17,6 +17,14 @@ return [
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
+		'enable_blog_author' => 'Enable change of post author',
+		'enable_blog_author_description' => 'If checked, dropdown with list of activated administrators will be added to blog post form',
+
+		'author' => 'Author',
+		'author_comment' => 'Set author of this post',
+		'author_empty' => 'Not set',
+
+
 		'static_pages_section' => 'Extra fields',
 
 		'hide_content' => 'Hide Content tab',
