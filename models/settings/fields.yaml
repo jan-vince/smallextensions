@@ -92,7 +92,7 @@ tabs:
             default: false
             type: checkbox
             commentHtml: 'true'
-            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
+            comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_image_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
 
