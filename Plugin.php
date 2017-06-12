@@ -57,7 +57,7 @@ class Plugin extends PluginBase {
 					$model->custom_fields->save();
 				});
 
-				if(Settings::get('blog_author')) {
+				if( BackendAuth::getUser() && Settings::get('blog_author') ) {
 
 					/**
 					*	Other users only for user with correct permission
