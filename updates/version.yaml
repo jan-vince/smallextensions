@@ -48,3 +48,5 @@
     - Disabled is_activated check for backend user as this is not needed
 1.2.2:
     - Check permission for authors list and set default value for logged in user
+1.2.3:
+    - Check for singed in user in plugin's boot method
