@@ -69,7 +69,7 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_string_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
-        blog_custom_fields_checkbox:
+        blog_custom_fields_switch:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch'
             span: left
             default: false
