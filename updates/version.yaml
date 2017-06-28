@@ -49,4 +49,6 @@
 1.2.2:
     - Check permission for authors list and set default value for logged in user
 1.2.3:
-    - Check for singed in user in plugin's boot method
+    - Check for signed in user in plugin's boot method
+1.2.4:
+    - Fixed typo in fields.yaml (thanks Jorge Noguera)
