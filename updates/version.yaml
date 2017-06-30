@@ -52,3 +52,5 @@
     - Check for signed in user in plugin's boot method
 1.2.4:
     - Fixed typo in fields.yaml (thanks Jorge Noguera)
+1.2.5:
+    - Changed column type for repeater to 'text' instead of json (thanks CanThis)
