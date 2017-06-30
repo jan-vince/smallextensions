@@ -20,7 +20,7 @@ class SmallExtensionsTables extends Migration
             $table->text('text')->nullable();
             $table->boolean('switch')->nullable();
             $table->datetime('datetime')->nullable();
-            $table->json('repeater')->nullable();
+            $table->text('repeater')->nullable();
             $table->timestamps();
         });
 
