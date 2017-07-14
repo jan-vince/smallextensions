@@ -26,10 +26,18 @@ tabs:
 
         blog_featured_image:
             label: 'janvince.smallextensions::lang.labels.enable_featured_image'
-            span: full
+            span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_featured_image_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
+        blog_featured_image_meta:
+            label: 'janvince.smallextensions::lang.labels.enable_featured_image_meta'
+            span: right
+            default: false
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.enable_featured_image_meta_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_author_section:

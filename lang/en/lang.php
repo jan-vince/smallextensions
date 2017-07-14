@@ -14,6 +14,8 @@ return [
 		'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a><br>Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
 		'enable_featured_image' => 'Post featured image from media manager',
 		'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
+    'enable_featured_image_meta' => 'Add title and description to image',
+		'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
@@ -64,10 +66,15 @@ return [
 		'custom_fields_image' => 'Image',
 		'custom_fields_image_description' => '',
 		'enable_custom_fields_image' => 'Add image',
-		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.image|media}}',
+		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.featured_image|media}}',
 
 		'custom_fields_featured_image' => 'Featured image',
 		'custom_fields_featured_image_description' => '',
+
+		'custom_fields_featured_image_title' => 'Featured image title',
+		'custom_fields_featured_image_title_description' => '',
+		'custom_fields_featured_image_alt' => 'Featured image description',
+		'custom_fields_featured_image_alt_description' => '',
 
 		'tab_blog' => 'Blog',
 		'tab_blog_fields' => 'Blog custom fields',

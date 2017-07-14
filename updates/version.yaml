@@ -54,3 +54,6 @@
     - Fixed typo in fields.yaml (thanks Jorge Noguera)
 1.2.5:
     - Changed column type for repeater to 'text' instead of json (thanks CanThis)
+1.3.0:
+    - Added extra blog image columns for title and description
+    - smallextensions_tables_update_03.php
