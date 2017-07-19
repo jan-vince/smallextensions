@@ -18,10 +18,11 @@ return [
 		'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
+
 		'enable_menu_image' => 'Enable Menu image',
 		'enable_menu_image_description' => 'Allows to add image (TODO: show saved image in menu popup window!)',
-		'enable_menu_image' => 'Enable Menu color',
-		'enable_menu_image_description' => 'Allows to set color.',
+		'enable_menu_color' => 'Enable Menu color',
+		'enable_menu_color_description' => 'Allows to set color.',
 
 		'enable_blog_author' => 'Enable change of post author',
 		'enable_blog_author_description' => 'If checked, dropdown with list of activated administrators will be added to blog post form',
