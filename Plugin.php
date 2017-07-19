@@ -370,6 +370,50 @@ class Plugin extends PluginBase {
       });
     }
 
+    if (Settings::get('static_pages_menu_image')) {
+
+          Event::listen('backend.form.extendFields', function ($widget) {
+
+            if (!$widget->getController() instanceof \RainLab\Pages\Controllers\Index ||
+                !$widget->model instanceof \RainLab\Pages\Classes\MenuItem) {
+              return;
+            }
+
+            $widget->addTabFields([
+              'viewBag[image]' => [
+                'tab' => 'janvince.smallextensions::lang.static_menu.image',
+                'label' => 'janvince.smallextensions::lang.static_menu.add_image',
+                'commentAbove' => 'janvince.smallextensions::lang.static_menu.add_image_comment',
+                'type' => 'mediafinder',
+                'mode' => 'image',
+                'span' => 'full'
+              ]
+            ]);
+
+          });
+
+    }
+
+    if (Settings::get('static_pages_menu_color')) {
+
+          Event::listen('backend.form.extendFields', function ($widget) {
+
+            if (!$widget->getController() instanceof \RainLab\Pages\Controllers\Index || !$widget->model instanceof \RainLab\Pages\Classes\MenuItem) {
+              return;
+            }
+
+            $widget->addTabFields([
+              'viewBag[color]' => [
+                'tab' => 'janvince.smallextensions::lang.static_menu.color',
+                'label' => 'janvince.smallextensions::lang.static_menu.add_color',
+                'commentAbove' => 'janvince.smallextensions::lang.static_menu.add_color_comment',
+                'type' => 'colorpicker',
+                'default' => '#ffffff'
+              ],
+            ]);
+          });
+        }
+
     /*
      * Hide CONTENT field tab
      */

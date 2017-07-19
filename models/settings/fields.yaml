@@ -124,3 +124,26 @@ tabs:
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_menu_notes_description'
             tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
+
+        static_pages_menu_items_hint:
+            type: partial
+            span: right
+            path: $/janvince/smallextensions/models/settings/_pages_menu_items_hint.htm
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
+
+        static_pages_menu_image:
+            label: 'janvince.smallextensions::lang.labels.enable_menu_image'
+            span: left
+            default: false
+            type: checkbox
+            htmlComment: true
+            comment: 'janvince.smallextensions::lang.labels.enable_menu_image_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
+
+        static_pages_menu_color:
+            label: 'janvince.smallextensions::lang.labels.enable_menu_color'
+            span: left
+            default: false
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.enable_menu_color_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_static_pages'

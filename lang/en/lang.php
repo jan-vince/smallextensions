@@ -18,6 +18,10 @@ return [
 		'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
 		'enable_menu_notes' => 'Enable Menu notes',
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
+		'enable_menu_image' => 'Enable Menu image',
+		'enable_menu_image_description' => 'Allows to add image (TODO: show saved image in menu popup window!)',
+		'enable_menu_image' => 'Enable Menu color',
+		'enable_menu_image_description' => 'Allows to set color.',
 
 		'enable_blog_author' => 'Enable change of post author',
 		'enable_blog_author_description' => 'If checked, dropdown with list of activated administrators will be added to blog post form',
@@ -68,6 +72,11 @@ return [
 		'enable_custom_fields_image' => 'Add image',
 		'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.featured_image|media}}',
 
+        'pages_menu_items_hint_title' => 'Warning',
+		'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image and color to reapear after save and reopening of menu item.',
+		'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/jan-vince/pages-plugin">edited version of plugin</a>.',
+
+
 		'custom_fields_featured_image' => 'Featured image',
 		'custom_fields_featured_image_description' => '',
 
@@ -86,8 +95,14 @@ return [
 	],
 	'static_menu' => [
 		'notes' => 'Notes',
+    'image' => 'Image',
+    'color' => 'Color',
 		'add_note' => 'Add a note to this menu item',
 		'add_note_comment' => 'Add note to this menu item. It will be accessible from page/layout with: {{item.viewBag.note}}.',
+		'add_image' => 'Add an image',
+    'add_image_comment' => 'Saved image will not be shown here!',
+		'add_color' => 'Add a color',
+		'add_color_comment' => '',
 	],
 	'permissions' => [
 		'settings_tab' => 'Small Extensions',

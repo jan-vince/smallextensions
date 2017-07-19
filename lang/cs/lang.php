@@ -16,8 +16,13 @@ return [
 		'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
 		'enable_featured_image_meta' => 'Umožnit přidat k obrázku název a popisek',
 		'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
-		'enable_menu_notes' => 'Povolit poznámky v Menu',
+		'enable_menu_notes' => 'Povolit poznámky u položek menu',
 		'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
+
+        'enable_menu_image' => 'Povolit obrázek u položky menu',
+		'enable_menu_image_description' => 'Umožní přidat k položce menu obrázek.',
+		'enable_menu_color' => 'Povolit barvu u položky menu',
+		'enable_menu_color_description' => 'Umožní nastavit barvu položky.',
 
 		'enable_blog_author' => 'Umožnit změnu autora příspěvku',
 		'enable_blog_author_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr autora',
@@ -65,15 +70,20 @@ return [
 		'custom_fields_image' => 'Obrázek',
 		'custom_fields_image_description' => '',
 		'enable_custom_fields_image' => 'Přidat obrázek',
-    'custom_fields_featured_image_description' => '',
+        'custom_fields_featured_image_description' => '',
 
 		'custom_fields_featured_image' => 'Obrázek',
 		'custom_fields_featured_image_description' => '',
 
-    'custom_fields_featured_image_title' => 'Název obrázku',
+        'custom_fields_featured_image_title' => 'Název obrázku',
 		'custom_fields_featured_image_title_description' => '',
 		'custom_fields_featured_image_alt' => 'Popis obrázku',
 		'custom_fields_featured_image_alt_description' => '',
+
+        'pages_menu_items_hint_title' => 'Varování',
+		'pages_menu_items_hint_line1' => 'V pluginu statických stránek je momentálně chyba, která neumožňuje znovu zobrazit uložený obrázek a barvu pro položky menu!',
+		'pages_menu_items_hint_line2' => 'Do doby, než bude chyba opravená, můžete použít <a target="_blank" href="https://github.com/jan-vince/pages-plugin">upravenou verzi pluginu</a>.',
+
 
 		'tab_blog' => 'Blog',
 		'tab_blog_fields' => 'Vlastní pole příspěvku',
@@ -85,8 +95,14 @@ return [
 	],
 	'static_menu' => [
 		'notes' => 'Poznámky',
+    'image' => 'Obrázek',
+    'color' => 'Barva',
 		'add_note' => 'Přidat poznámku k položce menu',
 		'add_note_comment' => 'Přidá poznámku k této položce menu. Ta pak bude přístupná ze stránky/layoutu pomocí: {{item.viewBag.note}}.',
+    'add_image' => 'Přidat obrázek',
+    'add_image_comment' => 'Uložený obrazek se tu neobjeví.',
+		'add_color' => 'Přidat barvu',
+		'add_color_comment' => 'V HEX formátu (např.: #efefef)',
 	],
 	'permissions' => [
 		'settings_tab' => 'Drobná rozšíření',
