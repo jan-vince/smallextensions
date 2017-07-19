@@ -20,7 +20,7 @@ return [
 		'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
 		'enable_menu_image' => 'Enable Menu image',
-		'enable_menu_image_description' => 'Allows to add image (TODO: show saved image in menu popup window!)',
+		'enable_menu_image_description' => 'Allows to add image.',
 		'enable_menu_color' => 'Enable Menu color',
 		'enable_menu_color_description' => 'Allows to set color.',
 
