@@ -179,12 +179,12 @@ class Plugin extends PluginBase {
       /*
       * API code field
       */
-      if(Settings::get('blog_custom_fields_api_code')) {
+      if(Settings::get('blog_custom_fields_datetime')) {
 
         $widget->addSecondaryTabFields([
-          'custom_fields[api_code]' => [
-            'label' => 'janvince.smallextensions::lang.labels.custom_fields_api_code',
-            'comment' => 'janvince.smallextensions::lang.labels.custom_fields_api_code_description',
+          'custom_fields[datetime]' => [
+            'label' => ( Settings::get('blog_custom_fields_datetime_label') ? Settings::get('blog_custom_fields_datetime_label') : 'janvince.smallextensions::lang.labels.custom_fields_datetime'),
+            'comment' => 'janvince.smallextensions::lang.labels.custom_fields_datetime_description',
             'span' => 'full',
             'type' => 'text',
             'deferredBinding' => 'true',
@@ -200,7 +200,7 @@ class Plugin extends PluginBase {
       if(Settings::get('blog_custom_fields_string')) {
 
         $string = [
-          'label' => 'janvince.smallextensions::lang.labels.custom_fields_string',
+          'label' => ( Settings::get('blog_custom_fields_string_label') ? Settings::get('blog_custom_fields_string_label') : 'janvince.smallextensions::lang.labels.custom_fields_string'),
           'comment' => 'janvince.smallextensions::lang.labels.custom_fields_string_description',
           'span' => 'full',
           'deferredBinding' => 'true',
@@ -231,7 +231,7 @@ class Plugin extends PluginBase {
       if(Settings::get('blog_custom_fields_datetime')) {
 
         $datetime = [
-          'label' => 'janvince.smallextensions::lang.labels.custom_fields_datetime',
+          'label' => ( Settings::get('blog_custom_fields_datetime_label') ? Settings::get('blog_custom_fields_datetime_label') : 'janvince.smallextensions::lang.labels.custom_fields_datetime'),
           'comment' => 'janvince.smallextensions::lang.labels.custom_fields_datetime_description',
           'type' => 'datepicker',
           'span' => 'left',
@@ -256,7 +256,7 @@ class Plugin extends PluginBase {
 
         $widget->addSecondaryTabFields([
           'custom_fields[switch]' => [
-            'label' => 'janvince.smallextensions::lang.labels.custom_fields_switch',
+            'label' => ( Settings::get('blog_custom_fields_switch_label') ? Settings::get('blog_custom_fields_switch_label') : 'janvince.smallextensions::lang.labels.custom_fields_switch'),
             'comment' => 'janvince.smallextensions::lang.labels.custom_fields_switch_description',
             'type' => 'switch',
             'span' => 'left',
@@ -273,7 +273,7 @@ class Plugin extends PluginBase {
       if(Settings::get('blog_custom_fields_image')) {
 
         $image = [
-          'label' => 'janvince.smallextensions::lang.labels.custom_fields_image',
+          'label' => ( Settings::get('blog_custom_fields_image_label') ? Settings::get('blog_custom_fields_image_label') : 'janvince.smallextensions::lang.labels.custom_fields_image'),
           'comment' => 'janvince.smallextensions::lang.labels.custom_fields_image_description',
           'type' => 'mediafinder',
           'span' => 'left',

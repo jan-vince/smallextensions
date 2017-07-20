@@ -55,18 +55,23 @@ tabs:
 
 
         ## Custom fields
-        blog_custom_fields_hint:
-            type: partial
-            span: right
-            path: $/janvince/smallextensions/models/settings/_blog_custom_fields_hint.htm
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
         blog_custom_fields_api_code:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code'
             span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_api_code_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_api_code_section:
+            type: section
+            cssClass: field-indent
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_string:
@@ -77,12 +82,34 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_string_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
+        blog_custom_fields_string_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_string_section:
+            type: section
+            cssClass: field-indent
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
         blog_custom_fields_switch:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch'
             span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_switch_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_switch_section:
+            type: section
+            cssClass: field-indent
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_datetime:
@@ -94,6 +121,17 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
+        blog_custom_fields_datetime_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_datetime_section:
+            type: section
+            cssClass: field-indent
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
         blog_custom_fields_image:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_image'
             span: left
@@ -102,6 +140,24 @@ tabs:
             commentHtml: 'true'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_image_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_image_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_image_section:
+            type: section
+            cssClass: field-indent
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
+        blog_custom_fields_hint:
+            type: partial
+            span: full
+            path: $/janvince/smallextensions/models/settings/_blog_custom_fields_hint.htm
+            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+
 
 
         ## Static pages

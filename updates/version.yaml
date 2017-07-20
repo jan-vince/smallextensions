@@ -61,3 +61,5 @@
     - Added options for menu item image (imagefinder) and color (colorpicker)
 1.3.2:
     - Fixed settings translation for EN
+1.3.3:
+    - Labels can be added to blog custom fields just right in the Settings

@@ -47,6 +47,8 @@ return [
 		'custom_fields_hint_title2' => 'Omezení',
 		'custom_fields_hint_line3' => 'Nelze použít pole pro více jazyků. Řešení hledám.',
 
+        'custom_fields_label' => 'Název tohoto pole (bude použitý ve formuláři příspěvku)',
+
 		'custom_fields_api_code' => 'API kód',
 		'custom_fields_api_code_description' => '',
 		'enable_custom_fields_api_code' => 'Přidat pole pro Add API kód',
