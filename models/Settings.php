@@ -12,7 +12,7 @@ class Settings extends Model
     ];
 
 
-    public $requiredPerrmisions = ['janvince.smallextensions.settings'];
+    public $requiredPermissions = ['janvince.smallextensions.settings'];
 
     public $settingsCode = 'janvince_smallextensions_settings';
 
