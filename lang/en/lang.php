@@ -78,7 +78,7 @@ return [
 
         'pages_menu_items_hint_title' => 'Warning',
         'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image and color to reapear after save and reopening of menu item.',
-        'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/jan-vince/pages-plugin">edited version of plugin</a>.',
+        'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">edited version of plugin</a>.',
 
 
         'custom_fields_featured_image' => 'Featured image',
