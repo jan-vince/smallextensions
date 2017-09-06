@@ -407,8 +407,7 @@ class Plugin extends PluginBase {
                 'tab' => 'janvince.smallextensions::lang.static_menu.color',
                 'label' => 'janvince.smallextensions::lang.static_menu.add_color',
                 'commentAbove' => 'janvince.smallextensions::lang.static_menu.add_color_comment',
-                'type' => 'colorpicker',
-                'default' => '#ffffff'
+                'type' => 'text',
               ],
             ]);
           });

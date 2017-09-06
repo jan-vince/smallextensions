@@ -10,7 +10,7 @@ return [
         'wysiwyg_section' => 'WYSIWYG editor',
         'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
         'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
-        'enable_wysiwyg_toolbar' => 'Editor toolbar buttons (leave blank for default set)',
+        'enable_wysiwyg_toolbar' => 'Custom editor toolbar buttons (leave blank for default set)',
         'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a> Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
         'enable_featured_image' => 'Post featured image from media manager',
         'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
@@ -46,7 +46,7 @@ return [
         'custom_fields_hint_line3' => 'You can easily <a target="_blank" href="https://octobercms.com/docs/plugin/localization#overriding">override custom fields names and comments</a>.',
 
         'custom_fields_hint_title2' => 'Limitations',
-        'custom_fields_hint_line4' => 'Translation of strings is not working right now. I am looking for a solution.',
+        'custom_fields_hint_line4' => 'Translation of labels is not working right now. I am looking for a solution.',
 
         'custom_fields_label' => 'Label for this field (to be used in Post form)',
 
@@ -89,9 +89,19 @@ return [
         'custom_fields_featured_image_alt' => 'Featured image description',
         'custom_fields_featured_image_alt_description' => '',
 
+        'wysiwyg_section' => 'WYSIWYG editor',
+        'media_section' => 'Media',
+        'settings_section' => 'other settings',
+        'custom_fields_section' => 'Custom fields',
+        'menu_section' => 'Menu items',
+
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Blog custom fields',
         'tab_static_pages' => 'Static Pages',
+        'tab_content' => 'Content',
+        'tab_media' => 'Media',
+        'tab_other' => 'Other',
+        'tab_custom_fields' => 'Custom fields',
     ],
     'blog' => [
         'label' => 'Blog',

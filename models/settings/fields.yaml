@@ -1,7 +1,12 @@
 fields: {  }
+
 tabs:
     fields:
-        ## WYSIWYG
+        wysiwyg_section:
+            label: 'janvince.smallextensions::lang.labels.wysiwyg_section'
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+
         blog_wysiwyg:
             label: 'janvince.smallextensions::lang.labels.enable_wysiwyg'
             span: left
@@ -15,12 +20,18 @@ tabs:
             span: right
             default: false
             type: textarea
-            size: small
+            size: tiny
             comment: 'janvince.smallextensions::lang.labels.enable_wysiwyg_toolbar_description'
             commentHtml: 'true'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_wysiwyg
+                condition: checked
 
-        blog_featured_image_section:
+        media_section:
+            label: 'janvince.smallextensions::lang.labels.media_section'
             type: section
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
@@ -34,14 +45,21 @@ tabs:
 
         blog_featured_image_meta:
             label: 'janvince.smallextensions::lang.labels.enable_featured_image_meta'
-            span: right
+            span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_featured_image_meta_description'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_featured_image
+                condition: checked
 
-        blog_author_section:
+
+        other_section:
             type: section
+            label: 'janvince.smallextensions::lang.labels.settings_section'
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_author:
@@ -53,26 +71,29 @@ tabs:
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
 
+        custom_fields_section:
+            type: section
+            label: 'janvince.smallextensions::lang.labels.custom_fields_section'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
-        ## Custom fields
         blog_custom_fields_api_code:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code'
             span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_api_code_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_custom_fields_api_code_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: right
+            span: left
             type: text
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
-        blog_custom_fields_api_code_section:
-            type: section
-            cssClass: field-indent
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_api_code
+                condition: checked
 
         blog_custom_fields_string:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_string'
@@ -80,18 +101,18 @@ tabs:
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_string_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_custom_fields_string_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: right
+            span: left
             type: text
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
-        blog_custom_fields_string_section:
-            type: section
-            cssClass: field-indent
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_string
+                condition: checked
 
         blog_custom_fields_switch:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch'
@@ -99,18 +120,18 @@ tabs:
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_switch_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_custom_fields_switch_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: right
+            span: left
             type: text
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
-        blog_custom_fields_switch_section:
-            type: section
-            cssClass: field-indent
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_switch
+                condition: checked
 
         blog_custom_fields_datetime:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime'
@@ -119,18 +140,19 @@ tabs:
             type: checkbox
             commentHtml: 'true'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_datetime_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_custom_fields_datetime_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: right
+            span: left
             type: text
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_datetime
+                condition: checked
 
-        blog_custom_fields_datetime_section:
-            type: section
-            cssClass: field-indent
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
 
         blog_custom_fields_image:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_image'
@@ -139,25 +161,18 @@ tabs:
             type: checkbox
             commentHtml: 'true'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_image_description'
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
 
         blog_custom_fields_image_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: right
+            span: left
             type: text
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
-        blog_custom_fields_image_section:
-            type: section
-            cssClass: field-indent
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
-        blog_custom_fields_hint:
-            type: partial
-            span: full
-            path: $/janvince/smallextensions/models/settings/_blog_custom_fields_hint.htm
-            tab: 'janvince.smallextensions::lang.labels.tab_blog_fields'
-
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_image
+                condition: checked
 
 
         ## Static pages
@@ -169,13 +184,14 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.hide_content_description'
             tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
 
-        static_pages_section:
+        menu_section:
             type: section
+            label: 'janvince.smallextensions::lang.labels.menu_section'
             tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
 
         static_pages_menu_notes:
             label: 'janvince.smallextensions::lang.labels.enable_menu_notes'
-            span: full
+            span: left
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_menu_notes_description'

@@ -10,7 +10,7 @@ return [
         'wysiwyg_section' => 'WYSIWYG editor',
         'enable_wysiwyg' => 'Povolit WYSIWYG editor pro plugin Rainlab.Blog?',
         'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
-        'enable_wysiwyg_toolbar' => 'Tlačítka nástrojové lišty editoru (nechte prázdné pro výchozí sadu)',
+        'enable_wysiwyg_toolbar' => 'Vlastní tlačítka nástrojové lišty editoru (nechte prázdné pro výchozí sadu)',
         'enable_wysiwyg_toolbar_description' => '<p><small>Zde můžete změnit tlačítka zobrazená v liště editoru. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Podívejte se, která tlačítka jsou dostupná.</a></small> <small>Nebo můžete zkusit <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">vytvořit svá vlastní tlačítka.</a></small></p>',
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
         'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
@@ -86,10 +86,19 @@ return [
         'pages_menu_items_hint_line1' => 'V pluginu statických stránek je momentálně chyba, která neumožňuje znovu zobrazit uložený obrázek položky menu!',
         'pages_menu_items_hint_line2' => 'Do doby, než bude chyba opravená, můžete použít <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">upravenou verzi pluginu</a>.',
 
+        'wysiwyg_section' => 'WYSIWYG editor',
+        'media_section' => 'Média',
+        'settings_section' => 'Další nastavení',
+        'custom_fields_section' => 'Vlastní pole',
+        'menu_section' => 'Položky Menu',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Vlastní pole příspěvku',
         'tab_static_pages' => 'Statické stránky',
+        'tab_content' => 'Obsah',
+        'tab_media' => 'Média',
+        'tab_other' => 'Ostatní',
+        'tab_custom_fields' => 'Vlastní pole',
     ],
     'blog' => [
         'label' => 'Blog',
