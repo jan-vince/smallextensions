@@ -11,7 +11,7 @@ return [
         'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
         'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
         'enable_wysiwyg_toolbar' => 'Editor toolbar buttons (leave blank for default set)',
-        'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a><br>Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
+        'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a> Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
         'enable_featured_image' => 'Post featured image from media manager',
         'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Add title and description to image',
@@ -77,7 +77,7 @@ return [
         'enable_custom_fields_image_description' => 'Twig: {{post.custom_fields.featured_image|media}}',
 
         'pages_menu_items_hint_title' => 'Warning',
-        'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image and color to reapear after save and reopening of menu item.',
+        'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image to reapear after save and reopening of menu item.',
         'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">edited version of plugin</a>.',
 
 

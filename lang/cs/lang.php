@@ -11,7 +11,7 @@ return [
         'enable_wysiwyg' => 'Povolit WYSIWYG editor pro plugin Rainlab.Blog?',
         'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
         'enable_wysiwyg_toolbar' => 'Tlačítka nástrojové lišty editoru (nechte prázdné pro výchozí sadu)',
-        'enable_wysiwyg_toolbar_description' => '<p><small>Zde můžete změnit tlačítka zobrazená v liště editoru. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Podívejte se, která tlačítka jsou dostupná.</a></small></p><p><small>Nebo můžete zkusit <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">vytvořit svá vlastní tlačítka.</a></small></p>',
+        'enable_wysiwyg_toolbar_description' => '<p><small>Zde můžete změnit tlačítka zobrazená v liště editoru. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Podívejte se, která tlačítka jsou dostupná.</a></small> <small>Nebo můžete zkusit <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">vytvořit svá vlastní tlačítka.</a></small></p>',
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
         'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Umožnit přidat k obrázku název a popisek',
@@ -83,7 +83,7 @@ return [
         'custom_fields_featured_image_alt_description' => '',
 
         'pages_menu_items_hint_title' => 'Varování',
-        'pages_menu_items_hint_line1' => 'V pluginu statických stránek je momentálně chyba, která neumožňuje znovu zobrazit uložený obrázek a barvu pro položky menu!',
+        'pages_menu_items_hint_line1' => 'V pluginu statických stránek je momentálně chyba, která neumožňuje znovu zobrazit uložený obrázek položky menu!',
         'pages_menu_items_hint_line2' => 'Do doby, než bude chyba opravená, můžete použít <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">upravenou verzi pluginu</a>.',
 
 
