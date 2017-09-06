@@ -94,6 +94,8 @@ return [
         'settings_section' => 'other settings',
         'custom_fields_section' => 'Custom fields',
         'menu_section' => 'Menu items',
+        'static_page_section' => 'Page content',
+        'server_info_section' => 'Server information',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Blog custom fields',
@@ -102,6 +104,10 @@ return [
         'tab_media' => 'Media',
         'tab_other' => 'Other',
         'tab_custom_fields' => 'Custom fields',
+        'tab_system' => 'System info',
+
+        'php_info_box' => 'PHP info',
+
     ],
     'blog' => [
         'label' => 'Blog',

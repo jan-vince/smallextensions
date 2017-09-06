@@ -91,6 +91,8 @@ return [
         'settings_section' => 'Další nastavení',
         'custom_fields_section' => 'Vlastní pole',
         'menu_section' => 'Položky Menu',
+        'static_page_section' => 'Obsah stránky',
+        'server_info_section' => 'Informace o serveru',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Vlastní pole příspěvku',
@@ -99,6 +101,11 @@ return [
         'tab_media' => 'Média',
         'tab_other' => 'Ostatní',
         'tab_custom_fields' => 'Vlastní pole',
+        'tab_system' => 'Systémové informace',
+
+        'php_info_box' => 'PHP info',
+
+
     ],
     'blog' => [
         'label' => 'Blog',

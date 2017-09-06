@@ -65,3 +65,5 @@
     - Labels can be added to blog custom fields just right in the Settings
 1.3.4:
     - Changed field type colorpicker to text only. Small change in Settings UI. Fixed some typos.
+1.3.5:
+    - Added server info tab with PHP info data
