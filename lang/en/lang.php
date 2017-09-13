@@ -80,7 +80,6 @@ return [
         'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image to reapear after save and reopening of menu item.',
         'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">edited version of plugin</a>.',
 
-
         'custom_fields_featured_image' => 'Featured image',
         'custom_fields_featured_image_description' => '',
 
@@ -96,6 +95,9 @@ return [
         'menu_section' => 'Menu items',
         'static_page_section' => 'Page content',
         'server_info_section' => 'Server information',
+        'twig_section' => 'Twig extensions',
+        'twig_functions_allow' => 'Allow new functions',
+        'twig_functions_allow_description' => 'Add new Twig functions. See documentation for detailed info.',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Blog custom fields',
@@ -105,6 +107,7 @@ return [
         'tab_other' => 'Other',
         'tab_custom_fields' => 'Custom fields',
         'tab_system' => 'System info',
+        'tab_twig' => 'Twig',
 
         'php_info_box' => 'PHP info',
 

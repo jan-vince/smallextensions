@@ -67,3 +67,5 @@
     - Changed field type colorpicker to text only. Small change in Settings UI. Fixed some typos.
 1.3.5:
     - Added server info tab with PHP info data
+1.3.6:
+    - Added new Twig functions section

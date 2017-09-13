@@ -34,16 +34,16 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 
 * **WYSIWYG editor**
 
-	* Enable to switch between default MarkDown or OctoberCMS's Rich editor.
-	* Allows you to add custom toolbar buttons.
+    * Enable to switch between default MarkDown or OctoberCMS's Rich editor.
+    * Allows you to add custom toolbar buttons.
 
 * **Change post author**
 
-	* Adds post author field with administrators dropdown
+    * Adds post author field with administrators dropdown
 
 * **Custom fields**
-	* Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
-	* Allow to replace original featured images upload field with one featured image selectable from Media manager
+    * Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, switch, date&time and Media image)
+    * Allow to replace original featured images upload field with one featured image selectable from Media manager
 
 
 ## Rainlab.Pages Extension
@@ -57,14 +57,23 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 
 * **Hide Content field**
 
-	* Allow to hide default Content tab and field from Pages editing page.
-	* Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.
-	* As of **version 1.2.17 of Rainlab.Pages plugin** custom fields are placed in secondary tabs container by default - by allow *Hide Content field*, all custom fields will be moved to primary tabs container.
+    * Allow to hide default Content tab and field from Pages editing page.
+    * Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.
+    * As of **version 1.2.17 of Rainlab.Pages plugin** custom fields are placed in secondary tabs container by default - by allow *Hide Content field*, all custom fields will be moved to primary tabs container.
 
 * **Enable Menu notes**
 
-	* If on, new tab Notes and a field Note is added to Menu items editing popup window.
-	* text is then accessible from page/layout from {{item.viewBag.note}}.
+    * If on, new tab Notes and a field Note is added to Menu items editing popup window.
+    * text is then accessible from page/layout from {{item.viewBag.note}}.
+
+
+## Twig Extensions
+
+#### New functions
+
+* **getImageSizeAttributes(image)**
+ * Get image dimensions for use in ````<img>```` tag like: ````<img src="{{image.getPath}}" {{getImageSizeAttributes(image)}}>````
+ * Will output ````<img ... width="123" height="123">````.
 
 ----
 > My special thanks goes to:    

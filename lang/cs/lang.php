@@ -93,6 +93,8 @@ return [
         'menu_section' => 'Položky Menu',
         'static_page_section' => 'Obsah stránky',
         'server_info_section' => 'Informace o serveru',
+        'twig_functions_allow' => 'Povolit nové funkce',
+        'twig_functions_allow_description' => 'Přidá nové funkce pro Twig. Podívejte se prosím do dokumentace pro více informací.',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Vlastní pole příspěvku',
@@ -102,6 +104,7 @@ return [
         'tab_other' => 'Ostatní',
         'tab_custom_fields' => 'Vlastní pole',
         'tab_system' => 'Systémové informace',
+        'tab_twig' => 'Twig',
 
         'php_info_box' => 'PHP info',
 

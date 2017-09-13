@@ -469,4 +469,50 @@ class Plugin extends PluginBase {
     ];
   }
 
+  /**
+   * Twig extensions
+   */
+  public function registerMarkupTags()
+  {
+
+    $twigExtensions = [];
+
+    /**
+     * New Twig functions
+     */
+    if (Settings::get('twig_functions_allow')) {
+
+        $twigExtensions['functions'] = [
+
+              /**
+              *   Get image dimensions for use in <img> tag
+              *   <img src="{{ image.getPath }}" {{ getImageSizeAttributes(image) }}>
+              *   will output <img ... width="123" height="123">
+              */
+              'getImageSizeAttributes' => function($value) {
+
+                  if( !empty($value->getDiskPath()) ){
+
+                      $filePath = storage_path('app/' . $value->getDiskPath());
+
+                      if( is_file($filePath) ) {
+
+                          list($width, $height, $type, $attributes) = getimagesize($filePath);
+
+                          return $attributes;
+
+                      }
+
+                  }
+
+              }
+
+        ];
+
+    }
+
+    return $twigExtensions;
+
+  }
+
 }

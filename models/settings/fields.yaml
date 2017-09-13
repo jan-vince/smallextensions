@@ -239,3 +239,19 @@ tabs:
             span: full
             path: $/janvince/smallextensions/models/settings/_php_info_box.htm
             tab: 'janvince.smallextensions::lang.labels.tab_system'
+
+        ##
+        #   Twig Extensions
+        #
+        twig_section:
+            label: 'janvince.smallextensions::lang.labels.twig_section'
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_twig'
+
+        twig_functions_allow:
+            label: 'janvince.smallextensions::lang.labels.twig_functions_allow'
+            span: left
+            default: false
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.twig_functions_allow_description'
+            tab: 'janvince.smallextensions::lang.labels.tab_twig'
