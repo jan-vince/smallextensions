@@ -15,7 +15,7 @@ return [
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
         'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Umožnit přidat k obrázku název a popisek',
-        'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
+        'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
         'enable_menu_notes' => 'Povolit poznámky u položek menu',
         'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
 

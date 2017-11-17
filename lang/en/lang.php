@@ -15,7 +15,7 @@ return [
         'enable_featured_image' => 'Post featured image from media manager',
         'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Add title and description to image',
-        'enable_featured_image_meta_description' => 'Twig: Title:{{post.custom_fields.featured_image_title|media}}, Description: {{post.custom_fields.featured_image_alt|media}}.',
+        'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
         'enable_menu_notes' => 'Enable Menu notes',
         'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 

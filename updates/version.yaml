@@ -73,3 +73,5 @@
     - Added trans and choice functions to bypass |_ and |__ twig filters if Rainlab Translate plugin is not installed.
 1.3.8:
     - Twig function to be enabled by default in settings
+1.3.9:
+    - Fixed typo in translations
