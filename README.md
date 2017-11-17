@@ -38,7 +38,6 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
     * Allows you to add custom toolbar buttons.
 
 * **Change post author**
-
     * Adds post author field with administrators dropdown
 
 * **Custom fields**
@@ -74,6 +73,9 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 * **getImageSizeAttributes(image)**
  * Get image dimensions for use in ````<img>```` tag like: ````<img src="{{image.getPath}}" {{getImageSizeAttributes(image)}}>````
  * Will output ````<img ... width="123" height="123">````.
+
+* **|_** (trans), **|__** (choice)
+ * If Rainlab Translate plugin is not present, bypass trans and choice functions
 
 ----
 > My special thanks goes to:    

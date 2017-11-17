@@ -509,6 +509,18 @@ class Plugin extends PluginBase {
 
         ];
 
+        // If Rainlab.Translate is not present, bypass translate filters
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+
+            $twigExtensions['filters'] = [
+
+                '_' => ['Lang', 'get'],
+                '__' => ['Lang', 'choice'],
+
+            ];
+
+        }
+
     }
 
     return $twigExtensions;
