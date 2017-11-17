@@ -251,7 +251,7 @@ tabs:
         twig_functions_allow:
             label: 'janvince.smallextensions::lang.labels.twig_functions_allow'
             span: left
-            default: false
+            default: true
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.twig_functions_allow_description'
             tab: 'janvince.smallextensions::lang.labels.tab_twig'
