@@ -77,6 +77,16 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 * **|_** (trans), **|__** (choice)
  * If Rainlab Translate plugin is not present, bypass trans and choice functions
 
+
+## Report Widgets
+
+#### Cache cleaner
+
+There is a dashboard widget that cleans cache files and folders.
+
+*It doesn't use Artisan ````cache:clear```` so it works on sites where ````putenv()```` function is disabled.*
+
+
 ----
 > My special thanks goes to:    
 > [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
