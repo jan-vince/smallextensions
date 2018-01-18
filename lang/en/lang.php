@@ -133,5 +133,18 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'More',
-    ]
+    ],
+    'reportwidgets' => [
+        'cachecleaner' => [
+            'label' => 'Small Extensions - Cache Cleaner',
+            'label_short' => 'Cache Cleaner',
+            'label_button' => 'Delete files',
+
+            'flash' => [
+                'success' => 'Cache was successfully cleaned.',
+                'error' => 'There was an error while clearing the cache. For more information look into system log.',
+            ],
+        ],
+    ],
+
 ];

@@ -131,5 +131,18 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'Další',
-    ]
+    ],
+    'reportwidgets' => [
+        'cachecleaner' => [
+            'label' => 'Small Extensions - Vymazat dočasné soubory',
+            'label' => 'Vymazat dočasné soubory',
+            'label_button' => 'Smazat soubory',
+
+            'flash' => [
+                'success' => 'Dočasné soubory byly vymazány.',
+                'error' => 'Nepodařilo se vymazat soubory. Více informací naleznete v systémovém protokolu událostí.',
+            ],
+        ]
+    ],
+
 ];

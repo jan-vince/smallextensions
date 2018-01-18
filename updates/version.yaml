@@ -75,3 +75,5 @@
     - Twig function to be enabled by default in settings
 1.3.9:
     - Fixed typo in translations
+1.4.0:
+    - Added Report widget to clean cache files and folders (for those affected with putenv() disabled problem)

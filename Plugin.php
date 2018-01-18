@@ -527,4 +527,16 @@ class Plugin extends PluginBase {
 
   }
 
+  public function registerReportWidgets(){
+
+      return [
+          'JanVince\SmallExtensions\ReportWidgets\CacheCleaner' => [
+              'label'   => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.label',
+              'context' => 'dashboard'
+          ]
+      ];
+
+  }
+
+
 }
