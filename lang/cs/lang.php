@@ -134,8 +134,8 @@ return [
     ],
     'reportwidgets' => [
         'cachecleaner' => [
-            'label' => 'Small Extensions - Vymazat dočasné soubory',
-            'label' => 'Vymazat dočasné soubory',
+            'label' => 'Drobná rozšíření - Vymazat dočasné soubory',
+            'label_short' => 'Vymazat dočasné soubory',
             'label_button' => 'Smazat soubory',
 
             'flash' => [
