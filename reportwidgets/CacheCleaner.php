@@ -55,16 +55,19 @@ class CacheCleaner extends ReportWidgetBase {
             Log::error($e->getMessage());
         }
 
-        try {
-            $this->deleteThumbnails();
-        } catch(\Exception $e) {
-            Log::error($e->getMessage());
+        if($this->property('thumbs_remove')) {
+            try {
+                $this->deleteThumbnails();
+            } catch(\Exception $e) {
+                Log::error($e->getMessage());
+            }
         }
 
         if($this->errors) {
             Flash::error(Lang::get('janvince.smallextensions::lang.reportwidgets.cachecleaner.flash.error'));
         } else {
             Flash::success(Lang::get('janvince.smallextensions::lang.reportwidgets.cachecleaner.flash.success'));
+            Log::info(Lang::get('janvince.smallextensions::lang.reportwidgets.cachecleaner.flash.success'));
         }
 
     }
@@ -138,6 +141,7 @@ class CacheCleaner extends ReportWidgetBase {
             empty($this->property('thumbs_regex'))
         ) {
             ++$this->errors;
+            Log::error( Lang::get('janvince.smallextensions::lang.reportwidgets.cachecleaner.thumbs_error') );
             return false;
         }
 

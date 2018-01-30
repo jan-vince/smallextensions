@@ -142,6 +142,7 @@ return [
             'thumbs_remove' => 'Delete thumbnails',
             'thumbs_path' => 'Thumbnails path',
             'thumbs_regex' => 'Regular expression to find thumbnails',
+            'thumbs_error' => 'Path or regular expression is missing',
 
             'flash' => [
                 'success' => 'Cache was successfully cleaned.',

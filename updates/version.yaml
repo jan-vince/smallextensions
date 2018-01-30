@@ -81,3 +81,5 @@
     - Fixed typo in cs locale
 1.4.2:
     - Added option for report widget to clear thumbnails
+1.4.3:
+    - Fixed report widget

@@ -140,6 +140,7 @@ return [
             'thumbs_remove' => 'Smazat náhledy',
             'thumbs_path' => 'Cesta k náhledům',
             'thumbs_regex' => 'Regulární výraz pro hledání náhledů',
+            'thumbs_error' => 'Chybí cesta k náhledům nebo regulární výraz',
 
             'flash' => [
                 'success' => 'Dočasné soubory byly vymazány.',
