@@ -139,6 +139,9 @@ return [
             'label' => 'Small Extensions - Cache Cleaner',
             'label_short' => 'Cache Cleaner',
             'label_button' => 'Delete files',
+            'thumbs_remove' => 'Delete thumbnails',
+            'thumbs_path' => 'Thumbnails path',
+            'thumbs_regex' => 'Regular expression to find thumbnails',
 
             'flash' => [
                 'success' => 'Cache was successfully cleaned.',

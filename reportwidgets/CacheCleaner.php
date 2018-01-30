@@ -14,6 +14,35 @@ class CacheCleaner extends ReportWidgetBase {
 
     private $errors = 0;
 
+    public function defineProperties() {
+
+        return [
+            'title' => [
+                'title'             => 'backend::lang.dashboard.widget_title_label',
+                'default'           => 'romanov.clearcachewidget::lang.plugin.label',
+                'type'              => 'string',
+                'validationPattern' => '^.+$',
+                'validationMessage' => 'backend::lang.dashboard.widget_title_error'
+            ],
+            'thumbs_remove' => [
+                'title'             => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.thumbs_remove',
+                'type'              => 'checkbox',
+                'default'           => false,
+            ],
+            'thumbs_path' => [
+                'title'             => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.thumbs_path',
+                'type'              => 'string',
+                'default'           => '/app/uploads/public',
+            ],
+            'thumbs_regex' => [
+                'title'             => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.thumbs_regex',
+                'type'              => 'string',
+                'default'           => '/^thumb_*/',
+            ]
+        ];
+
+    }
+
     public function render(){
         return $this->makePartial('cachecleaner');
     }
@@ -22,6 +51,12 @@ class CacheCleaner extends ReportWidgetBase {
 
         try {
             $this->clearDirectories();
+        } catch(\Exception $e) {
+            Log::error($e->getMessage());
+        }
+
+        try {
+            $this->deleteThumbnails();
         } catch(\Exception $e) {
             Log::error($e->getMessage());
         }
@@ -90,6 +125,39 @@ class CacheCleaner extends ReportWidgetBase {
             } catch (\Exception $e) {
                 Log::error($e->getMessage());
                 ++$this->errors;
+            }
+
+        }
+
+    }
+
+    private function deleteThumbnails() {
+
+        if( empty($this->property('thumbs_remove')) or
+            empty($this->property('thumbs_path')) or
+            empty($this->property('thumbs_regex'))
+        ) {
+            ++$this->errors;
+            return false;
+        }
+
+        $path = storage_path( $this->property('thumbs_path') );
+
+        $iterator = new \RecursiveDirectoryIterator($path);
+
+        $regex = $this->property('thumbs_regex');
+
+        foreach (new \RecursiveIteratorIterator($iterator) as $file) {
+
+            if (preg_match($regex, $file->getFilename())) {
+
+                try {
+                    unlink( $file->getRealPath() );
+                } catch (\Exception $e) {
+                    Log::error($e->getMessage());
+                    ++$this->errors;
+                }
+
             }
 
         }

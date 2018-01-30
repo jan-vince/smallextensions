@@ -79,3 +79,5 @@
     - Added Report widget to clean cache files and folders (for those affected with putenv() disabled problem)
 1.4.1:
     - Fixed typo in cs locale
+1.4.2:
+    - Added option for report widget to clear thumbnails

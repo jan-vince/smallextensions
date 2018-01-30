@@ -137,6 +137,9 @@ return [
             'label' => 'Drobná rozšíření - Vymazat dočasné soubory',
             'label_short' => 'Vymazat dočasné soubory',
             'label_button' => 'Smazat soubory',
+            'thumbs_remove' => 'Smazat náhledy',
+            'thumbs_path' => 'Cesta k náhledům',
+            'thumbs_regex' => 'Regulární výraz pro hledání náhledů',
 
             'flash' => [
                 'success' => 'Dočasné soubory byly vymazány.',
