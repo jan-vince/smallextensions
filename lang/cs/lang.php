@@ -154,4 +154,15 @@ return [
         ]
     ],
 
+    'components' => [
+
+        'force_login' => [
+
+            'name' => 'Vynutit přihlášení',
+            'description' => 'Povolit přístup na stránku pouze přihlášeným administrátorům',
+
+        ],
+
+    ],
+
 ];

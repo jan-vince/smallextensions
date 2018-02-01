@@ -85,3 +85,5 @@
     - Fixed report widget
 1.5.0:
     - Added forceLogin component that can be used to force login to backend area before visiting a page
+1.5.1:
+    - Added translations for forceLogin component

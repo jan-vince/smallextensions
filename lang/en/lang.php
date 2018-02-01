@@ -157,4 +157,15 @@ return [
         ],
     ],
 
+    'components' => [
+
+        'force_login' => [
+
+            'name' => 'Force login',
+            'description' => 'Allow access to page to logged in administrators only',
+
+        ],
+
+    ],
+
 ];

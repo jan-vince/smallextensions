@@ -22,8 +22,8 @@ class ForceLogin extends ComponentBase
 
     public function componentDetails() {
         return [
-            'name'        => 'janvince.smallextensions::lang.controller.force_login.name',
-            'description' => 'janvince.smallextensions::lang.controller.force_login.description'
+            'name'        => 'janvince.smallextensions::lang.components.force_login.name',
+            'description' => 'janvince.smallextensions::lang.components.force_login.description'
         ];
     }
 
