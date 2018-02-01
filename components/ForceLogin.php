@@ -36,18 +36,12 @@ class ForceLogin extends ComponentBase
 
             if( !BackendAuth::check() ) {
 
-                $backendUrl = url('/' . Config::get('cms.backendUri'));
+                $backendUrl = url(Config::get('cms.backendUri'));
 
-                $currentUrl = url()->current();
+                header(307, true);
+                header('Location: ' . $backendUrl, true);
 
-                if( $backendUrl != $currentUrl ) {
-
-                   header(307, true);
-                   header('Location: ' . $backendUrl, true);
-
-                   exit(0);
-
-                }
+                exit(0);
 
             }
 
