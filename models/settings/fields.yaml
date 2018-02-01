@@ -255,3 +255,20 @@ tabs:
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.twig_functions_allow_description'
             tab: 'janvince.smallextensions::lang.labels.tab_twig'
+
+        ##
+        #   Custom extensions
+        #
+        misc_section:
+            label: 'janvince.smallextensions::lang.labels.force_login_section'
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_components'
+
+        force_backend_login:
+            label: 'janvince.smallextensions::lang.labels.force_backend_login'
+            span: full
+            default: true
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.force_backend_login_comment'
+            tab: 'janvince.smallextensions::lang.labels.tab_components'
+            cssClass: 'field-indent'

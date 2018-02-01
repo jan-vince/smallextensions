@@ -111,6 +111,12 @@ return [
 
         'php_info_box' => 'PHP info',
 
+        'tab_components' => 'Components',
+        'force_login_section' => 'Force login component',
+        'force_backend_login' => 'Allow force login',
+        'force_backend_login_comment' => 'By checking this and placing [forceLogin] component to your page, layout or partial, you can force visitor to login to backend area.',
+
+
     ],
     'blog' => [
         'label' => 'Blog',

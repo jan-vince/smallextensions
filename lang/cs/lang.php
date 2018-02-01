@@ -108,6 +108,11 @@ return [
 
         'php_info_box' => 'PHP info',
 
+        'tab_components' => 'Komponenty',
+        'force_login_section' => 'Komponenta Vynutit přihlášení',
+        'force_backend_login' => 'Vynutit přihlášení',
+        'force_backend_login_comment' => 'Zaškrtnutím políčka a použitím komponenty [forceLogin] na stránce, layoutu nebo dílčí šabloně můžete vynutit přihlášení uživatele do admnistrace webu.',
+
 
     ],
     'blog' => [

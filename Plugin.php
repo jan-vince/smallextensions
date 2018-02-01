@@ -8,8 +8,9 @@ use System\Classes\PluginManager;
 use JanVince\SmallExtensions\Models\Settings;
 use JanVince\SmallExtensions\Models\BlogFields;
 use Config;
-
+use Auth;
 use BackendAuth;
+use Redirect;
 use Backend\Models\User as UserModel;
 
 
@@ -536,6 +537,13 @@ class Plugin extends PluginBase {
           ]
       ];
 
+  }
+
+  public function registerComponents()
+  {
+      return [
+          'JanVince\SmallExtensions\Components\ForceLogin' => 'forceLogin',
+      ];
   }
 
 

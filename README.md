@@ -87,6 +87,17 @@ There is a dashboard widget that cleans cache files and folders.
 *It doesn't use Artisan ````cache:clear```` so it works on sites where ````putenv()```` function is disabled.*
 
 
+## Components
+
+#### Force login
+
+You can place **forceLogin** component to your page, layout or partial.
+
+Than if you check ````Allow force login```` checkbox in Plugin's settings, visitors will be redirected to ````backedUri```` configured in ````/config/cms.php````.
+
+Useful when you need to limit access to several pages or whole site to only administrators while testing.
+
+
 ----
 > My special thanks goes to:    
 > [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
