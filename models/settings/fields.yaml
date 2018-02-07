@@ -281,7 +281,7 @@ tabs:
         add_backend_admin_fields:
             label: 'janvince.smallextensions::lang.labels.add_backend_admin_fields'
             span: full
-            default: true
+            default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.add_backend_admin_fields_comment'
             tab: 'janvince.smallextensions::lang.labels.tab_system'
