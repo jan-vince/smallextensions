@@ -65,6 +65,15 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
     * If on, new tab Notes and a field Note is added to Menu items editing popup window.
     * text is then accessible from page/layout from {{item.viewBag.note}}.
 
+## System Extension
+
+> *OctoberCMS > Backend > Settings > Small Extensions > System*
+
+#### Settings
+
+* **Custom fields**
+    * Adds extra fields to backend administrators form (currently only field description)
+
 
 ## Twig Extensions
 
