@@ -89,3 +89,7 @@
     - Added translations for forceLogin component
 1.5.2:
     - Fixed forceLogin redirection logic
+1.6.0:
+    - Added option to allow extra fields in backend administrator\'s form (now only description is available)
+    - Fixed plugin uninstall
+    - smallextensions_tables_update_04.php

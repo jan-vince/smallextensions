@@ -96,6 +96,10 @@ return [
         'twig_functions_allow' => 'Povolit nové funkce',
         'twig_functions_allow_description' => 'Přidá nové funkce pro Twig. Podívejte se prosím do dokumentace pro více informací.',
 
+        'system_extensions_section' => 'Rozšíření systému',
+        'add_backend_admin_fields' => 'Povolit další informace u systémových administrátorů',
+        'add_backend_admin_fields_comment' => 'Přidá nová pole do formuláře systémových adminitrátorů.',
+
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Vlastní pole příspěvku',
         'tab_static_pages' => 'Statické stránky',
@@ -103,7 +107,7 @@ return [
         'tab_media' => 'Média',
         'tab_other' => 'Ostatní',
         'tab_custom_fields' => 'Vlastní pole',
-        'tab_system' => 'Systémové informace',
+        'tab_system' => 'Systém',
         'tab_twig' => 'Twig',
 
         'php_info_box' => 'PHP info',
@@ -136,6 +140,11 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'Další',
+    ],
+    'backend_admin_fields' => [
+        'tab_info' => 'Info',
+        'description' => 'Popis',
+        'active' => 'Aktivní',
     ],
     'reportwidgets' => [
         'cachecleaner' => [

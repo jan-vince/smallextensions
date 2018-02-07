@@ -99,6 +99,10 @@ return [
         'twig_functions_allow' => 'Allow new functions',
         'twig_functions_allow_description' => 'Add new Twig functions. See documentation for detailed info.',
 
+        'system_extensions_section' => 'System extensions',
+        'add_backend_admin_fields' => 'Add backend admin form fields',
+        'add_backend_admin_fields_comment' => 'This will add extra fields to backend admin\'s form.',
+
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Blog custom fields',
         'tab_static_pages' => 'Static Pages',
@@ -106,7 +110,7 @@ return [
         'tab_media' => 'Media',
         'tab_other' => 'Other',
         'tab_custom_fields' => 'Custom fields',
-        'tab_system' => 'System info',
+        'tab_system' => 'System',
         'tab_twig' => 'Twig',
 
         'php_info_box' => 'PHP info',
@@ -139,6 +143,11 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'More',
+    ],
+    'backend_admin_fields' => [
+        'tab_info' => 'Info',
+        'description' => 'Description',
+        'active' => 'Active',
     ],
     'reportwidgets' => [
         'cachecleaner' => [

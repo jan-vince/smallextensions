@@ -4,9 +4,6 @@ namespace JanVince\SmallExtensions\Models;
 
 use Model;
 
-/**
- * Tag Model
- */
 class BlogFields extends Model
 {
 

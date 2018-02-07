@@ -227,20 +227,6 @@ tabs:
             tab: 'janvince.smallextensions::lang.labels.tab_static_pages'
 
         ##
-        #   System info
-        #
-        server_info_section:
-            label: 'janvince.smallextensions::lang.labels.server_info_section'
-            type: section
-            tab: 'janvince.smallextensions::lang.labels.tab_system'
-
-        php_info_box:
-            type: partial
-            span: full
-            path: $/janvince/smallextensions/models/settings/_php_info_box.htm
-            tab: 'janvince.smallextensions::lang.labels.tab_system'
-
-        ##
         #   Twig Extensions
         #
         twig_section:
@@ -272,3 +258,30 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.force_backend_login_comment'
             tab: 'janvince.smallextensions::lang.labels.tab_components'
             cssClass: 'field-indent'
+
+        ##
+        #   System info
+        #
+        server_info_section:
+            label: 'janvince.smallextensions::lang.labels.server_info_section'
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_system'
+
+        php_info_box:
+            type: partial
+            span: full
+            path: $/janvince/smallextensions/models/settings/_php_info_box.htm
+            tab: 'janvince.smallextensions::lang.labels.tab_system'
+
+        system_extensions_section:
+            label: 'janvince.smallextensions::lang.labels.system_extensions_section'
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_system'
+
+        add_backend_admin_fields:
+            label: 'janvince.smallextensions::lang.labels.add_backend_admin_fields'
+            span: full
+            default: true
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.add_backend_admin_fields_comment'
+            tab: 'janvince.smallextensions::lang.labels.tab_system'

@@ -7,6 +7,7 @@ use System\Classes\PluginBase;
 use System\Classes\PluginManager;
 use JanVince\SmallExtensions\Models\Settings;
 use JanVince\SmallExtensions\Models\BlogFields;
+use JanVince\SmallExtensions\Models\AdminFields;
 use Config;
 use Auth;
 use BackendAuth;
@@ -449,6 +450,56 @@ class Plugin extends PluginBase {
         $widget->addJs('/plugins/janvince/smallextensions/assets/js/primary-tabs.js');
 
       });
+
+    }
+
+    /*
+     * Add extra admin form fields
+     */
+    if (Settings::get('add_backend_admin_fields')) {
+
+        \Backend\Models\User::extend(function($model) {
+
+          $model->hasOne['custom_fields'] = [
+              'JanVince\SmallExtensions\Models\AdminFields',
+              'delete' => 'true',
+              'key' => 'backend_user_id',
+              'otherKey' => 'id'
+          ];
+
+        });
+
+        Event::listen('backend.form.extendFields', function ($widget) {
+
+          if (
+            !$widget->getController() instanceof \Backend\Controllers\Users ||
+            !$widget->model instanceof \Backend\Models\User
+          ) {
+            return;
+          }
+
+          $widget->addTabFields([
+            'custom_fields[description]' => [
+              'tab' => 'janvince.smallextensions::lang.backend_admin_fields.tab_info',
+              'label' => 'janvince.smallextensions::lang.backend_admin_fields.description',
+              'type' => 'richeditor',
+              'size' => 'huge'
+            ],
+
+          ]);
+
+          /*
+          * Custom fields model deferred bind
+          */
+          if (!$widget->model->custom_fields) {
+            $sessionKey = uniqid('session_key', true);
+
+            $custom_fields = new AdminFields;
+            $widget->model->custom_fields = $custom_fields;
+          }
+
+
+        });
 
     }
 

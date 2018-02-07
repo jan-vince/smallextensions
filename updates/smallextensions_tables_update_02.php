@@ -21,7 +21,7 @@ class SmallExtensionsTables02 extends Migration
     {
 		Schema::table('janvince_smallextensions_blogfields', function($table)
         {
-            $table->dropColumn('featured_image')->nullable();
+            $table->dropColumn('featured_image');
         });
     }
 }
