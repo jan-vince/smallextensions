@@ -69,6 +69,12 @@ return [
         'enable_custom_fields_repeater' => 'Přidat REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
+        'blog_custom_fields_repeater_title_allow' => 'Zobrazit Název',
+        'blog_custom_fields_repeater_description_allow' => 'Zobrazit popis',
+        'blog_custom_fields_repeater_image_allow' => 'Zobrazit Obrázek',
+        'blog_custom_fields_repeater_url_allow' => 'Zobrazit URL',
+        'blog_custom_fields_repeater_text_allow' => 'Zobrazit Text',
+
         'custom_fields_repeater_items' => [
             'title' => 'Název',
             'description' => 'Popis',

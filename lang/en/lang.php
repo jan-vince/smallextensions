@@ -48,7 +48,7 @@ return [
         'custom_fields_hint_title2' => 'Limitations',
         'custom_fields_hint_line4' => 'Translation of labels is not working right now. I am looking for a solution.',
 
-        'custom_fields_label' => 'Label for this field (to be used in Post form)',
+        'custom_fields_label' => 'Field label',
 
         'custom_fields_api_code' => 'API code',
         'custom_fields_api_code_description' => '',
@@ -70,6 +70,12 @@ return [
         'custom_fields_repeater_description' => '',
         'enable_custom_fields_repeater' => 'Add REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
+
+        'blog_custom_fields_repeater_title_allow' => 'Show Title',
+        'blog_custom_fields_repeater_description_allow' => 'Show Description',
+        'blog_custom_fields_repeater_image_allow' => 'Show Image',
+        'blog_custom_fields_repeater_url_allow' => 'Show URL',
+        'blog_custom_fields_repeater_text_allow' => 'Show Text',
 
         'custom_fields_repeater_items' => [
             'title' => 'Title',

@@ -427,6 +427,60 @@ class Plugin extends PluginBase {
         */
         if(Settings::get('blog_custom_fields_repeater')) {
 
+            $repeaterFields = [];
+
+            if(Settings::get('blog_custom_fields_repeater_title_allow')) {
+
+                $repeaterFields['repeater_title'] = [
+                    'label' => ( Settings::get('blog_custom_fields_repeater_title_label') ? Settings::get('blog_custom_fields_repeater_title_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.title' ),
+                    'type' => 'text',
+                    'span' => 'left',
+                ];
+
+            }
+
+            if(Settings::get('blog_custom_fields_repeater_image_allow')) {
+
+                $repeaterFields['repeater_image'] = [
+                    'label' => ( Settings::get('blog_custom_fields_repeater_image_label') ? Settings::get('blog_custom_fields_repeater_image_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.image' ),
+                    'type' => 'mediafinder',
+                    'mode' => 'image',
+                    'span' => 'right',
+                ];
+
+            }
+
+            if(Settings::get('blog_custom_fields_repeater_description_allow')) {
+
+                $repeaterFields['repeater_description'] = [
+                    'label' => ( Settings::get('blog_custom_fields_repeater_description_label') ? Settings::get('blog_custom_fields_repeater_description_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description' ),
+                    'type' => 'textarea',
+                    'size' => 'tiny',
+                    'span' => 'left',
+                ];
+
+            }
+
+            if(Settings::get('blog_custom_fields_repeater_url_allow')) {
+
+                $repeaterFields['repeater_url'] = [
+                    'label' => ( Settings::get('blog_custom_fields_repeater_url_label') ? Settings::get('blog_custom_fields_repeater_url_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.url' ),
+                    'type' => 'text',
+                    'span' => 'left',
+                ];
+
+            }
+
+            if(Settings::get('blog_custom_fields_repeater_text_allow')) {
+
+                $repeaterFields['repeater_text'] = [
+                    'label' => ( Settings::get('blog_custom_fields_repeater_text_label') ? Settings::get('blog_custom_fields_repeater_text_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.text' ),
+                    'type' => 'richeditor',
+                    'span' => 'full',
+                ];
+
+            }
+
           $repeater = [
             'label' => ( Settings::get('blog_custom_fields_repeater_label') ? Settings::get('blog_custom_fields_repeater_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater'),
             'comment' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_description',
@@ -434,34 +488,7 @@ class Plugin extends PluginBase {
             'deferredBinding' => 'true',
             'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
             'form' => [
-                'fields' => [
-                    'repeater_title' => [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.title',
-                        'type' => 'text',
-                        'span' => 'left',
-                    ],
-                    'repeater_image' => [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.image',
-                        'type' => 'mediafinder',
-                        'mode' => 'image',
-                        'span' => 'right',
-                    ],
-                    'repeater_description' => [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description',
-                        'type' => 'text',
-                        'span' => 'left',
-                    ],
-                    'repeater_url' => [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.url',
-                        'type' => 'text',
-                        'span' => 'left',
-                    ],
-                    'repeater_text' => [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.text',
-                        'type' => 'richeditor',
-                        'span' => 'full',
-                    ],
-                ],
+                'fields' => $repeaterFields,
             ],
           ];
 

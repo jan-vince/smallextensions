@@ -95,3 +95,5 @@
     - smallextensions_tables_update_04.php
 1.7.0:
     - Added new custom Rainlab Blog columns 'text' and 'repeater'
+1.7.1:
+    - Added fully configurable repeater fields and labels

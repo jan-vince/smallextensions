@@ -86,10 +86,18 @@ tabs:
 
         blog_custom_fields_api_code_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_api_code
+                condition: checked
+
+        blog_custom_fields_api_code_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_api_code
@@ -105,10 +113,18 @@ tabs:
 
         blog_custom_fields_string_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_string
+                condition: checked
+
+        blog_custom_fields_string_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_string
@@ -124,7 +140,7 @@ tabs:
 
         blog_custom_fields_repeater_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
@@ -132,6 +148,179 @@ tabs:
                 action: show
                 field: blog_custom_fields_repeater
                 condition: checked
+
+        blog_custom_fields_repeater_section_indent:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+
+        blog_custom_fields_repeater_title_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_title_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_title_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_title_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section_title:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            span: full
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_title_allow
+                condition: checked
+
+
+        blog_custom_fields_repeater_description_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_description_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_description_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_description_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section_description:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            span: full
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_description_allow
+                condition: checked
+
+
+        blog_custom_fields_repeater_image_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_image_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_image_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_image_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section_image:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            span: full
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_image_allow
+                condition: checked
+
+
+        blog_custom_fields_repeater_url_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_url_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_url_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_url_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section_text:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            span: full
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_url_allow
+                condition: checked
+
+
+        blog_custom_fields_repeater_text_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_text_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_text_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_text_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
 
         blog_custom_fields_text:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_text'
@@ -143,10 +332,18 @@ tabs:
 
         blog_custom_fields_text_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_text
+                condition: checked
+
+        blog_custom_fields_text_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_text
@@ -162,10 +359,18 @@ tabs:
 
         blog_custom_fields_switch_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_switch
+                condition: checked
+
+        blog_custom_fields_switch_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_switch
@@ -182,10 +387,18 @@ tabs:
 
         blog_custom_fields_datetime_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_datetime
+                condition: checked
+
+        blog_custom_fields_datetime_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_datetime
@@ -203,10 +416,18 @@ tabs:
 
         blog_custom_fields_image_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: left
+            span: right
             type: text
             tab: 'janvince.smallextensions::lang.labels.tab_blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_image
+                condition: checked
+
+        blog_custom_fields_image_section:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
             trigger:
                 action: show
                 field: blog_custom_fields_image
