@@ -93,3 +93,5 @@
     - Added option to allow extra fields in backend administrator\'s form (now only description is available)
     - Fixed plugin uninstall
     - smallextensions_tables_update_04.php
+1.7.0:
+    - Added new custom blog column 'text'

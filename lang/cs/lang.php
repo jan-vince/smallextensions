@@ -59,6 +59,16 @@ return [
         'enable_custom_fields_string' => 'Přidat Krátký text',
         'enable_custom_fields_string_description' => 'Twig: {{post.custom_fields.string}}',
 
+        'custom_fields_text' => 'Formátovaný text',
+        'custom_fields_text_description' => '',
+        'enable_custom_fields_text' => 'Přidat formátovaný TEXT',
+        'enable_custom_fields_text_description' => 'Twig: {{post.custom_fields.text}}',
+
+        'custom_fields_repeater' => 'Repeater',
+        'custom_fields_repeater_description' => '',
+        'enable_custom_fields_repeater' => 'Přidat REPEATER',
+        'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
+
         'custom_fields_switch' => 'Přepínač',
         'custom_fields_switch_description' => '',
         'enable_custom_fields_switch' => 'Přidat Přepínač',

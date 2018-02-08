@@ -61,6 +61,16 @@ return [
         'enable_custom_fields_string' => 'Add STRING',
         'enable_custom_fields_string_description' => 'Twig: {{post.custom_fields.string}}',
 
+        'custom_fields_text' => 'Richeditor text',
+        'custom_fields_text_description' => '',
+        'enable_custom_fields_text' => 'Add richeditor TEXT',
+        'enable_custom_fields_text_description' => 'Twig: {{post.custom_fields.text}}',
+
+        'custom_fields_repeater' => 'Repeater',
+        'custom_fields_repeater_description' => '',
+        'enable_custom_fields_repeater' => 'Add REPEATER',
+        'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
+
         'custom_fields_switch' => 'Switch',
         'custom_fields_switch_description' => '',
         'enable_custom_fields_switch' => 'Add SWITCH',

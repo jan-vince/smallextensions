@@ -228,6 +228,37 @@ class Plugin extends PluginBase {
       }
 
       /*
+      * Text field
+      */
+      if(Settings::get('blog_custom_fields_text')) {
+
+        $string = [
+          'label' => ( Settings::get('blog_custom_fields_text_label') ? Settings::get('blog_custom_fields_text_label') : 'janvince.smallextensions::lang.labels.custom_fields_text'),
+          'comment' => 'janvince.smallextensions::lang.labels.custom_fields_text_description',
+          'span' => 'full',
+          'deferredBinding' => 'true',
+          'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+        ];
+
+        /*
+         * Check the Rainlab.Translate plugin is installed
+         */
+         // TODO: Translation not work with relation - find out more about this!
+
+        $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+        if ($pluginManager && !$pluginManager->disabled) {
+          $string['type'] = 'richeditor';  // TODO: Find out why 'mlricheditor' not work.
+        } else {
+          $string['type'] = 'richeditor';
+        }
+
+        $widget->addSecondaryTabFields([
+          'custom_fields[text]' => $string
+        ]);
+
+      }
+
+      /*
       * Datetime field
       */
       if(Settings::get('blog_custom_fields_datetime')) {
