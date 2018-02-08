@@ -71,6 +71,14 @@ return [
         'enable_custom_fields_repeater' => 'Add REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
+        'custom_fields_repeater_items' => [
+            'title' => 'Title',
+            'description' => 'Description',
+            'image' => 'Image',
+            'url' => 'URL',
+            'text' => 'Text',
+        ],
+
         'custom_fields_switch' => 'Switch',
         'custom_fields_switch_description' => '',
         'enable_custom_fields_switch' => 'Add SWITCH',
@@ -120,6 +128,7 @@ return [
         'tab_media' => 'Media',
         'tab_other' => 'Other',
         'tab_custom_fields' => 'Custom fields',
+        'tab_custom_fields_repeater' => 'Notes',
         'tab_system' => 'System',
         'tab_twig' => 'Twig',
 
@@ -153,6 +162,7 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'More',
+        'custom_fields_repeater' => 'Notes',
     ],
     'backend_admin_fields' => [
         'tab_info' => 'Info',

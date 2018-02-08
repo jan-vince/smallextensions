@@ -98,6 +98,10 @@ class Plugin extends PluginBase {
         return;
       }
 
+      if( $widget->isNested ) {
+          return;
+      }
+
       /*
       * Replace default MD editor ?
       */
@@ -258,6 +262,7 @@ class Plugin extends PluginBase {
 
       }
 
+
       /*
       * Datetime field
       */
@@ -375,6 +380,108 @@ class Plugin extends PluginBase {
         }
 
       }
+
+    });
+
+    \RainLab\Blog\Models\Post::extend(function($model) {
+      $model->hasOne['custom_fields_repeater'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
+
+      /*
+      * Deferred bind doesn't work with extended models?
+      * I haven't found a better way yet :(
+      */
+      $model->bindEvent('model.afterSave', function() use ($model) {
+        $model->custom_fields_repeater->post_id = $model->id;
+        $model->custom_fields_repeater->save();
+      });
+
+    });
+
+    Event::listen('backend.form.extendFields', function($widget) {
+
+      if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Posts) {
+        return;
+      }
+
+      if (!$widget->model instanceof \RainLab\Blog\Models\Post) {
+        return;
+      }
+
+      if( $widget->isNested ) {
+          return;
+      }
+
+      /*
+      * Custom fields model deferred bind
+      */
+      if (!$widget->model->custom_fields) {
+        $sessionKey = uniqid('session_key', true);
+
+        $custom_fields = new BlogFields;
+        $widget->model->custom_fields = $custom_fields;
+      }
+
+
+        /*
+        * Repeater field
+        */
+        if(Settings::get('blog_custom_fields_repeater')) {
+
+          $repeater = [
+            'label' => ( Settings::get('blog_custom_fields_repeater_label') ? Settings::get('blog_custom_fields_repeater_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater'),
+            'comment' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_description',
+            'span' => 'full',
+            'deferredBinding' => 'true',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
+            'form' => [
+                'fields' => [
+                    'repeater_title' => [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.title',
+                        'type' => 'text',
+                        'span' => 'left',
+                    ],
+                    'repeater_image' => [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.image',
+                        'type' => 'mediafinder',
+                        'mode' => 'image',
+                        'span' => 'right',
+                    ],
+                    'repeater_description' => [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description',
+                        'type' => 'text',
+                        'span' => 'left',
+                    ],
+                    'repeater_url' => [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.url',
+                        'type' => 'text',
+                        'span' => 'left',
+                    ],
+                    'repeater_text' => [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.text',
+                        'type' => 'richeditor',
+                        'span' => 'full',
+                    ],
+                ],
+            ],
+          ];
+
+          /*
+           * Check the Rainlab.Translate plugin is installed
+           */
+           // TODO: Translation not work with relation - find out more about this!
+
+          $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+          if ($pluginManager && !$pluginManager->disabled) {
+            $repeater['type'] = 'repeater';  // TODO: Find out why 'mlrepeater' not work.
+          } else {
+            $repeater['type'] = 'repeater';
+          }
+
+          $widget->addSecondaryTabFields([
+            'custom_fields[repeater]' => $repeater
+          ]);
+
+        }
 
     });
 

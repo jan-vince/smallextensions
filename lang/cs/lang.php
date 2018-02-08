@@ -69,6 +69,14 @@ return [
         'enable_custom_fields_repeater' => 'Přidat REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
+        'custom_fields_repeater_items' => [
+            'title' => 'Název',
+            'description' => 'Popis',
+            'image' => 'Obrázek',
+            'url' => 'URL',
+            'text' => 'Text',
+        ],
+
         'custom_fields_switch' => 'Přepínač',
         'custom_fields_switch_description' => '',
         'enable_custom_fields_switch' => 'Přidat Přepínač',
@@ -117,6 +125,7 @@ return [
         'tab_media' => 'Média',
         'tab_other' => 'Ostatní',
         'tab_custom_fields' => 'Vlastní pole',
+        'tab_custom_fields_repeater' => 'Poznámky',
         'tab_system' => 'Systém',
         'tab_twig' => 'Twig',
 
@@ -150,6 +159,7 @@ return [
     ],
     'tabs' => [
         'custom_fields' => 'Další',
+        'custom_fields_repeater' => 'Poznámky',
     ],
     'backend_admin_fields' => [
         'tab_info' => 'Info',

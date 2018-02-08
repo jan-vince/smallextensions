@@ -94,4 +94,4 @@
     - Fixed plugin uninstall
     - smallextensions_tables_update_04.php
 1.7.0:
-    - Added new custom blog column 'text'
+    - Added new custom Rainlab Blog columns 'text' and 'repeater'
