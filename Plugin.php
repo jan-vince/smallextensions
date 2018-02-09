@@ -491,6 +491,7 @@ class Plugin extends PluginBase {
                 'span' => 'full',
                 'deferredBinding' => 'true',
                 'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
+                'prompt' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_prompt',
                 'form' => [
                     'fields' => $repeaterFields,
                 ],

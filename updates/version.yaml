@@ -99,3 +99,5 @@
     - Added fully configurable repeater fields and labels
 1.7.2:
     - Fixed Blog Post plugin check
+1.7.3:
+    - Fixed translation

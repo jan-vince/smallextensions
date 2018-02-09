@@ -68,6 +68,7 @@ return [
 
         'custom_fields_repeater' => 'Repeater',
         'custom_fields_repeater_description' => '',
+        'custom_fields_repeater_prompt' => 'Add new item',
         'enable_custom_fields_repeater' => 'Add REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 

@@ -66,7 +66,8 @@ return [
 
         'custom_fields_repeater' => 'Repeater',
         'custom_fields_repeater_description' => '',
-        'enable_custom_fields_repeater' => 'Přidat REPEATER',
+        'custom_fields_repeater' => 'Přidat REPEATER',
+        'enable_custom_fields_repeater_prompt' => 'Přidat nový záznam',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
         'blog_custom_fields_repeater_title_allow' => 'Zobrazit Název',
