@@ -19,7 +19,7 @@ class CacheCleaner extends ReportWidgetBase {
         return [
             'title' => [
                 'title'             => 'backend::lang.dashboard.widget_title_label',
-                'default'           => 'romanov.clearcachewidget::lang.plugin.label',
+                'default'           => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.label_short',
                 'type'              => 'string',
                 'validationPattern' => '^.+$',
                 'validationMessage' => 'backend::lang.dashboard.widget_title_error'
