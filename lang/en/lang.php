@@ -159,7 +159,7 @@ return [
         'add_note' => 'Add a note to this menu item',
         'add_note_comment' => 'Add note to this menu item. It will be accessible from page/layout with: {{item.viewBag.note}}.',
         'add_image' => 'Add an image',
-    'add_image_comment' => 'Saved image will not be shown here!',
+        'add_image_comment' => '',
         'add_color' => 'Add a color',
         'add_color_comment' => '',
     ],
