@@ -95,23 +95,23 @@ class Plugin extends PluginBase {
         ($pluginManagerUser && !$pluginManagerUser->disabled) ){
 
       \RainLab\Blog\Models\Post::extend(function($model) {
+          
+        $usersFormated = [];
 
         if( Settings::get('blog_rainlab_user') ) {
 
             $users = \Rainlab\User\Models\User::get();
 
-            $usersFormated = [];
-
             foreach($users as $user){
                 $usersFormated[$user->id] = ($user->surname . ' ' . $user->name);
             }
 
-            
-            $model->addDynamicMethod('listRainlabUsers', function() use($usersFormated) {
-                return $usersFormated;
-            });
-            
         } 
+            
+        $model->addDynamicMethod('listRainlabUsers', function() use($usersFormated) {
+            return $usersFormated;
+        });
+            
 
       });
 
