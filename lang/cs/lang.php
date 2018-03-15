@@ -28,7 +28,7 @@ return [
         'enable_blog_author_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr autora',
 
         'enable_blog_rainlab_user' => 'Povolit přiřazení uživatele z pluginu Rainlab User k příspěvku',
-        'enable_blog_rainlab_user_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr uživatele z blogu (Rainlab User).  Twig: {{ post.custom_fields.rainlab_user }}',
+        'enable_blog_rainlab_user_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr uživatele z pluginu Rainlab User. Twig: {{ post.custom_fields.rainlab_user }}',
 
         'author' => 'Autor',
         'author_comment' => 'Nastavit autora tohoto příspěvku',
