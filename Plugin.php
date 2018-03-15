@@ -88,6 +88,41 @@ class Plugin extends PluginBase {
 
     }
 
+    // Check for Rainlab.User plugin
+    $pluginManagerUser = PluginManager::instance()->findByIdentifier('Rainlab.User');
+
+    if ( ($pluginManager && !$pluginManager->disabled) and  
+        ($pluginManagerUser && !$pluginManagerUser->disabled) ){
+
+      \RainLab\Blog\Models\Post::extend(function($model) {
+
+        if( Settings::get('blog_rainlab_user') ) {
+
+            $users = \Rainlab\User\Models\User::get();
+
+            $usersFormated = [];
+
+            foreach($users as $user){
+                $usersFormated[$user->id] = ($user->surname . ' ' . $user->name);
+            }
+
+            
+            $model->addDynamicMethod('listRainlabUsers', function() use($usersFormated) {
+                return $usersFormated;
+            });
+            
+        } 
+
+      });
+
+      \JanVince\SmallExtensions\Models\BlogFields::extend(function($model) {
+
+        $model->belongsTo['rainlab_user'] = ['Rainlab\User\Models\User', 'delete' => 'false', 'key' => 'rainlab_user_id', 'otherKey' => 'id'];
+
+      });
+
+    }
+
     Event::listen('backend.form.extendFields', function($widget) {
 
       if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Posts) {
@@ -177,6 +212,28 @@ class Plugin extends PluginBase {
         if( BackendAuth::getUser()->hasAccess('rainlab.blog.access_other_posts') ) {
           $field['user_id']['emptyOption'] = 'janvince.smallextensions::lang.labels.author_empty';
         }
+
+        $widget->addSecondaryTabFields( $field );
+
+      }
+
+      /*
+      * Rainlab User field
+      */
+      if( Settings::get('blog_rainlab_user') ) {
+
+        $field = [
+          'custom_fields[rainlab_user_id]' => [
+            'label' => 'janvince.smallextensions::lang.labels.rainlab_user',
+            'comment' => 'janvince.smallextensions::lang.labels.rainlab_user_comment',
+            'span' => 'left',
+            'type' => 'dropdown',
+            'options' => 'listRainlabUsers',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+          ],
+        ];
+
+        $field['custom_fields[rainlab_user_id]']['emptyOption'] = 'janvince.smallextensions::lang.labels.rainlab_user_empty';
 
         $widget->addSecondaryTabFields( $field );
 

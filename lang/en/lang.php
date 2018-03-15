@@ -27,10 +27,16 @@ return [
         'enable_blog_author' => 'Enable change of post author',
         'enable_blog_author_description' => 'If checked, dropdown with list of activated administrators will be added to blog post form',
 
+        'enable_blog_rainlab_user' => 'Allow to assign Rainlab User to blog post',
+        'enable_blog_rainlab_user_description' => 'If checked, dropdown with list of Rainlab Users will be added to blog post form. Twig: {{ post.custom_fields.rainlab_user }}',
+
         'author' => 'Author',
         'author_comment' => 'Set author of this post',
         'author_empty' => 'Not set',
 
+        'rainlab_user' => 'User',
+        'rainlab_user_comment' => 'Link user to this post',
+        'rainlab_user_empty' => 'None',
 
         'static_pages_section' => 'Extra fields',
 

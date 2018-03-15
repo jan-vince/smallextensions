@@ -40,6 +40,9 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 * **Change post author**
     * Adds post author field with administrators dropdown
 
+* **Link Rainlab User**
+    * Allows to link Rainlab User to the post
+
 * **Custom fields**
     * Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, text, switch, date&time, repeater (as notes) and Media image)
     * Allow to replace original featured images upload field with one featured image selectable from Media manager

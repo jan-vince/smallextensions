@@ -103,3 +103,6 @@
     - Fixed translation
 1.7.4:
     - Fixed widget translation
+1.8.0:
+    - Added option to link Rainlab Blog post and Rainlab User
+    - smallextensions_tables_update_05.php
