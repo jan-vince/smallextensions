@@ -41,7 +41,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
     * Adds post author field with administrators dropdown
 
 * **Link Rainlab User**
-    * Allows to link Rainlab User to the post
+    * Adds Rainlab User field with users dropdown (but will be visible only if Rainlab User plugin is installed)
 
 * **Custom fields**
     * Adds selected extra fields to blog post editing page on More tab (available fields: API code, string, text, switch, date&time, repeater (as notes) and Media image)

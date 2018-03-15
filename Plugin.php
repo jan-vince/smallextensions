@@ -220,7 +220,10 @@ class Plugin extends PluginBase {
       /*
       * Rainlab User field
       */
-      if( Settings::get('blog_rainlab_user') ) {
+    // Check for Rainlab.User plugin
+    $pluginManagerUser = PluginManager::instance()->findByIdentifier('Rainlab.User');
+
+      if( ($pluginManagerUser && !$pluginManagerUser->disabled) and Settings::get('blog_rainlab_user') ) {
 
         $field = [
           'custom_fields[rainlab_user_id]' => [
