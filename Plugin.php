@@ -117,7 +117,7 @@ class Plugin extends PluginBase {
 
       \JanVince\SmallExtensions\Models\BlogFields::extend(function($model) {
 
-        $model->belongsTo['rainlab_user'] = ['Rainlab\User\Models\User', 'delete' => 'false', 'key' => 'rainlab_user_id', 'otherKey' => 'id'];
+        $model->hasOne['rainlab_user'] = ['Rainlab\User\Models\User', 'key' => 'id', 'otherKey' => 'rainlab_user_id'];
 
       });
 
