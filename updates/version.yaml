@@ -106,3 +106,5 @@
 1.8.0:
     - Added option to link Rainlab Blog post and Rainlab User
     - smallextensions_tables_update_05.php
+1.8.1:
+    - Fixed unintended deletion of user when blog post is deleted (thx laurensmartina for issue)

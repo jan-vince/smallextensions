@@ -117,7 +117,7 @@ class Plugin extends PluginBase {
 
       \JanVince\SmallExtensions\Models\BlogFields::extend(function($model) {
 
-        $model->belongsTo['rainlab_user'] = ['Rainlab\User\Models\User', 'delete' => 'false', 'key' => 'rainlab_user_id', 'otherKey' => 'id'];
+        $model->belongsTo['rainlab_user'] = ['Rainlab\User\Models\User', 'key' => 'rainlab_user_id', 'otherKey' => 'id'];
 
       });
 
@@ -694,7 +694,6 @@ class Plugin extends PluginBase {
 
           $model->hasOne['custom_fields'] = [
               'JanVince\SmallExtensions\Models\AdminFields',
-              'delete' => 'true',
               'key' => 'backend_user_id',
               'otherKey' => 'id'
           ];
