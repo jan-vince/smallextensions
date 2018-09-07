@@ -245,12 +245,12 @@ class Plugin extends PluginBase {
       /*
       * API code field
       */
-      if(Settings::get('blog_custom_fields_datetime')) {
+      if(Settings::get('blog_custom_fields_api_code')) {
 
         $widget->addSecondaryTabFields([
-          'custom_fields[datetime]' => [
-            'label' => ( Settings::get('blog_custom_fields_datetime_label') ? Settings::get('blog_custom_fields_datetime_label') : 'janvince.smallextensions::lang.labels.custom_fields_datetime'),
-            'comment' => 'janvince.smallextensions::lang.labels.custom_fields_datetime_description',
+          'custom_fields[api_code]' => [
+            'label' => ( Settings::get('blog_custom_fields_api_code_label') ? Settings::get('blog_custom_fields_api_code_label') : 'janvince.smallextensions::lang.labels.custom_fields_api_code'),
+            'comment' => 'janvince.smallextensions::lang.labels.custom_fields_api_code_description',
             'span' => 'full',
             'type' => 'text',
             'deferredBinding' => 'true',
