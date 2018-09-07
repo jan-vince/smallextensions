@@ -108,3 +108,5 @@
     - smallextensions_tables_update_05.php
 1.8.1:
     - Fixed unintended deletion of user when blog post is deleted (thx laurensmartina for issue)
+1.8.2:
+    - Fixed API Code field (thx SalocinDotTEN)
