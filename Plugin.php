@@ -10,6 +10,7 @@ use JanVince\SmallExtensions\Models\BlogFields;
 use JanVince\SmallExtensions\Models\AdminFields;
 use Config;
 use Auth;
+use Log;
 use BackendAuth;
 use Redirect;
 use Backend\Models\User as UserModel;
@@ -792,9 +793,12 @@ class Plugin extends PluginBase {
 
         ];
 
-        // If Rainlab.Translate is not present, bypass translate filters
-        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
 
+        // If Rainlab.Translate is not present, bypass translate filters
+        $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+
+        if (!$pluginManager or ($pluginManager and $pluginManager->disabled)) {
+  
             $twigExtensions['filters'] = [
 
                 '_' => ['Lang', 'get'],

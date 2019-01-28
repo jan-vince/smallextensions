@@ -110,3 +110,5 @@
     - Fixed unintended deletion of user when blog post is deleted (thx laurensmartina for issue)
 1.8.2:
     - Fixed API Code field (thx SalocinDotTEN)
+1.8.3:
+    - Better detection of missing Translate plugin
