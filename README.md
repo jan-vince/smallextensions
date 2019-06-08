@@ -98,6 +98,14 @@ There is a dashboard widget that cleans cache files and folders.
 
 *It doesn't use Artisan ````cache:clear```` so it works on sites where ````putenv()```` function is disabled.*
 
+#### Optimize database
+
+There is a dashboard widget that optimize database.
+
+Supported databases and used commands:
+
+* SQLite - VACUUM
+
 
 ## Components
 

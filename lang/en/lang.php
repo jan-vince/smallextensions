@@ -197,6 +197,17 @@ return [
                 'error' => 'There was an error while clearing the cache. For more information look into system log.',
             ],
         ],
+        'optimizedb' => [
+            'label' => 'Small Extensions - Optimize database',
+            'label_short' => 'Optimize DB',
+            'label_button' => 'Run optimization',
+
+            'flash' => [
+                'success' => 'Database was successfully optimized.',
+                'error' => 'There was an error while optimizing your database. For more information look into system log.',
+                'error_unsupported_db' => 'Sorry, but your database is not supported yet!',
+            ],
+        ],
     ],
 
     'components' => [

@@ -820,7 +820,11 @@ class Plugin extends PluginBase {
           'JanVince\SmallExtensions\ReportWidgets\CacheCleaner' => [
               'label'   => 'janvince.smallextensions::lang.reportwidgets.cachecleaner.label',
               'context' => 'dashboard'
-          ]
+          ],
+          'JanVince\SmallExtensions\ReportWidgets\OptimizeDb' => [
+              'label'   => 'janvince.smallextensions::lang.reportwidgets.optimizedb.label',
+              'context' => 'dashboard'
+          ],
       ];
 
   }
@@ -831,6 +835,4 @@ class Plugin extends PluginBase {
           'JanVince\SmallExtensions\Components\ForceLogin' => 'forceLogin',
       ];
   }
-
-
 }
