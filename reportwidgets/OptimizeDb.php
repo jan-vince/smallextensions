@@ -56,8 +56,7 @@ class OptimizeDb extends ReportWidgetBase {
         switch( Config::get('database.default') ) {
             
             case 'sqlite':
-                $results = Db::raw('VACUUM');
-                return $results;
+                Db::statement('VACUUM');
             break;
 
             default:

@@ -114,3 +114,5 @@
     - Better detection of missing Translate plugin
 1.9.0:
     - Added Optimize DB report widget
+1.9.1:
+    - Fixed raw SQL in Optimize DB report widget
