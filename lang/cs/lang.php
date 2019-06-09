@@ -194,7 +194,18 @@ return [
                 'success' => 'Dočasné soubory byly vymazány.',
                 'error' => 'Nepodařilo se vymazat soubory. Více informací naleznete v systémovém protokolu událostí.',
             ],
-        ]
+        ],
+        'optimizedb' => [
+            'label' => 'Small Extensions - Optimalizovat databázi',
+            'label_short' => 'Optimalizovat DB',
+            'label_button' => 'Optimalizovat',
+
+            'flash' => [
+                'success' => 'Databáze byla úspěšně optimalizována.',
+                'error' => 'Během optimalizace došlo k chybě. Více informací naleznete v protokolu událostí.',
+                'error_unsupported_db' => 'Je nám líto, ale váš typ databáze zatím není podporovaný!',
+            ],
+        ],
     ],
 
     'components' => [
