@@ -56,6 +56,17 @@ class Plugin extends PluginBase {
         * I haven't found a better way yet :(
         */
         $model->bindEvent('model.afterSave', function() use ($model) {
+
+          /*
+          * Custom fields model deferred bind
+          */
+          if (!$model->custom_fields) {
+            $sessionKey = uniqid('session_key', true);
+
+            $custom_fields = new BlogFields;
+            $model->custom_fields = $custom_fields;
+          }
+
           $model->custom_fields->post_id = $model->id;
           $model->custom_fields->save();
         });
