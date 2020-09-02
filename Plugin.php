@@ -775,7 +775,7 @@ class Plugin extends PluginBase {
     /**
      * New Twig functions
      */
-    if (Settings::get('twig_functions_allow')) {
+    if (Settings::get('twig_functions_allow') !== 0) {
 
         $twigExtensions['functions'] = [
 

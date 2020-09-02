@@ -118,3 +118,5 @@
     - Fixed raw SQL in Optimize DB report widget
 1.9.2:
     - Fixed artisan Blog post creation (thanks mbroadhead)
+1.9.3:
+    - Allow Twig extensions if not explicitly disabled
