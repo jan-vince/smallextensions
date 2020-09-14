@@ -264,6 +264,37 @@ tabs:
                 field: blog_custom_fields_repeater_image_allow
                 condition: checked
 
+        blog_custom_fields_repeater_file_allow:
+            label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_file_allow'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
+
+        blog_custom_fields_repeater_file_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_file_allow
+                condition: checked
+
+        blog_custom_fields_repeater_section_file:
+            type: section
+            tab: 'janvince.smallextensions::lang.labels.tab_blog'
+            span: full
+            cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater_file_allow
+                condition: checked
 
         blog_custom_fields_repeater_url_allow:
             label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_url_allow'

@@ -120,3 +120,5 @@
     - Fixed artisan Blog post creation (thanks mbroadhead)
 1.9.3:
     - Allow Twig extensions if not explicitly disabled
+1.10.3:
+    - Added file field to Blog custom fields repeater

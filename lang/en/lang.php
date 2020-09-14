@@ -81,6 +81,7 @@ return [
         'blog_custom_fields_repeater_title_allow' => 'Show Title',
         'blog_custom_fields_repeater_description_allow' => 'Show Description',
         'blog_custom_fields_repeater_image_allow' => 'Show Image',
+        'blog_custom_fields_repeater_file_allow' => 'Show File',
         'blog_custom_fields_repeater_url_allow' => 'Show URL',
         'blog_custom_fields_repeater_text_allow' => 'Show Text',
 
