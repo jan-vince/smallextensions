@@ -6,16 +6,41 @@ return [
         'description' => 'Rozšíření pro pluginy Rainlab Blog a Pages',
         'category' => 'Small plugins',
     ],
+
+    'tabs' => [
+        'custom_fields' => 'Další',
+        'custom_fields_repeater' => 'Poznámky',
+        'blog' => 'Rainlab.Blog',
+        'pages' => 'Rainlab.Pages',
+        'other' => 'Ostatní',
+        'october' => 'October',
+        'php' => 'PHP',
+    ],
+
+    'sections' => [
+        'fields' => 'Nová pole',
+        'misc' => 'Různé',
+        'deprecated' => 'Zastaralé',
+        'static_menu' => 'Rozšíření menu',
+        'blog_editor' => 'Editor obsahu',
+        'october_admins' => 'Administrátoři',
+        'twig' => 'Rozšíření pro Twig',
+        'components' => 'Komponenty',
+    ],
+
     'labels' => [
-        'wysiwyg_section' => 'WYSIWYG editor',
-        'enable_wysiwyg' => 'Povolit WYSIWYG editor pro plugin Rainlab.Blog?',
+        'enable_wysiwyg' => 'Povolit WYSIWYG editor',
         'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
-        'enable_wysiwyg_toolbar' => 'Vlastní tlačítka nástrojové lišty editoru (nechte prázdné pro výchozí sadu)',
-        'enable_wysiwyg_toolbar_description' => '<p><small>Zde můžete změnit tlačítka zobrazená v liště editoru. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Podívejte se, která tlačítka jsou dostupná.</a></small> <small>Nebo můžete zkusit <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">vytvořit svá vlastní tlačítka.</a></small></p>',
+        'enable_wysiwyg_toolbar' => 'Vlastní tlačítka editoru',
+        'enable_wysiwyg_toolbar_description' => 'Nechte prázdné pro výchozí sadu. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Přehled tlačítek</a>.',
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
-        'enable_featured_image_description' => 'Nahradí původní pole pro upload obrázků polem pro výběr obrázku ze správce médií. Twig: {{post.custom_fields.featured_image|media}}.',
+        'enable_featured_image_description' => 'Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Umožnit přidat k obrázku název a popisek',
-        'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
+        'enable_featured_image_meta_description' => 'Twig: {{post.custom_fields.featured_image_title}}, {{post.custom_fields.featured_image_alt}}.',
+
+        'enable_featured_image_both' => 'Zachovat i původní widget obrázků',
+        'enable_featured_image_both_description' => 'Zobrazit výběr obrázku z Média panelu, ale zachovat i původní widget pro upload.',
+
         'enable_menu_notes' => 'Povolit poznámky u položek menu',
         'enable_menu_notes_description' => 'Přidá záložku Poznámky a pole pro zadání textu k položkám Static Pages Menu.',
 
@@ -25,10 +50,10 @@ return [
         'enable_menu_color_description' => 'Umožní nastavit barvu položky.',
 
         'enable_blog_author' => 'Umožnit změnu autora příspěvku',
-        'enable_blog_author_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr autora',
+        'enable_blog_author_description' => 'Tato funkce nyní už obsažená přímo v pluginu Rainlab.Blog',
 
-        'enable_blog_rainlab_user' => 'Povolit přiřazení uživatele z pluginu Rainlab User k příspěvku',
-        'enable_blog_rainlab_user_description' => 'Pokud je zaškrtnuto, zobrazí v editaci článku výběr uživatele z pluginu Rainlab User. Twig: {{ post.custom_fields.rainlab_user }}',
+        'enable_blog_rainlab_user' => 'Povolit přiřazení uživatele z pluginu Rainlab.User',
+        'enable_blog_rainlab_user_description' => 'Twig: {{ post.custom_fields.rainlab_user }}',
 
         'author' => 'Autor',
         'author_comment' => 'Nastavit autora tohoto příspěvku',
@@ -41,7 +66,7 @@ return [
         'static_pages_section' => 'Nová pole',
 
         'hide_content' => 'Skrýt záložku OBSAH',
-        'hide_content_description' => 'Skryje záložku Obsah při editaci statické Stránky. Užitečné pro ty, kteří používají pro editaci obsahu stránek části definované pomocí {variable} a záložka Obsah v druhém panelu je trochu mate.',
+        'hide_content_description' => 'Staré nastavení, které lze dnes už upravit v definici componenty',
 
         'custom_fields_section' => 'Vlastní pole',
         'custom_fields_section_description' => '',
@@ -58,6 +83,7 @@ return [
 
         'custom_fields_api_code' => 'API kód',
         'custom_fields_api_code_description' => '',
+        
         'enable_custom_fields_api_code' => 'Přidat pole pro Add API kód',
         'enable_custom_fields_api_code_description' => 'Twig: {{post.custom_fields.api_code}}',
 
@@ -73,12 +99,20 @@ return [
 
         'custom_fields_repeater' => 'Repeater',
         'custom_fields_repeater_description' => '',
-        'custom_fields_repeater' => 'Přidat REPEATER',
-        'enable_custom_fields_repeater_prompt' => 'Přidat nový záznam',
+        'custom_fields_repeater_prompt' => 'Přidat nový záznam',
+        'enable_custom_fields_repeater' => 'Přidat Repeater (opakující se formulář)',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
+        'enable_custom_fields_repeater_locale' => 'Allow locale selection',
+        'enable_custom_fields_repeater_locale_description' => 'This will show a dropdown with languages so you can add values for each locale.',
+
+        'enable_custom_fields_repeater_min_items' => 'Min items',
+        'enable_custom_fields_repeater_min_items_description' => 'Minimum repeater items to start with. Set 0 to disable.',
+        'enable_custom_fields_repeater_max_items' => 'Max items',
+        'enable_custom_fields_repeater_max_items_description' => 'Maximum repeater items. Set 0 to disable.',
+
         'blog_custom_fields_repeater_title_allow' => 'Zobrazit Název',
-        'blog_custom_fields_repeater_description_allow' => 'Zobrazit popis',
+        'blog_custom_fields_repeater_description_allow' => 'Zobrazit Popis',
         'blog_custom_fields_repeater_image_allow' => 'Zobrazit Obrázek',
         'blog_custom_fields_repeater_file_allow' => 'Zobrazit Soubor',
         'blog_custom_fields_repeater_url_allow' => 'Zobrazit URL',
@@ -88,8 +122,11 @@ return [
             'title' => 'Název',
             'description' => 'Popis',
             'image' => 'Obrázek',
+            'file' => 'Soubor',
             'url' => 'URL',
             'text' => 'Text',
+            'locale' => 'Jazyk',
+            'locale_empty_option' => 'Můžete vybrat ...',
         ],
 
         'custom_fields_switch' => 'Přepínač',
@@ -109,6 +146,7 @@ return [
 
         'custom_fields_featured_image' => 'Obrázek',
         'custom_fields_featured_image_description' => '',
+        'custom_fields_featured_image_section' => '',
 
         'custom_fields_featured_image_title' => 'Název obrázku',
         'custom_fields_featured_image_title_description' => '',
@@ -126,12 +164,11 @@ return [
         'menu_section' => 'Položky Menu',
         'static_page_section' => 'Obsah stránky',
         'server_info_section' => 'Informace o serveru',
-        'twig_functions_allow' => 'Povolit nové funkce',
-        'twig_functions_allow_description' => 'Přidá nové funkce pro Twig. Podívejte se prosím do dokumentace pro více informací.',
+        'twig_functions_allow' => 'Povolit nové funkce pro Twig',
+        'twig_functions_allow_description' => 'Více informací je v dokumentaci',
 
-        'system_extensions_section' => 'Rozšíření systému',
-        'add_backend_admin_fields' => 'Povolit další informace u systémových administrátorů',
-        'add_backend_admin_fields_comment' => 'Přidá nová pole do formuláře systémových adminitrátorů.',
+        'add_backend_admin_fields' => 'Přidat k autorovi pole Popis (Systém > Administrátoři)',
+        'add_backend_admin_fields_comment' => 'Twig: {{post.user.custom_fields.description}}',
 
         'tab_blog' => 'Blog',
         'tab_blog_fields' => 'Vlastní pole příspěvku',
@@ -153,10 +190,12 @@ return [
 
 
     ],
+
     'blog' => [
         'label' => 'Blog',
         'description' => 'Rozšíření pro Rainlab.Blog.',
     ],
+
     'static_menu' => [
         'notes' => 'Poznámky',
     'image' => 'Obrázek',
@@ -168,14 +207,12 @@ return [
         'add_color' => 'Přidat barvu',
         'add_color_comment' => 'V HEX formátu (např.: #efefef)',
     ],
+
     'permissions' => [
         'settings_tab' => 'Drobná rozšíření',
         'settings_description' => 'Správa nastavení v administraci.',
     ],
-    'tabs' => [
-        'custom_fields' => 'Další',
-        'custom_fields_repeater' => 'Poznámky',
-    ],
+
     'backend_admin_fields' => [
         'tab_info' => 'Info',
         'description' => 'Popis',

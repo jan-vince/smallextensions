@@ -259,7 +259,7 @@ class Plugin extends PluginBase {
       */
       if(Settings::get('blog_custom_fields_api_code')) {
 
-        $widget->addSecondaryTabFields([
+        $fields = [
           'custom_fields[api_code]' => [
             'label' => ( Settings::get('blog_custom_fields_api_code_label') ? Settings::get('blog_custom_fields_api_code_label') : 'janvince.smallextensions::lang.labels.custom_fields_api_code'),
             'comment' => 'janvince.smallextensions::lang.labels.custom_fields_api_code_description',
@@ -268,8 +268,25 @@ class Plugin extends PluginBase {
             'deferredBinding' => 'true',
             'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
           ]
-        ]);
+        ];
 
+        /*
+         * Check the Rainlab.Translate plugin is installed
+         */
+        $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+        
+        if ($pluginManager && !$pluginManager->disabled) 
+        {
+          $fields['custom_fields[api_code]']['type'] = 'text';
+        } else {
+          $fields['custom_fields[api_code]']['type'] = 'text';
+        }
+
+        $widget->addSecondaryTabFields($fields);
+
+
+        // dump($widget->model);
+        // dd($widget);
       }
 
       /*
@@ -404,7 +421,7 @@ class Plugin extends PluginBase {
       if(Settings::get('blog_featured_image')) {
 
         $featuredImage = [
-          'label' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image',
+          'label' => ( Settings::get('blog_featured_image_label') ? Settings::get('blog_featured_image_label') : 'janvince.smallextensions::lang.labels.custom_fields_featured_image' ),
           'comment' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_description',
           'type' => 'mediafinder',
           'span' => 'left',
@@ -426,6 +443,7 @@ class Plugin extends PluginBase {
           'comment' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_alt_description',
           'type' => 'textarea',
           'span' => 'right',
+          'size' => 'tiny',
           'tab' => 'rainlab.blog::lang.post.tab_manage'
         ];
 
@@ -434,23 +452,23 @@ class Plugin extends PluginBase {
           'tab' => 'rainlab.blog::lang.post.tab_manage'
         ];
 
-        $widget->removeField('featured_images');
+        if(empty(Settings::get('blog_featured_image_both', null))) 
+        {
+          $widget->removeField('featured_images');
+        }
 
         $widget->addSecondaryTabFields([
           'section' => $featuredImageSection,
           'custom_fields[featured_image]' => $featuredImage,
         ]);
 
-
-        if(Settings::get('blog_featured_image_meta')) {
-
+        if(Settings::get('blog_featured_image_meta')) 
+        {
           $widget->addSecondaryTabFields([
             'custom_fields[featured_image_title]' => $featuredImageTitle,
             'custom_fields[featured_image_alt]' => $featuredImageAlt,
           ]);
-
         }
-
       }
 
     });
@@ -515,6 +533,38 @@ class Plugin extends PluginBase {
 
                 }
 
+                /**
+                 * Mimic translate plugin with locales field
+                 */
+                $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+
+                if ($pluginManager && !$pluginManager->disabled && Settings::get('blog_custom_fields_repeater_allow_locale')) {
+
+                  $localeModel = new \RainLab\Translate\Models\Locale;
+                  $localeArray = $localeModel->listEnabled();
+
+                  $repeaterFields['repeater_locale'] = [
+                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale',
+                        'type' => 'dropdown',
+                        'emptyOption' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale_empty_option',
+                        'options' => $localeArray,
+                        'span' => 'right',
+                    ];
+                } else {
+                  $repeater['type'] = 'repeater';
+                }
+
+                if(Settings::get('blog_custom_fields_repeater_description_allow')) {
+
+                    $repeaterFields['repeater_description'] = [
+                        'label' => ( Settings::get('blog_custom_fields_repeater_description_label') ? Settings::get('blog_custom_fields_repeater_description_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description' ),
+                        'type' => 'textarea',
+                        'size' => 'tiny',
+                        'span' => 'left',
+                    ];
+
+                }
+
                 if(Settings::get('blog_custom_fields_repeater_image_allow')) {
 
                     $repeaterFields['repeater_image'] = [
@@ -533,17 +583,6 @@ class Plugin extends PluginBase {
                         'type' => 'mediafinder',
                         'mode' => 'file',
                         'span' => 'right',
-                    ];
-
-                }
-
-                if(Settings::get('blog_custom_fields_repeater_description_allow')) {
-
-                    $repeaterFields['repeater_description'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_description_label') ? Settings::get('blog_custom_fields_repeater_description_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description' ),
-                        'type' => 'textarea',
-                        'size' => 'tiny',
-                        'span' => 'left',
                     ];
 
                 }
@@ -573,6 +612,8 @@ class Plugin extends PluginBase {
                 'comment' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_description',
                 'span' => 'full',
                 'deferredBinding' => 'true',
+                'minItems' => Settings::get('blog_custom_fields_repeater_min_items', 0),
+                'maxItems' => Settings::get('blog_custom_fields_repeater_max_items', 0),
                 'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
                 'prompt' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_prompt',
                 'form' => [
@@ -786,7 +827,7 @@ class Plugin extends PluginBase {
     /**
      * New Twig functions
      */
-    if (Settings::get('twig_functions_allow') !== 0) {
+    if (Settings::get('twig_functions_allow', 0) == 1) {
 
         $twigExtensions['functions'] = [
 

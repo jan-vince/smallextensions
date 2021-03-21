@@ -6,8 +6,30 @@ return [
         'description' => 'Extensions for Rainlab Blog and Pages',
         'category' => 'Small plugins',
     ],
+
+        'tabs' => [
+        'custom_fields' => 'More',
+        'custom_fields_repeater' => 'Notes',
+                'blog' => 'Rainlab.Blog',
+        'pages' => 'Rainlab.Pages',
+        'other' => 'Other',
+        'october' => 'October',
+        'php' => 'PHP',
+    ],
+
+        'sections' => [
+        'fields' => 'New fields',
+        'misc' => 'Misc',
+        'deprecated' => 'Deprecated',
+        'static_menu' => 'Menu extensions',
+        'blog_editor' => 'Content editor',
+        'october_admins' => 'Administrators',
+        'twig' => 'Twig extensions',
+        'components' => 'Components',
+    ],
+
+
     'labels' => [
-        'wysiwyg_section' => 'WYSIWYG editor',
         'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
         'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
         'enable_wysiwyg_toolbar' => 'Custom editor toolbar buttons (leave blank for default set)',
@@ -16,6 +38,10 @@ return [
         'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
         'enable_featured_image_meta' => 'Add title and description to image',
         'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
+        
+        'enable_featured_image_both' => 'Display both widgets',
+        'enable_featured_image_both_description' => 'Display both original images widget and a new Media selection',
+
         'enable_menu_notes' => 'Enable Menu notes',
         'enable_menu_notes_description' => 'Add a new Notes tab and field to Static Pages Menu items.',
 
@@ -78,6 +104,14 @@ return [
         'enable_custom_fields_repeater' => 'Add REPEATER',
         'enable_custom_fields_repeater_description' => 'Twig: {{post.custom_fields.repeater}}',
 
+        'enable_custom_fields_repeater_locale' => 'Allow locale selection',
+        'enable_custom_fields_repeater_locale_description' => 'This will show a dropdown with languages so you can add values for each locale.',
+
+        'enable_custom_fields_repeater_min_items' => 'Nejmenší počet položek',
+        'enable_custom_fields_repeater_min_items_description' => 'Minimální počet opakování formuláře. Nechte 0 pro výchozí nastavení.',
+        'enable_custom_fields_repeater_max_items' => 'Maximální počet položek',
+        'enable_custom_fields_repeater_max_items_description' => 'Maximum položek opakování formuláře. Nechte 0 pro výchozí nastavení.',
+
         'blog_custom_fields_repeater_title_allow' => 'Show Title',
         'blog_custom_fields_repeater_description_allow' => 'Show Description',
         'blog_custom_fields_repeater_image_allow' => 'Show Image',
@@ -89,8 +123,11 @@ return [
             'title' => 'Title',
             'description' => 'Description',
             'image' => 'Image',
+            'file' => 'File',
             'url' => 'URL',
             'text' => 'Text',
+            'locale' => 'Locale',
+            'locale_empty_option' => 'You can select ...',
         ],
 
         'custom_fields_switch' => 'Switch',
@@ -173,10 +210,6 @@ return [
     'permissions' => [
         'settings_tab' => 'Small Extensions',
         'settings_description' => 'Manage backend preferences.',
-    ],
-    'tabs' => [
-        'custom_fields' => 'More',
-        'custom_fields_repeater' => 'Notes',
     ],
     'backend_admin_fields' => [
         'tab_info' => 'Info',

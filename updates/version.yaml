@@ -122,3 +122,9 @@
     - Allow Twig extensions if not explicitly disabled
 1.10.3:
     - Added file field to Blog custom fields repeater
+1.11.0:
+    - Rearranged settings fields
+    - Added option to show both - blog post images and custom image
+    - Added option to change blog custom image label
+    - Added locale dropdown for (blog) custom repeater to mimic translate plugin
+    - Fixed translation

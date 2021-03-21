@@ -33,28 +33,14 @@
     }
 ?>
 
-<div class="control-popup modal fade" id="contentBasic">
-    <div class="modal-dialog">
-        <div class="modal-content modal-lg">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+<div>
 
-                <div style="overflow: auto; width: 100%;">
-                    <?php echo myprint_r(phpinfo_array()); ?>
+    <?php echo myprint_r(phpinfo_array()); ?>
 
-                    <p>
-                        <em>
-                            Thanks to <a href="https://github.com/kenpb/phpinfo" target="_blank">kenpb/phpinfo</a>.
-                        </em>
-                    </p>
+    <p>
+        <em>
+            Thanks to <a href="https://github.com/kenpb/phpinfo" target="_blank">kenpb/phpinfo</a>.
+        </em>
+    </p>
 
-                </div>
-
-            </div>
-        </div>
-    </div>
 </div>
-
-<a data-toggle="modal" href="#contentBasic" class="btn btn-primary btn-lg">
-    Show server PHP info
-</a>

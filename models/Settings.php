@@ -9,8 +9,12 @@ class Settings extends Model
 
     public $implement = [
         'System.Behaviors.SettingsModel',
+        '@RainLab.Translate.Behaviors.TranslatableModel',
     ];
 
+    public $translatable = [
+        'form_success_msg',
+    ];
 
     public $requiredPermissions = ['janvince.smallextensions.settings'];
 

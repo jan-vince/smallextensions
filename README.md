@@ -57,11 +57,10 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
 
 #### Settings
 
-* **Hide Content field**
+* **Hide Content field (depricated)**
 
     * Allow to hide default Content tab and field from Pages editing page.
     * Useful for those, who uses {variable} fields and are little bit confused with default secondary content tab.
-    * As of **version 1.2.17 of Rainlab.Pages plugin** custom fields are placed in secondary tabs container by default - by allow *Hide Content field*, all custom fields will be moved to primary tabs container.
 
 * **Enable Menu notes**
 

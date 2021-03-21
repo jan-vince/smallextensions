@@ -12,9 +12,10 @@ class BlogFields extends Model
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     public $translatable = [
+        'api_code',
         'string',
-		'text',
-		'repeater',
+        'text',
+        'repeater',
     ];
 
     public $table = 'janvince_smallextensions_blogfields';
