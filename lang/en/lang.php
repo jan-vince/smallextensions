@@ -58,7 +58,7 @@ return [
         'enable_blog_author_description' => 'Dropdown with list of activated administrators will be added to blog post form (and the original dropdown will be removed)',
 
         'enable_blog_rainlab_user' => 'Allow to assign Rainlab User to blog post',
-        'enable_blog_rainlab_user_description' => 'If checked, dropdown with list of Rainlab Users will be added to blog post form. Twig: {{ post.custom_fields.rainlab_user }}',
+        'enable_blog_rainlab_user_description' => 'If checked, dropdown with list of Rainlab Users will be added to blog post form.<br>Twig: {{ post.custom_fields.rainlab_user }}',
 
         'author' => 'Author',
         'author_comment' => 'Set author of this post',

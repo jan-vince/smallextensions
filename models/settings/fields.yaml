@@ -41,6 +41,7 @@ tabs:
         blog_rainlab_user:
             label: 'janvince.smallextensions::lang.labels.enable_blog_rainlab_user'
             comment: 'janvince.smallextensions::lang.labels.enable_blog_rainlab_user_description'
+            commentHtml: true
             span: left
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'
