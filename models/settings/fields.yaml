@@ -45,12 +45,21 @@ tabs:
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
+        blog_author:
+            label: 'janvince.smallextensions::lang.labels.enable_blog_author'
+            comment: 'janvince.smallextensions::lang.labels.enable_blog_author_description'
+            span: right
+            default: false
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+
         add_backend_admin_fields:
             label: 'janvince.smallextensions::lang.labels.add_backend_admin_fields'
             span: right
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.add_backend_admin_fields_comment'
             tab: 'janvince.smallextensions::lang.tabs.blog'
+
 
         ## Fields section
 
@@ -67,11 +76,11 @@ tabs:
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
-        blog_author:
-            label: 'janvince.smallextensions::lang.labels.enable_blog_author'
-            comment: 'janvince.smallextensions::lang.labels.enable_blog_author_description'
+        blog_featured_image_upload:
+            label: 'janvince.smallextensions::lang.labels.enable_featured_image_upload'
+            comment: 'janvince.smallextensions::lang.labels.enable_featured_image_upload_description'
+            commentHtml: true
             span: right
-            default: false
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
@@ -81,6 +90,20 @@ tabs:
             cssClass: 'field-indent'
             type: text
             tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: show
+                field: blog_featured_image
+                condition: checked
+
+        blog_featured_image_upload_label:
+            label: 'janvince.smallextensions::lang.labels.custom_fields_label'
+            span: right
+            type: text
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: show
+                field: blog_featured_image_upload
+                condition: checked
 
         blog_featured_image_meta:
             label: 'janvince.smallextensions::lang.labels.enable_featured_image_meta'
@@ -224,19 +247,206 @@ tabs:
                 condition: checked
 
 
+
+        ## New repeater builder
+
+        repeater_section_new:
+            label: 'janvince.smallextensions::lang.sections.repeater_new'
+            type: section
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            cssClass: m-t
+
+        custom_repeater_allow:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_allow'
+            comment: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_allow_comment'
+            span: left
+            type: checkbox
+            default: false
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+
+        custom_repeater_tab_title:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_tab_title'
+            span: left
+            type: text
+            cssClass: 'm-t field-indent'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: hide
+                field: custom_repeater_allow
+                condition: unchecked
+
+        custom_repeater_prompt:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_prompt'
+            span: right
+            type: text
+            cssClass: 'm-t'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: hide
+                field: custom_repeater_allow
+                condition: unchecked
+
+        custom_repeater_min_items:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_min_items'
+            span: left
+            type: number
+            default: 1
+            cssClass: 'field-indent'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: hide
+                field: custom_repeater_allow
+                condition: unchecked
+
+        custom_repeater_max_items:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_max_items'
+            span: right
+            type: number
+            default: 1
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: hide
+                field: custom_repeater_allow
+                condition: unchecked
+
+        custom_repeater_fields:
+            type: repeater
+            prompt: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.repeater_prompt'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            cssClass: 'm-t field-indent'
+            style: collapsed
+            trigger:
+                action: hide
+                field: custom_repeater_allow
+                condition: unchecked
+            form:
+                fields:
+                    custom_repeater_field_label:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_label'
+                        type: text
+                        span: left
+                        required: true
+                    custom_repeater_field_name:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_name'
+                        comment: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_name_comment'
+                        type: text
+                        span: right
+                        required: true
+                        preset: 
+                            field: custom_repeater_field_label
+                            type: camel
+                    custom_repeater_field_type:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_type'
+                        type: dropdown
+                        span: left
+                        required: true
+                        options:
+                            text: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.text'
+                            number: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.number'
+                            textarea: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.textarea'
+                            dropdown: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.dropdown'
+                            checkbox: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.checkbox'
+                            checkboxlist: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.checkboxlist'
+                            switch: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.switch'
+                            mediafinder: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.mediafinder'
+                            richeditor: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.richeditor'
+                            radio: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.radio'
+                            datepicker: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.datepicker'
+                            colorpicker: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.colorpicker'
+                            codeeditor: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.codeeditor'
+                            taglist: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.taglist'
+                            balloon-selector: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.balloon_selector'
+                            section: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.section'
+                    custom_repeater_field_mode:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_mode'
+                        type: dropdown
+                        span: left
+                        cssClass: 'field-indent'
+                        emptyOption: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.empty_option'
+                        options:
+                            file: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.file'
+                            image: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.image'
+                        trigger:
+                            action: show
+                            field: custom_repeater_field_type
+                            condition: value[mediafinder]
+                    custom_repeater_field_attributes:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_attributes'
+                        comment: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_attributes_comment'
+                        commentHtml: true
+                        span: left
+                        cssClass: 'field-indent'
+                        type: repeater
+                        style: collapsed
+                        form:
+                            fields:
+                                attribute_name:
+                                    label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_attribute_name'
+                                    type: text
+                                    span: left
+                                attribute_value:
+                                    label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_attribute_value'
+                                    type: text
+                                    span: right
+                    custom_repeater_field_options:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_options'
+                        comment: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_options_comment'
+                        span: right
+                        cssClass: 'field-indent'
+                        type: repeater
+                        style: collapsed
+                        form:
+                            fields:
+                                option_key:
+                                    label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_option_key'
+                                    type: text
+                                    span: left
+                                option_value:
+                                    label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_option_value'
+                                    type: text
+                                    span: right
+                    custom_repeater_field_span_section:
+                        type: section
+                        span: full
+                    custom_repeater_field_span:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_span'
+                        type: dropdown
+                        span: left
+                        options:
+                            full: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.full'
+                            left: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.left'
+                            right: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.right'
+                    custom_repeater_field_size:
+                        label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.field_size'
+                        type: dropdown
+                        span: right
+                        emptyOption: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.empty_option'
+                        options:
+                            tiny: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.tiny'
+                            small: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.small'
+                            large: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.large'
+                            huge: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.huge'
+                            giant: 'janvince.smallextensions::lang.labels.repeater.custom_repeater.options.giant'
+
+
         ## Repeater
+
+        repeater_section:
+            label: 'janvince.smallextensions::lang.sections.repeater_old'
+            type: section
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            cssClass: m-t
 
         blog_custom_fields_repeater:
             label: 'janvince.smallextensions::lang.labels.enable_custom_fields_repeater'
             comment: 'janvince.smallextensions::lang.labels.enable_custom_fields_repeater_description'
             span: full
             type: checkbox
-            cssClass: 'm-t'
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
         blog_custom_fields_repeater_label:
             label: 'janvince.smallextensions::lang.labels.custom_fields_label'
-            span: full
+            span: left
             type: text
             tab: 'janvince.smallextensions::lang.tabs.blog'
             cssClass: 'field-indent'
@@ -289,6 +499,10 @@ tabs:
             type: section
             tab: 'janvince.smallextensions::lang.tabs.blog'
             cssClass: 'field-indent'
+            trigger:
+                action: show
+                field: blog_custom_fields_repeater
+                condition: checked
 
         blog_custom_fields_repeater_title_allow:
             label: 'janvince.smallextensions::lang.labels.blog_custom_fields_repeater_title_allow'
@@ -421,6 +635,7 @@ tabs:
                 action: show
                 field: blog_custom_fields_repeater_text_allow
                 condition: checked
+
 
         # Static pages
 

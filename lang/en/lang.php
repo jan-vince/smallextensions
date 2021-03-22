@@ -7,18 +7,18 @@ return [
         'category' => 'Small plugins',
     ],
 
-        'tabs' => [
-        'custom_fields' => 'More',
+    'tabs' => [
+        'custom_fields' => 'Custom fields',
         'custom_fields_repeater' => 'Notes',
-                'blog' => 'Rainlab.Blog',
+        'blog' => 'Rainlab.Blog',
         'pages' => 'Rainlab.Pages',
         'other' => 'Other',
         'october' => 'October',
         'php' => 'PHP',
     ],
 
-        'sections' => [
-        'fields' => 'New fields',
+    'sections' => [
+        'fields' => 'Fields',
         'misc' => 'Misc',
         'deprecated' => 'Deprecated',
         'static_menu' => 'Menu extensions',
@@ -26,6 +26,8 @@ return [
         'october_admins' => 'Administrators',
         'twig' => 'Twig extensions',
         'components' => 'Components',
+        'repeater_old' => 'Repeater (old)',
+        'repeater_new' => 'Repeater (new builder)',
     ],
 
 
@@ -36,6 +38,8 @@ return [
         'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a> Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
         'enable_featured_image' => 'Post featured image from media manager',
         'enable_featured_image_description' => 'Replace original featured images upload field with one selectable from Media manager. Twig: {{post.custom_fields.featured_image|media}}.',
+        'enable_featured_image_upload' => 'Post preview image (from upload)',
+        'enable_featured_image_upload_description' => 'Add option to upload one preview image.<br>Twig: {{post.featured_image.getPath}}',
         'enable_featured_image_meta' => 'Add title and description to image',
         'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
         
@@ -51,7 +55,7 @@ return [
         'enable_menu_color_description' => 'Allows to set color.',
 
         'enable_blog_author' => 'Enable change of post author',
-        'enable_blog_author_description' => 'If checked, dropdown with list of activated administrators will be added to blog post form',
+        'enable_blog_author_description' => 'Dropdown with list of activated administrators will be added to blog post form (and the original dropdown will be removed)',
 
         'enable_blog_rainlab_user' => 'Allow to assign Rainlab User to blog post',
         'enable_blog_rainlab_user_description' => 'If checked, dropdown with list of Rainlab Users will be added to blog post form. Twig: {{ post.custom_fields.rainlab_user }}',
@@ -149,8 +153,10 @@ return [
         'pages_menu_items_hint_line1' => 'There is a bug in Static pages plugin that prevents image to reapear after save and reopening of menu item.',
         'pages_menu_items_hint_line2' => 'Until fixed you can use <a target="_blank" href="https://github.com/rainlab/pages-plugin/pull/286">edited version of plugin</a>.',
 
-        'custom_fields_featured_image' => 'Featured image',
+        'custom_fields_featured_image' => 'Featured image (from Media)',
         'custom_fields_featured_image_description' => '',
+        'custom_fields_featured_image_upload' => 'Featured image (upload)',
+        'custom_fields_featured_image_upload_description' => '',
 
         'custom_fields_featured_image_title' => 'Featured image title',
         'custom_fields_featured_image_title_description' => '',
@@ -190,7 +196,63 @@ return [
         'force_backend_login' => 'Allow force login',
         'force_backend_login_comment' => 'By checking this and placing [forceLogin] component to your page, layout or partial, you can force visitor to login to backend area.',
 
+        'repeater' => [
 
+            'custom_repeater_allow' => 'Allow new repeater',
+            'custom_repeater_allow_comment' => 'Twig: {{post.custom_repeater}}',
+            'custom_repeater_tab_title' => 'Tab name',
+            'custom_repeater_prompt' => 'Custom "Add new item" prompt',
+            'custom_repeater_min_items' => 'Minimum required items',
+            'custom_repeater_max_items' => 'Maximum allowed items',
+
+            'custom_repeater' => [
+                'repeater_prompt' => 'Add field',
+                'field_type' => 'Field type',
+                'field_name' => 'Field name',
+                'field_name_comment' => 'Field name like: my_record_name. You will use this in Twig to access field value.',
+                'field_label' => 'Field label',
+                'field_span' => 'Field span',
+                'field_mode' => 'Mode',
+                'field_size' => 'Size',
+                'field_options' => 'Field options',
+                'field_options_comment' => 'You can add field options for dropdown or other fields with several options.',
+                'field_option_key' => 'Option key',
+                'field_option_value' => 'Option value',
+                'field_attributes' => 'Field attributes',
+                'field_attributes_comment' => 'You can add field attributes, eg. for datepicker attribute \'firstDay\' a hodnotu \'1\'.<br>More in <a target="_blank" href="https://octobercms.com/docs/backend/forms#field-types">documentation</a>.',
+                'field_attribute_name' => 'Attribute name',
+                'field_attribute_value' => 'Attribute value',
+                'options' => [
+                    'text' => 'Text',
+                    'textarea' => 'Text area',
+                    'richeditor' => 'Richtext editor',
+                    'number' => 'Number',
+                    'checkbox' => 'Checkbox',
+                    'switch' => 'Switch',
+                    'datepicker' => 'Datepicker',
+                    'mediafinder' => 'Mediafinder',
+                    'dropdown' => 'Dropdown',
+                    'radio' => 'Radiolist',
+                    'checkboxlist' => 'Checkboxlist',
+                    'colorpicker' => 'Color picker',
+                    'codeeditor' => 'Code editor',
+                    'taglist' => 'Tag list',
+                    'balloon_selector' => 'Baloon selector',
+                    'section' => 'Section',
+                    'left' => 'Left',
+                    'right' => 'Right',
+                    'full' => 'Full',
+                    'file' => 'File',
+                    'image' => 'Image',
+                    'tiny' => 'Tiny',
+                    'small' => 'Small',
+                    'large' => 'Large',
+                    'huge' => 'Huge',
+                    'giant' => 'Giant',
+                    'empty_option' => 'Select ...'
+                ]
+            ],
+        ],
     ],
     'blog' => [
         'label' => 'Blog',

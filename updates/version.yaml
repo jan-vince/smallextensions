@@ -128,3 +128,7 @@
     - Added option to change blog custom image label
     - Added locale dropdown for (blog) custom repeater to mimic translate plugin
     - Fixed translation
+1.12.0:
+    - Added new translatable custom repeater (with fields builder) for Railab.Blog posts
+    - Added new option for featured image (from upload) for Rainlab.Blog
+    - smallextensions_tables_update_06.php

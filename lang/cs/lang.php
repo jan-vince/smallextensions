@@ -8,7 +8,7 @@ return [
     ],
 
     'tabs' => [
-        'custom_fields' => 'Další',
+        'custom_fields' => 'Další informace',
         'custom_fields_repeater' => 'Poznámky',
         'blog' => 'Rainlab.Blog',
         'pages' => 'Rainlab.Pages',
@@ -18,7 +18,7 @@ return [
     ],
 
     'sections' => [
-        'fields' => 'Nová pole',
+        'fields' => 'Pole',
         'misc' => 'Různé',
         'deprecated' => 'Zastaralé',
         'static_menu' => 'Rozšíření menu',
@@ -26,6 +26,8 @@ return [
         'october_admins' => 'Administrátoři',
         'twig' => 'Rozšíření pro Twig',
         'components' => 'Komponenty',
+        'repeater_old' => 'Repeater (stará verze)',
+        'repeater_new' => 'Repeater (nový builder)',
     ],
 
     'labels' => [
@@ -35,6 +37,8 @@ return [
         'enable_wysiwyg_toolbar_description' => 'Nechte prázdné pro výchozí sadu. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Přehled tlačítek</a>.',
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',
         'enable_featured_image_description' => 'Twig: {{post.custom_fields.featured_image|media}}.',
+        'enable_featured_image_upload' => 'Náhledový obrázek (z uploadu)',
+        'enable_featured_image_upload_description' => 'Přidat možnost nahrát jeden náhledový obrázek',
         'enable_featured_image_meta' => 'Umožnit přidat k obrázku název a popisek',
         'enable_featured_image_meta_description' => 'Twig: {{post.custom_fields.featured_image_title}}, {{post.custom_fields.featured_image_alt}}.',
 
@@ -50,7 +54,7 @@ return [
         'enable_menu_color_description' => 'Umožní nastavit barvu položky.',
 
         'enable_blog_author' => 'Umožnit změnu autora příspěvku',
-        'enable_blog_author_description' => 'Tato funkce nyní už obsažená přímo v pluginu Rainlab.Blog',
+        'enable_blog_author_description' => 'Zobrazí seznam administrátorů pro výběr autora příspěvku. Původní (systémový) výběr bude skrytý.',
 
         'enable_blog_rainlab_user' => 'Povolit přiřazení uživatele z pluginu Rainlab.User',
         'enable_blog_rainlab_user_description' => 'Twig: {{ post.custom_fields.rainlab_user }}',
@@ -144,8 +148,10 @@ return [
         'enable_custom_fields_image' => 'Přidat obrázek',
         'custom_fields_featured_image_description' => '',
 
-        'custom_fields_featured_image' => 'Obrázek',
+        'custom_fields_featured_image' => 'Obrázek (z Médií)',
         'custom_fields_featured_image_description' => '',
+        'custom_fields_featured_image_upload' => 'Obrázek (upload)',
+        'custom_fields_featured_image_upload_description' => '',
         'custom_fields_featured_image_section' => '',
 
         'custom_fields_featured_image_title' => 'Název obrázku',
@@ -188,7 +194,53 @@ return [
         'force_backend_login' => 'Vynutit přihlášení',
         'force_backend_login_comment' => 'Zaškrtnutím políčka a použitím komponenty [forceLogin] na stránce, layoutu nebo dílčí šabloně můžete vynutit přihlášení uživatele do admnistrace webu.',
 
+        'repeater' => [
+            'custom_repeater_allow' => 'Povolit nový repeater',
+            'custom_repeater_tab_title' => 'Název záložky',
+            'custom_repeater_prompt' => 'Vlastní popisek pro "Přidat novou položku"',
+            'custom_repeater_min_items' => 'Minimální vyžadovaný počet položek',
+            'custom_repeater_max_items' => 'Maximální povolený počet položek',
 
+            'custom_repeater' => [
+                'repeater_prompt' => 'Přidat pole',
+                'field_type' => 'Typ pole',
+                'field_name' => 'Název pole',
+                'field_name_comment' => 'Např.: my_record_name. Název pole se používá v Twigu pro přístup k uložené hodnotě.',
+                'field_label' => 'Popisek pole',
+                'field_span' => 'Zarovnání pole (span)',
+                'field_mode' => 'Mód zobrazení (mode)',
+                'field_size' => 'Velikost pole',
+                'field_options' => 'Hodnoty pole (options)',
+                'field_options_comment' => 'Pro políčka typu dropdown, ve kterých se vybírá z více hodnot',
+                'field_option_key' => 'Klíč (id)',
+                'field_option_value' => 'Hodnota',
+                'field_attributes' => 'Atributy pole',
+                'field_attributes_comment' => 'Můžete přidat libovolný atribut, např. pro datepicker atribut \'firstDay\' a hodnotu \'1\'.<br>Více v <a target="_blank" href="https://octobercms.com/docs/backend/forms#field-types">dokumentaci</a>.',
+                'field_attribute_name' => 'Attribute name',
+                'field_attribute_value' => 'Attribute value',
+                'options' => [
+                    'text' => 'Text',
+                    'textarea' => 'Textová oblast (textarea)',
+                    'richeditor' => 'Richtext editor',
+                    'number' => 'Číslo',
+                    'checkbox' => 'Zaškrtávací pole (checkbox)',
+                    'mediafinder' => 'Mediafinder',
+                    'dropdown' => 'Dropdown',
+                    'section' => 'Oddíl (section)',
+                    'left' => 'Vlevo',
+                    'right' => 'Vpravo',
+                    'full' => 'Na celou šířku',
+                    'file' => 'Soubor',
+                    'image' => 'Obrázek',
+                    'tiny' => 'Drobný (tiny)',
+                    'small' => 'Malý (small)',
+                    'large' => 'Velký (large)',
+                    'huge' => 'Obrovský (huge)',
+                    'giant' => 'Gigantický (giant)',
+                    'empty_option' => 'Vyberte ...'
+                ]
+            ],
+        ],
     ],
 
     'blog' => [

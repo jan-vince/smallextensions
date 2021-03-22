@@ -14,6 +14,9 @@ class Settings extends Model
 
     public $translatable = [
         'form_success_msg',
+        'custom_repeater_tab_title',
+        'custom_repeater_fields',
+        'custom_repeater_prompt',
     ];
 
     public $requiredPermissions = ['janvince.smallextensions.settings'];

@@ -50,6 +50,9 @@ class Plugin extends PluginBase {
 
       \RainLab\Blog\Models\Post::extend(function($model) {
         $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
+        $model->attachOne = ['featured_image' => ['System\Models\File']];
+
+        $model->addJsonable('custom_repeater');
 
         /*
         * Deferred bind doesn't work with extended models?
@@ -227,6 +230,7 @@ class Plugin extends PluginBase {
 
         $widget->addSecondaryTabFields( $field );
 
+        $widget->removeField('user');
       }
 
       /*
@@ -449,6 +453,7 @@ class Plugin extends PluginBase {
 
         $featuredImageSection = [
           'type' => 'section',
+          'label' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_description',
           'tab' => 'rainlab.blog::lang.post.tab_manage'
         ];
 
@@ -458,7 +463,7 @@ class Plugin extends PluginBase {
         }
 
         $widget->addSecondaryTabFields([
-          'section' => $featuredImageSection,
+          'section_featured_image' => $featuredImageSection,
           'custom_fields[featured_image]' => $featuredImage,
         ]);
 
@@ -469,6 +474,34 @@ class Plugin extends PluginBase {
             'custom_fields[featured_image_alt]' => $featuredImageAlt,
           ]);
         }
+      }
+
+      /*
+      * Featured image field (from upload)
+      */
+      if(Settings::get('blog_featured_image_upload')) {
+
+        $featuredImage = [
+          'label' => ( Settings::get('blog_featured_image_upload_label') ? Settings::get('blog_featured_image_upload_label') : 'janvince.smallextensions::lang.labels.custom_fields_featured_image_upload' ),
+          'comment' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_upload_description',
+          'type' => 'fileupload',
+          'span' => 'left',
+          'deferredBinding' => 'true',
+          'mode' => 'image',
+          'tab' => 'rainlab.blog::lang.post.tab_manage'
+        ];
+
+        $featuredImageSection = [
+          'type' => 'section',
+          'label' => 'janvince.smallextensions::lang.labels.custom_fields_featured_image_upload_description',
+          'tab' => 'rainlab.blog::lang.post.tab_manage'
+        ];
+
+
+        $widget->addSecondaryTabFields([
+          'section_featured_image_upload' => $featuredImageSection,
+          'featured_image' => $featuredImage,
+        ]);
       }
 
     });
@@ -515,9 +548,91 @@ class Plugin extends PluginBase {
             $widget->model->custom_fields = $custom_fields;
           }
 
+            
+            /**
+             * Custom repeater builder (new repeater)
+             */
+            if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null)) {
+
+              $fields = [];
+              $counter = 0;
+
+              foreach(Settings::get('custom_repeater_fields', null) as $field) {
+                  
+                  if(empty($field['custom_repeater_field_name'])) {
+                      $fieldName = 'field' . $counter;
+                  } else {
+                      $fieldName = $field['custom_repeater_field_name'];
+                  }
+
+                  $fields[$fieldName] = [
+                      'type' => $field['custom_repeater_field_type'],
+                      'label' => $field['custom_repeater_field_label'],
+                      'span' => $field['custom_repeater_field_span'],
+                  ];
+
+                  if(!empty($field['custom_repeater_field_attributes'])) 
+                  {
+                    foreach($field['custom_repeater_field_attributes'] as $value) 
+                    {
+                      $fields[$fieldName][$value['attribute_name']] = $value['attribute_value'];
+                    }
+                  }
+
+                  if(!empty($field['custom_repeater_field_mode'])) {
+                      $fields[$fieldName]['mode'] = $field['custom_repeater_field_mode'];
+                  }
+
+                  if(!empty($field['custom_repeater_field_size'])) {
+                      $fields[$fieldName]['size'] = $field['custom_repeater_field_size'];
+                  }
+
+                  $options = [];
+
+                  if(!empty($field['custom_repeater_field_options'])) 
+                  {
+                    foreach($field['custom_repeater_field_options'] as $value) 
+                    {
+                      $options[$value['option_key']] = $value['option_value'];
+                    }
+                  }
+                  
+                  $fields[$fieldName]['options'] = $options;
+
+                }
+
+              /*
+              * Check the Rainlab.Translate plugin is installed
+              */
+              $repeaterType = 'repeater';
+
+              $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+
+              if ($pluginManager && !$pluginManager->disabled) {
+                $repeaterType = 'mlrepeater';
+              }
+
+              $widget->addSecondaryTabFields([
+                  'custom_repeater' => [
+                      'type' => $repeaterType,
+                      'prompt' => Settings::get('custom_repeater_prompt', '+'),
+                      'minItems' => Settings::get('custom_repeater_min_items', 0),
+                      'maxItems' => Settings::get('custom_repeater_max_items', 0),
+                      'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
+                      'form' => [
+                          'fields' => $fields,
+                      ]
+                  ],
+              ]);
+
+            }
+
+
+
+
 
             /*
-            * Repeater field
+            * Repeater fields (old repeater)
             */
             if(Settings::get('blog_custom_fields_repeater')) {
 
