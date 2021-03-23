@@ -13,6 +13,7 @@ use Auth;
 use Log;
 use BackendAuth;
 use Redirect;
+use Schema;
 use Backend\Models\User as UserModel;
 
 
@@ -52,6 +53,19 @@ class Plugin extends PluginBase {
         $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
         $model->attachOne = ['featured_image' => ['System\Models\File']];
 
+        /**
+         * If Blog plugin exists but there is no custom_repeater column, create it
+         * Mostly because Rainlab Blog plugin was installed after Small Extensions
+         */
+        if (Schema::hasTable('rainlab_blog_posts') and !Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
+        {
+          Schema::table('rainlab_blog_posts', function($table)
+          {
+              $table->text('custom_repeater')->nullable();
+          });
+        }
+        
+        
         $model->addJsonable('custom_repeater');
 
         /*
@@ -611,6 +625,12 @@ class Plugin extends PluginBase {
               if ($pluginManager && !$pluginManager->disabled) {
                 $repeaterType = 'mlrepeater';
               }
+
+              /*
+              * Check that schema and column exists!
+              */
+
+
 
               $widget->addSecondaryTabFields([
                   'custom_repeater' => [

@@ -134,3 +134,5 @@
     - smallextensions_tables_update_06.php
 1.12.1:
     - Fixed schema update file
+1.12.2:
+    - Auto create Rainlab Blog column for custom_repeater if Blog plugin was installed after Small Extensions
