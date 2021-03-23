@@ -9,23 +9,29 @@ class SmallExtensionsTables06 extends Migration
 {
     public function up()
     {
-        if (!Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
+        if (Schema::hasTable('rainlab_blog_posts')) 
         {
-            Schema::table('rainlab_blog_posts', function($table)
+            if (!Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
             {
-                $table->text('custom_repeater')->nullable();
-            });
+                Schema::table('rainlab_blog_posts', function($table)
+                {
+                    $table->text('custom_repeater')->nullable();
+                });
+            }
         }
     }
 
     public function down()
     {
-        if (Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
+        if (Schema::hasTable('rainlab_blog_posts')) 
         {
-            Schema::table('rainlab_blog_posts', function($table)
+            if (Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
             {
-                $table->dropColumn('custom_repeater');
-            });
+                Schema::table('rainlab_blog_posts', function($table)
+                {
+                    $table->dropColumn('custom_repeater');
+                });
+            }
         }
     }
 }

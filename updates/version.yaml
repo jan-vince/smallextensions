@@ -132,3 +132,5 @@
     - Added new translatable custom repeater (with fields builder) for Railab.Blog posts
     - Added new option for featured image (from upload) for Rainlab.Blog
     - smallextensions_tables_update_06.php
+1.12.1:
+    - Fixed schema update file
