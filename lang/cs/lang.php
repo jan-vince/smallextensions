@@ -8,7 +8,7 @@ return [
     ],
 
     'tabs' => [
-        'custom_fields' => 'Další informace',
+        'custom_fields' => 'Další',
         'custom_fields_repeater' => 'Poznámky',
         'blog' => 'Rainlab.Blog',
         'pages' => 'Rainlab.Pages',
