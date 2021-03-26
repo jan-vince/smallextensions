@@ -197,6 +197,8 @@ return [
         'repeater' => [
             'custom_repeater_allow' => 'Povolit nový repeater',
             'custom_repeater_tab_title' => 'Název záložky',
+            'custom_repeater_simple' => 'Použít jako jednoduchý formulář (bez opakování)',
+            'custom_repeater_simple_comment' => 'Pokud je nastaveno, níže přidaná pole se zobrazí jako jednoduchý formulář, ne jako repeater (pokud nepotřebujete zadávat opakovaně data pro stejná pole)',
             'custom_repeater_prompt' => 'Vlastní popisek pro "Přidat novou položku"',
             'custom_repeater_min_items' => 'Minimální vyžadovaný počet položek',
             'custom_repeater_max_items' => 'Maximální povolený počet položek',

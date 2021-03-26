@@ -200,6 +200,8 @@ return [
 
             'custom_repeater_allow' => 'Allow new repeater',
             'custom_repeater_allow_comment' => 'Twig: {{post.custom_repeater}}',
+            'custom_repeater_simple' => 'Use as simple form (without repeating)',
+            'custom_repeater_simple_comment' => 'When set, custom fields will be rendered in simple form, not as repeater (if you don\'t need to add repeated values).',
             'custom_repeater_tab_title' => 'Tab name',
             'custom_repeater_prompt' => 'Custom "Add new item" prompt',
             'custom_repeater_min_items' => 'Minimum required items',

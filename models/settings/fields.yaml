@@ -265,6 +265,19 @@ tabs:
             default: false
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
+        custom_repeater_simple:
+            label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_simple'
+            comment: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_simple_comment'
+            span: left
+            type: checkbox
+            default: false
+            cssClass: 'field-indent'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: show
+                field: custom_repeater_allow
+                condition: checked
+
         custom_repeater_tab_title:
             label: 'janvince.smallextensions::lang.labels.repeater.custom_repeater_tab_title'
             span: left

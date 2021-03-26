@@ -139,3 +139,5 @@
 1.12.3:
     - Added list columns for (new) custom repeater fields
     - Updated localization
+1.12.4:
+    - Option to add (new) custom repeater as a simple form (when you do not need repeating)

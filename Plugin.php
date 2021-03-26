@@ -140,31 +140,38 @@ class Plugin extends PluginBase {
             {
               
               $fields = Settings::get('custom_repeater_fields', []);
+              
+              $columnTypesMap = [
+                'number' => 'number',
+                'datepicker' => 'date',
+              ];
 
               foreach($fields as $field) 
               {
+                $fieldType = 'sme_json_field';
+
                 if(isset($field['custom_repeater_field_type']) and $field['custom_repeater_field_type'])
                 {
+
+                  if(Settings::get('custom_repeater_simple', null))
+                  {
+                    $fieldType = 'text';
+
+                    if(isset($columnTypesMap[$field['custom_repeater_field_type']]))
+                    {
+                      $fieldType = $columnTypesMap[$field['custom_repeater_field_type']];
+                    }
+
+                  }
+
                   $columns = [
                       'custom_repeater['.$field['custom_repeater_field_name'].']' => [
                           'label' => $field['custom_repeater_field_label'],
-                          'type' => 'sme_json_field',
+                          'type' => $fieldType,
                           'repeaterValue' => $field['custom_repeater_field_name'],
                           'repeaterType' => $field['custom_repeater_field_type'],
                           'invisible' => true,
                           'searchable' => false,
-                      ]
-                  ];
-                }
-
-                if($field['custom_repeater_field_type'] == 'text')
-                {
-                  $columns = [
-                      'custom_repeater['.$field['custom_repeater_field_name'].']' => [
-                          'label' => $field['custom_repeater_field_label'],
-                          'type' => 'sme_json_field',
-                          'repeaterValue' => $field['custom_repeater_field_name'],
-                          'invisible' => true,
                       ]
                   ];
                 }
@@ -637,11 +644,26 @@ class Plugin extends PluginBase {
                       $fieldName = $field['custom_repeater_field_name'];
                   }
 
+                  if (Settings::get('custom_repeater_simple', null))
+                  {
+                    if(!empty($field['custom_repeater_field_name']))
+                    {
+                      $fieldName = 'custom_repeater['.$field['custom_repeater_field_name'].']';
+                    }
+                    else 
+                    {
+                      $fieldName = 'custom_repeater['.$counter.']';
+                    }
+                  }
+
+
                   $fields[$fieldName] = [
                       'type' => $field['custom_repeater_field_type'],
                       'label' => $field['custom_repeater_field_label'],
                       'span' => $field['custom_repeater_field_span'],
+                      'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
                   ];
+
 
                   if(!empty($field['custom_repeater_field_attributes'])) 
                   {
@@ -689,20 +711,25 @@ class Plugin extends PluginBase {
               */
 
 
-
-              $widget->addSecondaryTabFields([
-                  'custom_repeater' => [
-                      'type' => $repeaterType,
-                      'prompt' => Settings::get('custom_repeater_prompt', '+'),
-                      'minItems' => Settings::get('custom_repeater_min_items', 0),
-                      'maxItems' => Settings::get('custom_repeater_max_items', 0),
-                      'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
-                      'form' => [
-                          'fields' => $fields,
-                      ]
-                  ],
-              ]);
-
+              if(Settings::get('custom_repeater_simple', null) )
+              {
+                $widget->addSecondaryTabFields($fields);
+              }
+              else
+              {
+                $widget->addSecondaryTabFields([
+                    'custom_repeater' => [
+                        'type' => $repeaterType,
+                        'prompt' => Settings::get('custom_repeater_prompt', '+'),
+                        'minItems' => Settings::get('custom_repeater_min_items', 0),
+                        'maxItems' => Settings::get('custom_repeater_max_items', 0),
+                        'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
+                        'form' => [
+                            'fields' => $fields,
+                        ]
+                    ],
+                ]);
+              }
             }
 
 
