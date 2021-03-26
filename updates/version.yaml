@@ -136,3 +136,6 @@
     - Fixed schema update file
 1.12.2:
     - Auto create Rainlab Blog column for custom_repeater if Blog plugin was installed after Small Extensions
+1.12.3:
+    - Added list columns for (new) custom repeater fields
+    - Updated localization

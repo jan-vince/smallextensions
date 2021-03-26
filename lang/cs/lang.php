@@ -241,6 +241,8 @@ return [
                 ]
             ],
         ],
+
+        'author' => 'Autor',
     ],
 
     'blog' => [

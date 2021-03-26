@@ -115,6 +115,64 @@ class Plugin extends PluginBase {
 
       });
 
+        \RainLab\Blog\Controllers\Posts::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof \RainLab\Blog\Models\Post) {
+                return;
+            }
+
+            /**
+             * Author column
+             */
+            $column = [
+              'author' => [
+                'label' => 'janvince.smallextensions::lang.labels.author',
+                'relation' => 'user',
+                'select' => 'concat(first_name, " ",last_name)',
+                'searchable' => true,
+                'invisible' => true,
+              ],
+            ];
+
+            $list->addColumns($column);
+
+            if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null))
+            {
+              
+              $fields = Settings::get('custom_repeater_fields', []);
+
+              foreach($fields as $field) 
+              {
+                if(isset($field['custom_repeater_field_type']) and $field['custom_repeater_field_type'])
+                {
+                  $columns = [
+                      'custom_repeater['.$field['custom_repeater_field_name'].']' => [
+                          'label' => $field['custom_repeater_field_label'],
+                          'type' => 'sme_json_field',
+                          'repeaterValue' => $field['custom_repeater_field_name'],
+                          'repeaterType' => $field['custom_repeater_field_type'],
+                          'invisible' => true,
+                          'searchable' => false,
+                      ]
+                  ];
+                }
+
+                if($field['custom_repeater_field_type'] == 'text')
+                {
+                  $columns = [
+                      'custom_repeater['.$field['custom_repeater_field_name'].']' => [
+                          'label' => $field['custom_repeater_field_label'],
+                          'type' => 'sme_json_field',
+                          'repeaterValue' => $field['custom_repeater_field_name'],
+                          'invisible' => true,
+                      ]
+                  ];
+                }
+
+                $list->addColumns($columns);
+              }
+            }
+        });
     }
 
     // Check for Rainlab.User plugin
@@ -1033,4 +1091,29 @@ class Plugin extends PluginBase {
           'JanVince\SmallExtensions\Components\ForceLogin' => 'forceLogin',
       ];
   }
+
+    /**
+    *	Custom list types
+    */
+    public function registerListColumnTypes()
+    {
+        return [
+          'sme_json_field' => function($value, $column, $record) 
+          { 
+              $values = [];
+
+              if(is_array($record->custom_repeater) and isset($column->config['repeaterValue']))
+              {
+                foreach($record->custom_repeater as $field)
+                
+                  if(isset($field[$column->config['repeaterValue']]))
+                  {
+                    $values[] = $field[$column->config['repeaterValue']];
+                  }
+              }
+
+              return implode(',', $values);
+            }
+        ];
+    }
 }

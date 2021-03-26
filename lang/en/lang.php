@@ -253,6 +253,8 @@ return [
                 ]
             ],
         ],
+        
+        'author' => 'Author',
     ],
     'blog' => [
         'label' => 'Blog',
