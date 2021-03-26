@@ -148,9 +148,13 @@ class Plugin extends PluginBase {
 
               foreach($fields as $field) 
               {
+                $columns = [];
                 $fieldType = 'sme_json_field';
 
-                if(isset($field['custom_repeater_field_type']) and $field['custom_repeater_field_type'])
+
+                if(isset($field['custom_repeater_field_type']) 
+                  and $field['custom_repeater_field_type']
+                  and $field['custom_repeater_field_type'] != 'section')
                 {
 
                   if(Settings::get('custom_repeater_simple', null))
