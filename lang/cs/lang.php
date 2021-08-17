@@ -20,6 +20,7 @@ return [
     'sections' => [
         'fields' => 'Pole',
         'misc' => 'Různé',
+        'categories' => 'Kategorie',
         'deprecated' => 'Zastaralé',
         'static_menu' => 'Rozšíření menu',
         'blog_editor' => 'Editor obsahu',
@@ -58,6 +59,15 @@ return [
 
         'enable_blog_rainlab_user' => 'Povolit přiřazení uživatele z pluginu Rainlab.User',
         'enable_blog_rainlab_user_description' => 'Twig: {{ post.custom_fields.rainlab_user }}',
+
+        'enable_blog_category_color' => 'Přidat výběr barvy ke kategorii blogu',
+        'enable_blog_category_color_comment' => 'Twig: {{ post.category.custom_fields.color }}',
+
+        'enable_blog_category_featured_image' => 'Přidat obrázek ke kategoriím blogu',
+        'enable_blog_category_featured_image_comment' => 'Twig: {{ post.category.custom_fields.image }}',
+
+        'custom_fields_color' => 'Barva',
+        'custom_fields_image' => 'Obrázek',
 
         'author' => 'Autor',
         'author_comment' => 'Nastavit autora tohoto příspěvku',

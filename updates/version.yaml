@@ -143,3 +143,6 @@
     - Option to add (new) custom repeater as a simple form (when you do not need repeating)
 1.12.5:
     - Do not show section field type in Blog columns
+1.13.0:
+    - Added new columns for Blog categories
+    - smallextensions_tables_update_07.php

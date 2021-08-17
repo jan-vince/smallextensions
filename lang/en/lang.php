@@ -20,6 +20,7 @@ return [
     'sections' => [
         'fields' => 'Fields',
         'misc' => 'Misc',
+        'categories' => 'Categories',
         'deprecated' => 'Deprecated',
         'static_menu' => 'Menu extensions',
         'blog_editor' => 'Content editor',
@@ -59,6 +60,15 @@ return [
 
         'enable_blog_rainlab_user' => 'Allow to assign Rainlab User to blog post',
         'enable_blog_rainlab_user_description' => 'If checked, dropdown with list of Rainlab Users will be added to blog post form.<br>Twig: {{ post.custom_fields.rainlab_user }}',
+
+        'enable_blog_category_color' => 'Add color field to blog categories',
+        'enable_blog_category_color_comment' => 'If checked, you can assign color to Railab Blog categories. <br>Twig: {{ post.category.custom_fields.color }}',
+
+        'enable_blog_category_featured_image' => 'Add featured image field to blog categories',
+        'enable_blog_category_featured_image_comment' => 'If checked, you can assign featured image to Railab Blog categories. <br>Twig: {{ post.category.custom_fields.image }}',
+
+        'custom_fields_color' => 'Color',
+        'custom_fields_image' => 'Obrázek',
 
         'author' => 'Author',
         'author_comment' => 'Set author of this post',

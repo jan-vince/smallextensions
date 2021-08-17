@@ -61,6 +61,27 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.add_backend_admin_fields_comment'
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
+## Categories section
+
+        categories_section:
+            label: 'janvince.smallextensions::lang.sections.categories'
+            type: section
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            cssClass: m-t
+
+        blog_category_color:
+            label: 'janvince.smallextensions::lang.labels.enable_blog_category_color'
+            comment: 'janvince.smallextensions::lang.labels.enable_blog_category_color_comment'
+            span: full
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+
+        blog_category_featured_image:
+            label: 'janvince.smallextensions::lang.labels.enable_blog_category_featured_image'
+            comment: 'janvince.smallextensions::lang.labels.enable_blog_category_featured_image_comment'
+            span: full
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.blog'
 
         ## Fields section
 

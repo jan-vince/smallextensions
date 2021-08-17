@@ -7,6 +7,7 @@ use System\Classes\PluginBase;
 use System\Classes\PluginManager;
 use JanVince\SmallExtensions\Models\Settings;
 use JanVince\SmallExtensions\Models\BlogFields;
+use JanVince\SmallExtensions\Models\BlogCategoriesFields;
 use JanVince\SmallExtensions\Models\AdminFields;
 use Config;
 use Auth;
@@ -49,9 +50,16 @@ class Plugin extends PluginBase {
 
     if ($pluginManager && !$pluginManager->disabled) {
 
-      \RainLab\Blog\Models\Post::extend(function($model) {
-        $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
-        $model->attachOne = ['featured_image' => ['System\Models\File']];
+        // Categories fields
+        \RainLab\Blog\Models\Category::extend(function($model) {
+          $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogCategoriesFields', 'delete' => 'true', 'key' => 'category_id', 'otherKey' => 'id'];
+          $model->attachOne = ['image' => ['System\Models\File']];
+        });
+
+        // Blog fields
+        \RainLab\Blog\Models\Post::extend(function($model) {
+          $model->hasOne['custom_fields'] = ['JanVince\SmallExtensions\Models\BlogFields', 'delete' => 'true', 'key' => 'post_id', 'otherKey' => 'id'];
+          $model->attachOne = ['featured_image' => ['System\Models\File']];
 
         /**
          * If Blog plugin exists but there is no custom_repeater column, create it
@@ -64,8 +72,7 @@ class Plugin extends PluginBase {
               $table->text('custom_repeater')->nullable();
           });
         }
-        
-        
+
         $model->addJsonable('custom_repeater');
 
         /*
@@ -184,6 +191,41 @@ class Plugin extends PluginBase {
               }
             }
         });
+
+        \RainLab\Blog\Controllers\Categories::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof \RainLab\Blog\Models\Category) {
+                return;
+            }
+
+            if(Settings::get('blog_category_color', null))
+            {
+                  $columns = [
+                      'custom_fields[color]' => [
+                          'label' => 'janvince.smallextensions::lang.labels.custom_fields_color',
+                          'type' => 'sme_color_preview',
+                          'invisible' => false,
+                          'searchable' => true,
+                      ]
+                  ];
+
+              $list->addColumns($columns);
+            }
+
+            if(Settings::get('blog_category_featured_image', null))
+            {
+                  $columns = [
+                      'image[file_name]' => [
+                          'label' => 'janvince.smallextensions::lang.labels.custom_fields_image',
+                          'type' => 'text',
+                          'invisible' => false,
+                          'searchable' => false,
+                      ]
+                  ];
+
+              $list->addColumns($columns);
+            }
+        });
     }
 
     // Check for Rainlab.User plugin
@@ -220,6 +262,66 @@ class Plugin extends PluginBase {
       });
 
     }
+
+    Event::listen('backend.form.extendFields', function($widget) {
+
+      if (!$widget->getController() instanceof \RainLab\Blog\Controllers\Categories) {
+        return;
+      }
+
+      if (!$widget->model instanceof \RainLab\Blog\Models\Category) {
+        return;
+      }
+
+      if( $widget->isNested ) {
+          return;
+      }
+
+      /*
+      * Color code
+      */
+      if(Settings::get('blog_category_color')) {
+
+        $fields = [
+          'custom_fields[color]' => [
+            'label' => 'janvince.smallextensions::lang.labels.custom_fields_color',
+            'span' => 'left',
+            'type' => 'colorpicker',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+          ]
+        ];
+
+        $widget->addFields($fields);
+      }
+
+      /*
+      * Custom fields model deferred bind
+      */
+      if (!$widget->model->custom_fields) {
+        $sessionKey = uniqid('session_key', true);
+
+        $custom_fields = new BlogCategoriesFields;
+        $widget->model->custom_fields = $custom_fields;
+      }
+
+      /*
+      * Color code
+      */
+      if(Settings::get('blog_category_featured_image')) {
+
+        $fields = [
+          'image' => [
+            'label' => 'janvince.smallextensions::lang.labels.custom_fields_image',
+            'span' => 'left',
+            'type' => 'fileupload',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+          ]
+        ];
+
+        $widget->addFields($fields);
+      }
+    });
+
 
     Event::listen('backend.form.extendFields', function($widget) {
 
@@ -1129,6 +1231,10 @@ class Plugin extends PluginBase {
     public function registerListColumnTypes()
     {
         return [
+          'sme_color_preview' => function($value) { return '<div style="display: inline_block; width: 15px; height: 15px; border-radius: 20px; background-color: '.$value.'"></div>'; },
+          'sme_image_preview' => function($value) {
+              if($value){ return "<img src='".$value->getThumb(80, 80)."' style='width: auto; height: auto;'>"; }
+          },
           'sme_json_field' => function($value, $column, $record) 
           { 
               $values = [];
