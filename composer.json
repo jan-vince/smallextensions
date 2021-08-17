@@ -1,5 +1,5 @@
 {
-    "name": "jan-vince/smallextensions-plugin",
+    "name": "janvince/smallextensions-plugin",
     "type": "october-plugin",
     "description": "Set of small tools for Rainlab.Pages and Rainlab.Blog plugins.",
     "require": {
