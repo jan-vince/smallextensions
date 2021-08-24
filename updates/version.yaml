@@ -146,3 +146,5 @@
 1.13.0:
     - Added new columns for Blog categories
     - smallextensions_tables_update_07.php
+1.14.0:
+    - Option to hide Blog excerpt field

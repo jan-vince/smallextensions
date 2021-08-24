@@ -32,6 +32,9 @@ return [
     ],
 
     'labels' => [
+        'remove_excerpt' => 'Skrýt pole perex',
+        'remove_excerpt_description' => 'Pokud je povoleno, pole perex bude skryté.',
+
         'enable_wysiwyg' => 'Povolit WYSIWYG editor',
         'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
         'enable_wysiwyg_toolbar' => 'Vlastní tlačítka editoru',

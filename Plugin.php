@@ -382,6 +382,14 @@ class Plugin extends PluginBase {
       }
 
       /*
+      * Perex field
+      */
+      if( Settings::get('blog_remove_excerpt') ) {
+
+        $widget->removeField('excerpt');
+      }
+
+      /*
       * Author field
       */
       if( Settings::get('blog_author') ) {

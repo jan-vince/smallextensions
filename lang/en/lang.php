@@ -33,6 +33,9 @@ return [
 
 
     'labels' => [
+        'remove_excerpt' => 'Remove excerpt field',
+        'remove_excerpt_description' => 'When enabled, default excerpt field will be hidden from blog post form.',
+
         'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
         'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
         'enable_wysiwyg_toolbar' => 'Custom editor toolbar buttons (leave blank for default set)',

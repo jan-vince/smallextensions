@@ -61,6 +61,13 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.add_backend_admin_fields_comment'
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
+        blog_remove_excerpt:
+            label: 'janvince.smallextensions::lang.labels.remove_excerpt'
+            comment: 'janvince.smallextensions::lang.labels.remove_excerpt_description'
+            span: right
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+
 ## Categories section
 
         categories_section:
