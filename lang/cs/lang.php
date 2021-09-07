@@ -32,6 +32,11 @@ return [
     ],
 
     'labels' => [
+        'blog_add_preview_btn' => "Přidat tlačítko 'Náhled příspěvku na webu' do editoru blogu",
+        'blog_add_preview_btn_text' => "Náhled příspěvku na webu",
+        'blog_add_preview_btn_url' => "URL adresa stránky příspěvku",
+        'blog_add_preview_btn_url_description' => "Např. /blog/detail. Slug příspěvku bude k adrese přidán automaticky (např. /blog/detail/my-first-blog-post).",
+
         'remove_excerpt' => 'Skrýt pole perex',
         'remove_excerpt_description' => 'Pokud je povoleno, pole perex bude skryté.',
 

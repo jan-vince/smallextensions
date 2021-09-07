@@ -30,6 +30,24 @@ tabs:
                 field: blog_wysiwyg
                 condition: checked
 
+        blog_add_preview_btn:
+            label: 'janvince.smallextensions::lang.labels.blog_add_preview_btn'
+            type: checkbox
+            span: full
+            cssClass: m-t
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+        blog_add_preview_btn_url:
+            label: 'janvince.smallextensions::lang.labels.blog_add_preview_btn_url'
+            comment: 'janvince.smallextensions::lang.labels.blog_add_preview_btn_url_description'
+            type: text
+            span: left
+            cssClass: 'field-indent'
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+            trigger:
+                action: show
+                field: blog_add_preview_btn
+                condition: checked
+
         ## Misc section
 
         misc_section:

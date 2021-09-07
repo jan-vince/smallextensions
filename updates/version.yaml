@@ -148,3 +148,5 @@
     - smallextensions_tables_update_07.php
 1.14.0:
     - Option to hide Blog excerpt field
+1.15.0:
+    - Option to add Preview post button to Blog editor toolbar

@@ -741,237 +741,250 @@ class Plugin extends PluginBase {
             $widget->model->custom_fields = $custom_fields;
           }
 
-            
-            /**
-             * Custom repeater builder (new repeater)
-             */
-            if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null)) {
+          /**
+           *  Custom repeater builder (new repeater)
+           */
+          if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null)) 
+          {
 
-              $fields = [];
-              $counter = 0;
+            $fields = [];
+            $counter = 0;
 
-              foreach(Settings::get('custom_repeater_fields', null) as $field) {
-                  
-                  if(empty($field['custom_repeater_field_name'])) {
-                      $fieldName = 'field' . $counter;
-                  } else {
-                      $fieldName = $field['custom_repeater_field_name'];
-                  }
-
-                  if (Settings::get('custom_repeater_simple', null))
-                  {
-                    if(!empty($field['custom_repeater_field_name']))
-                    {
-                      $fieldName = 'custom_repeater['.$field['custom_repeater_field_name'].']';
-                    }
-                    else 
-                    {
-                      $fieldName = 'custom_repeater['.$counter.']';
-                    }
-                  }
-
-
-                  $fields[$fieldName] = [
-                      'type' => $field['custom_repeater_field_type'],
-                      'label' => $field['custom_repeater_field_label'],
-                      'span' => $field['custom_repeater_field_span'],
-                      'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
-                  ];
-
-
-                  if(!empty($field['custom_repeater_field_attributes'])) 
-                  {
-                    foreach($field['custom_repeater_field_attributes'] as $value) 
-                    {
-                      $fields[$fieldName][$value['attribute_name']] = $value['attribute_value'];
-                    }
-                  }
-
-                  if(!empty($field['custom_repeater_field_mode'])) {
-                      $fields[$fieldName]['mode'] = $field['custom_repeater_field_mode'];
-                  }
-
-                  if(!empty($field['custom_repeater_field_size'])) {
-                      $fields[$fieldName]['size'] = $field['custom_repeater_field_size'];
-                  }
-
-                  $options = [];
-
-                  if(!empty($field['custom_repeater_field_options'])) 
-                  {
-                    foreach($field['custom_repeater_field_options'] as $value) 
-                    {
-                      $options[$value['option_key']] = $value['option_value'];
-                    }
-                  }
-                  
-                  $fields[$fieldName]['options'] = $options;
-
+            foreach(Settings::get('custom_repeater_fields', null) as $field) {
+                
+                if(empty($field['custom_repeater_field_name'])) {
+                    $fieldName = 'field' . $counter;
+                } else {
+                    $fieldName = $field['custom_repeater_field_name'];
                 }
 
-              /*
-              * Check the Rainlab.Translate plugin is installed
-              */
-              $repeaterType = 'repeater';
+                if (Settings::get('custom_repeater_simple', null))
+                {
+                  if(!empty($field['custom_repeater_field_name']))
+                  {
+                    $fieldName = 'custom_repeater['.$field['custom_repeater_field_name'].']';
+                  }
+                  else 
+                  {
+                    $fieldName = 'custom_repeater['.$counter.']';
+                  }
+                }
 
-              $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
 
-              if ($pluginManager && !$pluginManager->disabled) {
-                $repeaterType = 'mlrepeater';
+                $fields[$fieldName] = [
+                    'type' => $field['custom_repeater_field_type'],
+                    'label' => $field['custom_repeater_field_label'],
+                    'span' => $field['custom_repeater_field_span'],
+                    'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
+                ];
+
+
+                if(!empty($field['custom_repeater_field_attributes'])) 
+                {
+                  foreach($field['custom_repeater_field_attributes'] as $value) 
+                  {
+                    $fields[$fieldName][$value['attribute_name']] = $value['attribute_value'];
+                  }
+                }
+
+                if(!empty($field['custom_repeater_field_mode'])) {
+                    $fields[$fieldName]['mode'] = $field['custom_repeater_field_mode'];
+                }
+
+                if(!empty($field['custom_repeater_field_size'])) {
+                    $fields[$fieldName]['size'] = $field['custom_repeater_field_size'];
+                }
+
+                $options = [];
+
+                if(!empty($field['custom_repeater_field_options'])) 
+                {
+                  foreach($field['custom_repeater_field_options'] as $value) 
+                  {
+                    $options[$value['option_key']] = $value['option_value'];
+                  }
+                }
+                
+                $fields[$fieldName]['options'] = $options;
+
               }
-
-              /*
-              * Check that schema and column exists!
-              */
-
-
-              if(Settings::get('custom_repeater_simple', null) )
-              {
-                $widget->addSecondaryTabFields($fields);
-              }
-              else
-              {
-                $widget->addSecondaryTabFields([
-                    'custom_repeater' => [
-                        'type' => $repeaterType,
-                        'prompt' => Settings::get('custom_repeater_prompt', '+'),
-                        'minItems' => Settings::get('custom_repeater_min_items', 0),
-                        'maxItems' => Settings::get('custom_repeater_max_items', 0),
-                        'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
-                        'form' => [
-                            'fields' => $fields,
-                        ]
-                    ],
-                ]);
-              }
-            }
-
-
-
-
 
             /*
-            * Repeater fields (old repeater)
+            * Check the Rainlab.Translate plugin is installed
             */
-            if(Settings::get('blog_custom_fields_repeater')) {
+            $repeaterType = 'repeater';
 
-                $repeaterFields = [];
+            $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
 
-                if(Settings::get('blog_custom_fields_repeater_title_allow')) {
+            if ($pluginManager && !$pluginManager->disabled) {
+              $repeaterType = 'mlrepeater';
+            }
 
-                    $repeaterFields['repeater_title'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_title_label') ? Settings::get('blog_custom_fields_repeater_title_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.title' ),
-                        'type' => 'text',
-                        'span' => 'left',
-                    ];
+            /*
+            * Check that schema and column exists!
+            */
 
-                }
 
-                /**
-                 * Mimic translate plugin with locales field
-                 */
-                $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+            if(Settings::get('custom_repeater_simple', null) )
+            {
+              $widget->addSecondaryTabFields($fields);
+            }
+            else
+            {
+              $widget->addSecondaryTabFields([
+                  'custom_repeater' => [
+                      'type' => $repeaterType,
+                      'prompt' => Settings::get('custom_repeater_prompt', '+'),
+                      'minItems' => Settings::get('custom_repeater_min_items', 0),
+                      'maxItems' => Settings::get('custom_repeater_max_items', 0),
+                      'tab' => Settings::get('custom_repeater_tab_title', 'Data'),
+                      'form' => [
+                          'fields' => $fields,
+                      ]
+                  ],
+              ]);
+            }
+          }
 
-                if ($pluginManager && !$pluginManager->disabled && Settings::get('blog_custom_fields_repeater_allow_locale')) {
+          /**
+          *   Repeater fields (old repeater)
+          */
+          if(Settings::get('blog_custom_fields_repeater')) 
+          {
 
-                  $localeModel = new \RainLab\Translate\Models\Locale;
-                  $localeArray = $localeModel->listEnabled();
+              $repeaterFields = [];
 
-                  $repeaterFields['repeater_locale'] = [
-                        'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale',
-                        'type' => 'dropdown',
-                        'emptyOption' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale_empty_option',
-                        'options' => $localeArray,
-                        'span' => 'right',
-                    ];
-                } else {
-                  $repeater['type'] = 'repeater';
-                }
+              if(Settings::get('blog_custom_fields_repeater_title_allow')) {
 
-                if(Settings::get('blog_custom_fields_repeater_description_allow')) {
+                  $repeaterFields['repeater_title'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_title_label') ? Settings::get('blog_custom_fields_repeater_title_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.title' ),
+                      'type' => 'text',
+                      'span' => 'left',
+                  ];
 
-                    $repeaterFields['repeater_description'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_description_label') ? Settings::get('blog_custom_fields_repeater_description_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description' ),
-                        'type' => 'textarea',
-                        'size' => 'tiny',
-                        'span' => 'left',
-                    ];
+              }
 
-                }
-
-                if(Settings::get('blog_custom_fields_repeater_image_allow')) {
-
-                    $repeaterFields['repeater_image'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_image_label') ? Settings::get('blog_custom_fields_repeater_image_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.image' ),
-                        'type' => 'mediafinder',
-                        'mode' => 'image',
-                        'span' => 'right',
-                    ];
-
-                }
-
-                if(Settings::get('blog_custom_fields_repeater_file_allow')) {
-
-                    $repeaterFields['repeater_file'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_file_label') ? Settings::get('blog_custom_fields_repeater_file_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.file' ),
-                        'type' => 'mediafinder',
-                        'mode' => 'file',
-                        'span' => 'right',
-                    ];
-
-                }
-
-                if(Settings::get('blog_custom_fields_repeater_url_allow')) {
-
-                    $repeaterFields['repeater_url'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_url_label') ? Settings::get('blog_custom_fields_repeater_url_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.url' ),
-                        'type' => 'text',
-                        'span' => 'left',
-                    ];
-
-                }
-
-                if(Settings::get('blog_custom_fields_repeater_text_allow')) {
-
-                    $repeaterFields['repeater_text'] = [
-                        'label' => ( Settings::get('blog_custom_fields_repeater_text_label') ? Settings::get('blog_custom_fields_repeater_text_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.text' ),
-                        'type' => 'richeditor',
-                        'span' => 'full',
-                    ];
-
-                }
-
-              $repeater = [
-                'label' => ( Settings::get('blog_custom_fields_repeater_label') ? Settings::get('blog_custom_fields_repeater_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater'),
-                'comment' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_description',
-                'span' => 'full',
-                'deferredBinding' => 'true',
-                'minItems' => Settings::get('blog_custom_fields_repeater_min_items', 0),
-                'maxItems' => Settings::get('blog_custom_fields_repeater_max_items', 0),
-                'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
-                'prompt' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_prompt',
-                'form' => [
-                    'fields' => $repeaterFields,
-                ],
-              ];
-
-              /*
-               * Check the Rainlab.Translate plugin is installed
+              /**
+               * Mimic translate plugin with locales field
                */
-               // TODO: Translation not work with relation - find out more about this!
-
               $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
-              if ($pluginManager && !$pluginManager->disabled) {
-                $repeater['type'] = 'repeater';  // TODO: Find out why 'mlrepeater' not work.
+
+              if ($pluginManager && !$pluginManager->disabled && Settings::get('blog_custom_fields_repeater_allow_locale')) {
+
+                $localeModel = new \RainLab\Translate\Models\Locale;
+                $localeArray = $localeModel->listEnabled();
+
+                $repeaterFields['repeater_locale'] = [
+                      'label' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale',
+                      'type' => 'dropdown',
+                      'emptyOption' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.locale_empty_option',
+                      'options' => $localeArray,
+                      'span' => 'right',
+                  ];
               } else {
                 $repeater['type'] = 'repeater';
               }
 
-              $widget->addSecondaryTabFields([
-                'custom_fields[repeater]' => $repeater
-              ]);
+              if(Settings::get('blog_custom_fields_repeater_description_allow')) {
 
+                  $repeaterFields['repeater_description'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_description_label') ? Settings::get('blog_custom_fields_repeater_description_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.description' ),
+                      'type' => 'textarea',
+                      'size' => 'tiny',
+                      'span' => 'left',
+                  ];
+
+              }
+
+              if(Settings::get('blog_custom_fields_repeater_image_allow')) {
+
+                  $repeaterFields['repeater_image'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_image_label') ? Settings::get('blog_custom_fields_repeater_image_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.image' ),
+                      'type' => 'mediafinder',
+                      'mode' => 'image',
+                      'span' => 'right',
+                  ];
+
+              }
+
+              if(Settings::get('blog_custom_fields_repeater_file_allow')) {
+
+                  $repeaterFields['repeater_file'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_file_label') ? Settings::get('blog_custom_fields_repeater_file_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.file' ),
+                      'type' => 'mediafinder',
+                      'mode' => 'file',
+                      'span' => 'right',
+                  ];
+
+              }
+
+              if(Settings::get('blog_custom_fields_repeater_url_allow')) {
+
+                  $repeaterFields['repeater_url'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_url_label') ? Settings::get('blog_custom_fields_repeater_url_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.url' ),
+                      'type' => 'text',
+                      'span' => 'left',
+                  ];
+
+              }
+
+              if(Settings::get('blog_custom_fields_repeater_text_allow')) {
+
+                  $repeaterFields['repeater_text'] = [
+                      'label' => ( Settings::get('blog_custom_fields_repeater_text_label') ? Settings::get('blog_custom_fields_repeater_text_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater_items.text' ),
+                      'type' => 'richeditor',
+                      'span' => 'full',
+                  ];
+
+              }
+
+            $repeater = [
+              'label' => ( Settings::get('blog_custom_fields_repeater_label') ? Settings::get('blog_custom_fields_repeater_label') : 'janvince.smallextensions::lang.labels.custom_fields_repeater'),
+              'comment' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_description',
+              'span' => 'full',
+              'deferredBinding' => 'true',
+              'minItems' => Settings::get('blog_custom_fields_repeater_min_items', 0),
+              'maxItems' => Settings::get('blog_custom_fields_repeater_max_items', 0),
+              'tab' => 'janvince.smallextensions::lang.tabs.custom_fields_repeater',
+              'prompt' => 'janvince.smallextensions::lang.labels.custom_fields_repeater_prompt',
+              'form' => [
+                  'fields' => $repeaterFields,
+              ],
+            ];
+
+            /*
+              * Check the Rainlab.Translate plugin is installed
+              */
+              // TODO: Translation not work with relation - find out more about this!
+
+            $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+            if ($pluginManager && !$pluginManager->disabled) {
+              $repeater['type'] = 'repeater';  // TODO: Find out why 'mlrepeater' not work.
+            } else {
+              $repeater['type'] = 'repeater';
             }
+
+            $widget->addSecondaryTabFields([
+              'custom_fields[repeater]' => $repeater
+            ]);
+
+          }
+
+          /**
+           *  Blog preview btn
+           */
+          if(Settings::get('blog_add_preview_btn') and $widget->model->slug) 
+          {
+            $widget->addFields([
+                'blog_add_preview_btn' => [
+                    'type' => 'postpreview',
+                    'post_link' => url(Settings::get('blog_add_preview_btn_url'), $widget->model->slug),
+                    'target' => '_blank',
+                    'readonly' => true,
+                    'disabled' => true,
+                ]
+            ]);
+          }
 
         });
 
@@ -1261,4 +1274,12 @@ class Plugin extends PluginBase {
             }
         ];
     }
+
+    public function registerFormWidgets() {
+        
+        return [
+            'JanVince\SmallExtensions\FormWidgets\PostPreview' => 'postpreview',
+        ];
+    }
+
 }

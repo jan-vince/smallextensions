@@ -33,6 +33,11 @@ return [
 
 
     'labels' => [
+        'blog_add_preview_btn' => "Add 'Preview blog post' button to backend post editor",
+        'blog_add_preview_btn_text' => "Preview blog post",
+        'blog_add_preview_btn_url' => "Frontend blog post URL",
+        'blog_add_preview_btn_url_description' => "Eg. /blog/detail. Post slug will be added to this URL automatically (like /blog/detail/my-first-blog-post).",
+
         'remove_excerpt' => 'Remove excerpt field',
         'remove_excerpt_description' => 'When enabled, default excerpt field will be hidden from blog post form.',
 
