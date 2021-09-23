@@ -152,3 +152,5 @@
     - Option to add Preview post button to Blog editor toolbar
 1.16.0:
     - Added option to allow Group Repeater titleFrom option (extend Group Repeater item title)
+1.16.1:
+    - Better handling of Group repeater title when titleFrom is allowed

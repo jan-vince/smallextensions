@@ -19,9 +19,9 @@
         {
             foreach ($widget->getFields() as $field)
             {
-                if($field->fieldName == $itemTitleFromField)
+                if($field->fieldName == $itemTitleFromField and $field->value)
                 {
-                    $itemTitle = strtoupper($itemTitle) . ': ' . $field->value;
+                    $itemTitle = $itemTitle . ' >> ' . $field->value;
                 }
             }
         }
