@@ -1,0 +1,73 @@
+<?php
+    $groupCode = $useGroups ? $this->getGroupCodeFromIndex($indexValue) : '';
+    $itemTitle = $useGroups ? e(trans($this->getGroupTitle($groupCode))) : null;
+
+    /**
+    *   Group repeater do not support titleFrom so collapsed items have only group name
+    *   This will add titleFrom field value to a group name
+    */
+    if( $useGroups )
+    {
+        $group = $this->getConfig('groups', []);
+
+        if (is_string($group)) 
+        {
+            $group = $this->makeConfig($group);
+        }
+
+        if ( !empty($group->{$groupCode}) and $itemTitleFromField = array_get($group->{$groupCode}, 'titleFrom') )
+        {
+            foreach ($widget->getFields() as $field)
+            {
+                if($field->fieldName == $itemTitleFromField)
+                {
+                    $itemTitle = strtoupper($itemTitle) . ': ' . $field->value;
+                }
+            }
+        }
+    }
+?>
+<li
+    <?= $itemTitle ? 'data-collapse-title="'.$itemTitle.'"' : '' ?>
+    class="field-repeater-item">
+
+    <?php if (!$this->previewMode): ?>
+        <div class="repeater-item-handle <?= $this->getId('items') ?>-handle">
+            <i class="icon-bars"></i>
+        </div>
+
+        <div class="repeater-item-remove">
+            <button
+                type="button"
+                class="close"
+                aria-label="Remove"
+                data-repeater-remove
+                data-request="<?= $this->getEventHandler('onRemoveItem') ?>"
+                data-request-data="'_repeater_index': '<?= $indexValue ?>', '_repeater_group': '<?= $groupCode ?>'"
+                data-request-confirm="<?= e(trans('backend::lang.form.action_confirm')) ?>">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif ?>
+
+    <div class="repeater-item-collapse">
+        <a href="javascript:;" class="repeater-item-collapse-one">
+            <i class="icon-chevron-up"></i>
+        </a>
+    </div>
+
+    <div class="repeater-item-collapsed-title"></div>
+
+    <div class="field-repeater-form"
+         data-control="formwidget"
+         data-refresh-handler="<?= $this->getEventHandler('onRefresh') ?>"
+         data-refresh-data="'_repeater_index': '<?= $indexValue ?>', '_repeater_group': '<?= $groupCode ?>'">
+        <?php foreach ($widget->getFields() as $field): ?>
+            <?= $widget->renderField($field) ?>
+        <?php endforeach ?>
+        <?php if ($useGroups): ?>
+            <input type="hidden" name="<?= $widget->arrayName ?>[_group]" value="<?= $groupCode ?>" />
+        <?php endif ?>
+    </div>
+
+</li>

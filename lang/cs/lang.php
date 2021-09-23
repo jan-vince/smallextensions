@@ -32,6 +32,9 @@ return [
     ],
 
     'labels' => [
+        'allow_grouprepeater_titlefrom' => 'Povolit titleFrom pro Group Repeater',
+        'allow_grouprepeater_titlefrom_comment' => 'Group repeater nepodporuje volbu titleFrom, takže sbalené položky mají pouze název skupiny. Tato volba povolí použití titleFrom a hodnotu odkazovaného pole přidá k názvu skupiny.',
+
         'blog_add_preview_btn' => "Přidat tlačítko 'Náhled příspěvku na webu' do editoru blogu",
         'blog_add_preview_btn_text' => "Náhled příspěvku na webu",
         'blog_add_preview_btn_url' => "URL adresa stránky příspěvku",

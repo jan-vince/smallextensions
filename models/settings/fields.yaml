@@ -758,6 +758,19 @@ tabs:
             comment: 'janvince.smallextensions::lang.labels.twig_functions_allow_description'
             tab: 'janvince.smallextensions::lang.tabs.october'
 
+        system_section:
+            label: 'janvince.smallextensions::lang.sections.system_section'
+            type: section
+            cssClass: 'm-t'
+            tab: 'janvince.smallextensions::lang.tabs.october'
+        allow_grouprepeater_titlefrom:
+            label: 'janvince.smallextensions::lang.labels.allow_grouprepeater_titlefrom'
+            comment: 'janvince.smallextensions::lang.labels.allow_grouprepeater_titlefrom_comment'
+            span: full
+            default: false
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.october'
+
         components_section:
             label: 'janvince.smallextensions::lang.sections.components'
             type: section

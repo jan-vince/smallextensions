@@ -150,3 +150,5 @@
     - Option to hide Blog excerpt field
 1.15.0:
     - Option to add Preview post button to Blog editor toolbar
+1.16.0:
+    - Added option to allow Group Repeater titleFrom option (extend Group Repeater item title)

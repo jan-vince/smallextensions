@@ -29,10 +29,13 @@ return [
         'components' => 'Components',
         'repeater_old' => 'Repeater (old)',
         'repeater_new' => 'Repeater (new builder)',
+        'system_section' => 'System',
     ],
 
 
     'labels' => [
+        'allow_grouprepeater_titlefrom' => 'Allow titleFrom for Group Repeater',
+        'allow_grouprepeater_titlefrom_comment' => 'Group repeater do not support titleFrom so collapsed items have only group name. This will add titleFrom field value to a group name.',
         'blog_add_preview_btn' => "Add 'Preview blog post' button to backend post editor",
         'blog_add_preview_btn_text' => "Preview blog post",
         'blog_add_preview_btn_url' => "Frontend blog post URL",
