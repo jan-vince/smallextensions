@@ -1147,9 +1147,24 @@ class Plugin extends PluginBase {
 
     if (Settings::get('allow_grouprepeater_titlefrom')) 
     {
-      \Backend\FormWidgets\Repeater::extend(function ($widget) {
-        $widget->addViewPath(plugins_path().'/JanVince/SmallExtensions/formwidgets/repeater/partials');
-      });
+        // If Rainlab.Translate is not present, bypass translate filters
+        $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+        if (!$pluginManager or ($pluginManager and $pluginManager->disabled)) 
+        {
+          // Classic repeater
+          \Backend\FormWidgets\Repeater::extend(function ($widget) {
+            $widget->addViewPath(plugins_path().'/JanVince/SmallExtensions/formwidgets/repeater/partials');
+          });
+        }
+        else 
+        {
+          // MLRepeater has hardcoded viewPath, so this is only simple workaround
+          // This looks for a first input and get its value. Can't access titleFrom
+          // Classic repeater
+          \RainLab\Translate\FormWidgets\MLRepeater::extend(function ($widget) {
+            $widget->addJs('/plugins/janvince/smallextensions/assets/js/mlrepeater_newtitle.js');
+          });
+        }
     }
   }
 

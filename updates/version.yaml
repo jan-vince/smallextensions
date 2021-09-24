@@ -154,3 +154,5 @@
     - Added option to allow Group Repeater titleFrom option (extend Group Repeater item title)
 1.16.1:
     - Better handling of Group repeater title when titleFrom is allowed
+1.16.2:
+    - Added (limited) support for MLRepeater to have both group name and first available text input value as collapsed block title
