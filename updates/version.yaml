@@ -160,3 +160,5 @@
     - Better (but still limited) MLRepeater support for group repeater block title
 1.16.4:
     - Truncate long group repeater titles
+1.16.5:
+    - Fixed partial path
