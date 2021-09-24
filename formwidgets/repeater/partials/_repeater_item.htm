@@ -19,9 +19,9 @@
         {
             foreach ($widget->getFields() as $field)
             {
-                if($field->fieldName == $itemTitleFromField and $field->value)
+                if($field->fieldName == $itemTitleFromField and strip_tags($field->value))
                 {
-                    $itemTitle = $itemTitle . ' >> ' . $field->value;
+                    $itemTitle = $itemTitle . ' >> ' . substr(strip_tags($field->value),0,60);
                 }
             }
         }
