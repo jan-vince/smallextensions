@@ -1163,6 +1163,7 @@ class Plugin extends PluginBase {
           // Classic repeater
           \RainLab\Translate\FormWidgets\MLRepeater::extend(function ($widget) {
             $widget->addJs('/plugins/janvince/smallextensions/assets/js/mlrepeater_newtitle.js');
+            $widget->addCss('/plugins/janvince/smallextensions/assets/css/mlrepeater.css');
           });
         }
     }

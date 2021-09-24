@@ -1,0 +1,28 @@
+
+.field-repeater {
+
+    ul.field-repeater-items > li {
+        &.dragged {
+            .repeater-item-collapsed-title-changed {
+                top: 5px;
+            }
+        }
+    }
+
+    li.field-repeater-item {
+        &.collapsed {
+            .repeater-item-collapsed-title-changed {
+                display: block;
+            }
+        }
+
+        .repeater-item-collapsed-title-changed {
+            display: none;
+            position: absolute;
+            font-size: 13px;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
+    }
+}
