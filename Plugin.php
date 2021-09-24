@@ -1148,7 +1148,7 @@ class Plugin extends PluginBase {
     if (Settings::get('allow_grouprepeater_titlefrom')) 
     {
       \Backend\FormWidgets\Repeater::extend(function ($widget) {
-        $widget->addViewPath(plugins_path().'/JanVince/SmallExtensions/formwidgets/repeater/partials/');
+        $widget->addViewPath(plugins_path().'/JanVince/SmallExtensions/formwidgets/repeater/partials');
       });
     }
   }
