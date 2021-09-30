@@ -162,3 +162,5 @@
     - Truncate long group repeater titles
 1.16.5:
     - Fixed partial path
+1.16.6:
+    - Fixed Repeater and MLRepeater support

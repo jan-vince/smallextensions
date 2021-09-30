@@ -1149,14 +1149,13 @@ class Plugin extends PluginBase {
     {
         // If Rainlab.Translate is not present, bypass translate filters
         $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
-        if (!$pluginManager or ($pluginManager and $pluginManager->disabled)) 
-        {
-          // Classic repeater
-          \Backend\FormWidgets\Repeater::extend(function ($widget) {
-            $widget->addViewPath(plugins_path().'/janvince/smallextensions/formwidgets/repeater/partials');
-          });
-        }
-        else 
+
+        // Classic repeater
+        \Backend\FormWidgets\Repeater::extend(function ($widget) {
+          $widget->addViewPath(plugins_path().'/janvince/smallextensions/formwidgets/repeater/partials');
+        });
+
+        if ($pluginManager and !$pluginManager->disabled) 
         {
           // MLRepeater has hardcoded viewPath, so this is only simple workaround
           // This looks for a first input and get its value. Can't access titleFrom
