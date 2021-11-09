@@ -21,7 +21,7 @@
             {
                 if($field->fieldName == $itemTitleFromField and strip_tags($field->value))
                 {
-                    $itemTitle = $itemTitle . ' >> ' . substr(strip_tags($field->value),0,60);
+                    $itemTitle = $itemTitle . ' >> ' . mb_substr(strip_tags($field->value),0,60);
                 }
             }
         }
