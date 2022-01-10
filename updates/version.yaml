@@ -166,3 +166,5 @@
     - Fixed Repeater and MLRepeater support
 1.16.7:
     - Fixed Repeater block titles
+1.16.8:
+    - Fixed MLRepeater JS block
