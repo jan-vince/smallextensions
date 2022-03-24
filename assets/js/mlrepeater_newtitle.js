@@ -16,7 +16,11 @@ $(window).on('render', function () {
                 var body = firstInputValue.toString();
                 var result = body.replace(regex, "");
 
-                newTitle = newTitle + ' >> ' + result;
+                if (typeof newTitle === "undefined") {
+                    newTitle = result;
+                } else {
+                    newTitle = newTitle + ' >> ' + result;
+                }
             }
 
             $(this).attr('data-collapse-title', newTitle);
