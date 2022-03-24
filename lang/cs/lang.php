@@ -275,11 +275,13 @@ return [
 
     'static_menu' => [
         'notes' => 'Poznámky',
-    'image' => 'Obrázek',
-    'color' => 'Barva',
+        'image' => 'Obrázek',
+        'color' => 'Barva',
         'add_note' => 'Přidat poznámku k položce menu',
         'add_note_comment' => 'Přidá poznámku k této položce menu. Ta pak bude přístupná ze stránky/layoutu pomocí: {{item.viewBag.note}}.',
         'add_image' => 'Přidat obrázek',
+        'image_width' => 'Šířka obrázku',
+        'image_height' => 'Výška obrázku',
         'add_image_comment' => '',
         'add_color' => 'Přidat barvu',
         'add_color_comment' => 'V HEX formátu (např.: #efefef)',

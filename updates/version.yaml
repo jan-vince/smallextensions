@@ -164,3 +164,5 @@
     - Fixed partial path
 1.16.6:
     - Fixed Repeater and MLRepeater support
+1.17.0:
+    - Options to add image width and height in Static Pages menu items

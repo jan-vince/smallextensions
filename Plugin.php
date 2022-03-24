@@ -1031,8 +1031,20 @@ class Plugin extends PluginBase {
                 'commentAbove' => 'janvince.smallextensions::lang.static_menu.add_image_comment',
                 'type' => 'mediafinder',
                 'mode' => 'image',
-                'span' => 'full'
-              ]
+                'span' => 'left'
+              ],
+              'viewBag[imageWidth]' => [
+                'tab' => 'janvince.smallextensions::lang.static_menu.image',
+                'label' => 'janvince.smallextensions::lang.static_menu.image_width',
+                'type' => 'text',
+                'span' => 'right'
+              ],
+              'viewBag[imageHeight]' => [
+                'tab' => 'janvince.smallextensions::lang.static_menu.image',
+                'label' => 'janvince.smallextensions::lang.static_menu.image_height',
+                'type' => 'text',
+                'span' => 'right'
+              ],
             ]);
 
           });
