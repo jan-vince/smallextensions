@@ -1,5 +1,14 @@
 <?php
     function phpinfo_array() {
+
+        $disabledPHPFunctions = explode(',', ini_get('disable_functions'));
+        
+        if(in_array('phpinfo', $disabledPHPFunctions)) {
+            return [
+                'Error' => 'PHP info is disabled!'
+            ];
+        }
+
         ob_start();
         phpinfo();
         $info_arr = array();

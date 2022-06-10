@@ -170,3 +170,5 @@
     - Fixed MLRepeater JS block
 1.17.0:
     - Options to add image width and height in Static Pages menu items
+1.17.1:
+    - Check if phpinfo is enabled
