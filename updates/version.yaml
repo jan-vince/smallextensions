@@ -172,3 +172,5 @@
     - Options to add image width and height in Static Pages menu items
 1.17.1:
     - Check if phpinfo is enabled
+1.18.1:
+    - Added Twig truncate filter

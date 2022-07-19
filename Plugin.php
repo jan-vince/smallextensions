@@ -1251,9 +1251,35 @@ class Plugin extends PluginBase {
 
         }
 
+        // Add extra Twif functions
+
+        $twigExtensions['filters']['truncate'] = [$this, 'twigFilterTruncate'];
+
     }
 
     return $twigExtensions;
+
+  }
+
+  public function twigFilterTruncate($text, $length, $preserveWords = false, $separator = '...') {
+
+      if (strlen($text) <= $length) 
+      {
+          return $text;
+      }
+
+      $text = $text." ";
+      
+      $text = substr($text, 0, $length);
+      
+      if($preserveWords)
+      {
+        $text = substr($text, 0, strrpos($text,' '));
+      }
+      
+      $text = $text.$separator;
+      
+      return $text;
 
   }
 

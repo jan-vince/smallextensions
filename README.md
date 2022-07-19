@@ -86,8 +86,11 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
  * Will output ````<img ... width="123" height="123">````.
 
 * **|_** (trans), **|__** (choice)
- * If Rainlab Translate plugin is not present, bypass trans and choice functions
+  * If Rainlab Translate plugin is not present, bypass trans and choice functions
 
+* **truncate**
+  * {{ text|truncate(20, true, '*') }} 
+  * length, preserve words (default false), separator (default is '...')
 
 ## Report Widgets
 
