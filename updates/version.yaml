@@ -174,3 +174,5 @@
     - Check if phpinfo is enabled
 1.18.1:
     - Added Twig truncate filter
+1.19.0:
+    - Updated OC3 compatibility
