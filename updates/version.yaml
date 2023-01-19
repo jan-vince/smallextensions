@@ -176,3 +176,5 @@
     - Added Twig truncate filter
 1.19.0:
     - Updated OC3 compatibility
+1.19.1:
+    - Fixed truncate Twig filter to support UTF8

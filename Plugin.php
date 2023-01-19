@@ -1263,18 +1263,18 @@ class Plugin extends PluginBase {
 
   public function twigFilterTruncate($text, $length, $preserveWords = false, $separator = '...') {
 
-      if (strlen($text) <= $length) 
+      if (mb_strlen($text) <= $length) 
       {
           return $text;
       }
 
       $text = $text." ";
       
-      $text = substr($text, 0, $length);
+      $text = mb_substr($text, 0, $length);
       
       if($preserveWords)
       {
-        $text = substr($text, 0, strrpos($text,' '));
+        $text = mb_substr($text, 0, mb_strrpos($text,' '));
       }
       
       $text = $text.$separator;
