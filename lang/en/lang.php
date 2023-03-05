@@ -23,7 +23,7 @@ return [
         'categories' => 'Categories',
         'deprecated' => 'Deprecated',
         'static_menu' => 'Menu extensions',
-        'blog_editor' => 'Content editor',
+        'blog_editor' => 'Content editor (deprecated)',
         'october_admins' => 'Administrators',
         'twig' => 'Twig extensions',
         'components' => 'Components',
@@ -45,7 +45,7 @@ return [
         'remove_excerpt_description' => 'When enabled, default excerpt field will be hidden from blog post form.',
 
         'enable_wysiwyg' => 'Enable WYSIWYG editor for Rainlab.Blog plugin?',
-        'enable_wysiwyg_description' => 'Replace default Markdown editor with Richtext.',
+        'enable_wysiwyg_description' => 'Deprecated option! Rainlab.Blog plugin now allows this directly.',
         'enable_wysiwyg_toolbar' => 'Custom editor toolbar buttons (leave blank for default set)',
         'enable_wysiwyg_toolbar_description' => '<p><small>Here you can change editor toolbar buttons. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Look at avalable types.</a> Or you can try to <a href="https://www.froala.com/wysiwyg-editor/examples/custom-buttons" target="_blank">define your own custom buttons.</a></small></p>',
         'enable_featured_image' => 'Post featured image from media manager',

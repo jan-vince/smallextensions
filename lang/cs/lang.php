@@ -23,7 +23,7 @@ return [
         'categories' => 'Kategorie',
         'deprecated' => 'Zastaralé',
         'static_menu' => 'Rozšíření menu',
-        'blog_editor' => 'Editor obsahu',
+        'blog_editor' => 'Editor obsahu (zastaralé)',
         'october_admins' => 'Administrátoři',
         'twig' => 'Rozšíření pro Twig',
         'components' => 'Komponenty',
@@ -44,7 +44,7 @@ return [
         'remove_excerpt_description' => 'Pokud je povoleno, pole perex bude skryté.',
 
         'enable_wysiwyg' => 'Povolit WYSIWYG editor',
-        'enable_wysiwyg_description' => 'Nahradí výchozí Markdown editor za Richtext editor.',
+        'enable_wysiwyg_description' => 'Zastaralá volba. Plugin Railab.Blog nyní toto sám umožňuje.',
         'enable_wysiwyg_toolbar' => 'Vlastní tlačítka editoru',
         'enable_wysiwyg_toolbar_description' => 'Nechte prázdné pro výchozí sadu. <a href="https://octobercms.com/docs/backend/forms#widget-richeditor" target="_blank">Přehled tlačítek</a>.',
         'enable_featured_image' => 'Obrázek příspěvku ze Správce médií',

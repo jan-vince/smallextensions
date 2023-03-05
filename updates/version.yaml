@@ -178,3 +178,5 @@
     - Updated OC3 compatibility
 1.19.1:
     - Fixed truncate Twig filter to support UTF8
+1.19.2:
+    - WYSIWYG option for Blog is now deprecated
