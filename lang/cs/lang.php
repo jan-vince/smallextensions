@@ -77,8 +77,13 @@ return [
         'enable_blog_category_featured_image' => 'Přidat obrázek ke kategoriím blogu',
         'enable_blog_category_featured_image_comment' => 'Twig: {{ post.category.custom_fields.image }}',
 
+        'enable_blog_category_meta' => 'Přidat SEO meta pole ke kategorii blogu',
+        'enable_blog_category_meta_comment' => 'Twig: {{ post.category.custom_fields.meta_title }}, {{ post.category.custom_fields.meta_description }}',
+
         'custom_fields_color' => 'Barva',
         'custom_fields_image' => 'Obrázek',
+        'custom_fields_meta_title' => 'Meta titulek',
+        'custom_fields_meta_description' => 'Meta popisek',
 
         'author' => 'Autor',
         'author_comment' => 'Nastavit autora tohoto příspěvku',

@@ -78,8 +78,13 @@ return [
         'enable_blog_category_featured_image' => 'Add featured image field to blog categories',
         'enable_blog_category_featured_image_comment' => 'If checked, you can assign featured image to Railab Blog categories. <br>Twig: {{ post.category.custom_fields.image }}',
 
+        'enable_blog_category_meta' => 'Add SEO meta fields to blog categories',
+        'enable_blog_category_meta_comment' => 'If checked, you can add meta title and meta description Railab Blog categories. <br>Twig: {{ post.category.custom_fields.meta_title }}, {{ post.category.custom_fields.meta_description }}',
+
         'custom_fields_color' => 'Color',
-        'custom_fields_image' => 'Obrázek',
+        'custom_fields_image' => 'Image',
+        'custom_fields_meta_title' => 'Meta title',
+        'custom_fields_meta_description' => 'Meta description',
 
         'author' => 'Author',
         'author_comment' => 'Set author of this post',

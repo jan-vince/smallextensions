@@ -180,3 +180,6 @@
     - Fixed truncate Twig filter to support UTF8
 1.19.2:
     - WYSIWYG option for Blog is now deprecated
+1.20.0:
+    - Added meta_title and meta_description fields to Blog Categories
+    - smallextensions_tables_update_08.php

@@ -97,13 +97,20 @@ tabs:
         blog_category_color:
             label: 'janvince.smallextensions::lang.labels.enable_blog_category_color'
             comment: 'janvince.smallextensions::lang.labels.enable_blog_category_color_comment'
-            span: full
+            span: left
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'
 
         blog_category_featured_image:
             label: 'janvince.smallextensions::lang.labels.enable_blog_category_featured_image'
             comment: 'janvince.smallextensions::lang.labels.enable_blog_category_featured_image_comment'
+            span: right
+            type: checkbox
+            tab: 'janvince.smallextensions::lang.tabs.blog'
+
+        blog_category_meta:
+            label: 'janvince.smallextensions::lang.labels.enable_blog_category_meta'
+            comment: 'janvince.smallextensions::lang.labels.enable_blog_category_meta_comment'
             span: full
             type: checkbox
             tab: 'janvince.smallextensions::lang.tabs.blog'

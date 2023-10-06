@@ -225,6 +225,26 @@ class Plugin extends PluginBase {
 
               $list->addColumns($columns);
             }
+
+            if(Settings::get('blog_category_meta', null))
+            {
+                  $columns = [
+                      'custom_fields[meta_title]' => [
+                          'label' => 'janvince.smallextensions::lang.labels.custom_fields_meta_title',
+                          'type' => 'text',
+                          'invisible' => true,
+                          'searchable' => false,
+                      ],
+                      'custom_fields[meta_description]' => [
+                          'label' => 'janvince.smallextensions::lang.labels.custom_fields_meta_description',
+                          'type' => 'text',
+                          'invisible' => true,
+                          'searchable' => false,
+                      ]
+                  ];
+
+              $list->addColumns($columns);
+            }
         });
     }
 
@@ -319,6 +339,29 @@ class Plugin extends PluginBase {
         ];
 
         $widget->addFields($fields);
+      }
+
+      /**
+       * Meta fields
+       */
+      if(Settings::get('blog_category_meta')) {
+
+        $fields = [
+          'custom_fields[meta_title]' => [
+            'label' => 'janvince.smallextensions::lang.labels.custom_fields_meta_title',
+            'span' => 'full',
+            'type' => 'text',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+          ],
+          'custom_fields[meta_description]' => [
+            'label' => 'janvince.smallextensions::lang.labels.custom_fields_meta_description',
+            'span' => 'full',
+            'type' => 'textarea',
+            'tab' => 'janvince.smallextensions::lang.tabs.custom_fields'
+          ]
+        ];
+
+        $widget->addTabFields($fields);
       }
     });
 
