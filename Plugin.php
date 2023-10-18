@@ -65,7 +65,7 @@ class Plugin extends PluginBase {
          * If Blog plugin exists but there is no custom_repeater column, create it
          * Mostly because Rainlab Blog plugin was installed after Small Extensions
          */
-        if (Schema::hasTable('rainlab_blog_posts') and !Schema::hasColumn('rainlab_blog_posts', 'custom_repeater')) 
+        if (Schema::hasTable('rainlab_blog_posts') and !Schema::hasColumn('rainlab_blog_posts', 'custom_repeater'))
         {
           Schema::table('rainlab_blog_posts', function($table)
           {
@@ -145,21 +145,21 @@ class Plugin extends PluginBase {
 
             if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null))
             {
-              
+
               $fields = Settings::get('custom_repeater_fields', []);
-              
+
               $columnTypesMap = [
                 'number' => 'number',
                 'datepicker' => 'date',
               ];
 
-              foreach($fields as $field) 
+              foreach($fields as $field)
               {
                 $columns = [];
                 $fieldType = 'sme_json_field';
 
 
-                if(isset($field['custom_repeater_field_type']) 
+                if(isset($field['custom_repeater_field_type'])
                   and $field['custom_repeater_field_type']
                   and $field['custom_repeater_field_type'] != 'section')
                 {
@@ -251,11 +251,11 @@ class Plugin extends PluginBase {
     // Check for Rainlab.User plugin
     $pluginManagerUser = PluginManager::instance()->findByIdentifier('Rainlab.User');
 
-    if ( ($pluginManager && !$pluginManager->disabled) and  
+    if ( ($pluginManager && !$pluginManager->disabled) and
         ($pluginManagerUser && !$pluginManagerUser->disabled) ){
 
       \RainLab\Blog\Models\Post::extend(function($model) {
-          
+
         $usersFormated = [];
 
         if( Settings::get('blog_rainlab_user') ) {
@@ -266,12 +266,12 @@ class Plugin extends PluginBase {
                 $usersFormated[$user->id] = ($user->surname . ' ' . $user->name);
             }
 
-        } 
-            
+        }
+
         $model->addDynamicMethod('listRainlabUsers', function() use($usersFormated) {
             return $usersFormated;
         });
-            
+
 
       });
 
@@ -514,8 +514,8 @@ class Plugin extends PluginBase {
          * Check the Rainlab.Translate plugin is installed
          */
         $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
-        
-        if ($pluginManager && !$pluginManager->disabled) 
+
+        if ($pluginManager && !$pluginManager->disabled)
         {
           $fields['custom_fields[api_code]']['type'] = 'text';
         } else {
@@ -693,7 +693,7 @@ class Plugin extends PluginBase {
           'tab' => 'rainlab.blog::lang.post.tab_manage'
         ];
 
-        if(empty(Settings::get('blog_featured_image_both', null))) 
+        if(empty(Settings::get('blog_featured_image_both', null)))
         {
           $widget->removeField('featured_images');
         }
@@ -703,7 +703,7 @@ class Plugin extends PluginBase {
           'custom_fields[featured_image]' => $featuredImage,
         ]);
 
-        if(Settings::get('blog_featured_image_meta')) 
+        if(Settings::get('blog_featured_image_meta'))
         {
           $widget->addSecondaryTabFields([
             'custom_fields[featured_image_title]' => $featuredImageTitle,
@@ -787,14 +787,14 @@ class Plugin extends PluginBase {
           /**
            *  Custom repeater builder (new repeater)
            */
-          if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null)) 
+          if(Settings::get('custom_repeater_allow', null) and Settings::get('custom_repeater_fields', null))
           {
 
             $fields = [];
             $counter = 0;
 
             foreach(Settings::get('custom_repeater_fields', null) as $field) {
-                
+
                 if(empty($field['custom_repeater_field_name'])) {
                     $fieldName = 'field' . $counter;
                 } else {
@@ -807,7 +807,7 @@ class Plugin extends PluginBase {
                   {
                     $fieldName = 'custom_repeater['.$field['custom_repeater_field_name'].']';
                   }
-                  else 
+                  else
                   {
                     $fieldName = 'custom_repeater['.$counter.']';
                   }
@@ -822,9 +822,9 @@ class Plugin extends PluginBase {
                 ];
 
 
-                if(!empty($field['custom_repeater_field_attributes'])) 
+                if(!empty($field['custom_repeater_field_attributes']))
                 {
-                  foreach($field['custom_repeater_field_attributes'] as $value) 
+                  foreach($field['custom_repeater_field_attributes'] as $value)
                   {
                     $fields[$fieldName][$value['attribute_name']] = $value['attribute_value'];
                   }
@@ -840,14 +840,14 @@ class Plugin extends PluginBase {
 
                 $options = [];
 
-                if(!empty($field['custom_repeater_field_options'])) 
+                if(!empty($field['custom_repeater_field_options']))
                 {
-                  foreach($field['custom_repeater_field_options'] as $value) 
+                  foreach($field['custom_repeater_field_options'] as $value)
                   {
                     $options[$value['option_key']] = $value['option_value'];
                   }
                 }
-                
+
                 $fields[$fieldName]['options'] = $options;
 
               }
@@ -892,7 +892,7 @@ class Plugin extends PluginBase {
           /**
           *   Repeater fields (old repeater)
           */
-          if(Settings::get('blog_custom_fields_repeater')) 
+          if(Settings::get('blog_custom_fields_repeater'))
           {
 
               $repeaterFields = [];
@@ -1016,7 +1016,7 @@ class Plugin extends PluginBase {
           /**
            *  Blog preview btn
            */
-          if(Settings::get('blog_add_preview_btn') and $widget->model->slug) 
+          if(Settings::get('blog_add_preview_btn') and $widget->model->slug)
           {
             $widget->addFields([
                 'blog_add_preview_btn' => [
@@ -1200,7 +1200,7 @@ class Plugin extends PluginBase {
 
     }
 
-    if (Settings::get('allow_grouprepeater_titlefrom')) 
+    if (Settings::get('allow_grouprepeater_titlefrom'))
     {
         // If Rainlab.Translate is not present, bypass translate filters
         $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
@@ -1210,7 +1210,7 @@ class Plugin extends PluginBase {
           $widget->addViewPath(plugins_path().'/janvince/smallextensions/formwidgets/repeater/partials');
         });
 
-        if ($pluginManager and !$pluginManager->disabled) 
+        if ($pluginManager and !$pluginManager->disabled)
         {
           // MLRepeater has hardcoded viewPath, so this is only simple workaround
           // This looks for a first input and get its value. Can't access titleFrom
@@ -1219,6 +1219,17 @@ class Plugin extends PluginBase {
             $widget->addJs('/plugins/janvince/smallextensions/assets/js/mlrepeater_newtitle.js');
             $widget->addCss('/plugins/janvince/smallextensions/assets/css/mlrepeater.css');
           });
+        }
+    }
+
+    // RainLab.Pages Duplicating tool
+    if (Settings::get('static_pages_enable_duplicating'))
+    {
+        if (PluginManager::instance()->hasPlugin('RainLab.Pages') && !PluginManager::instance()->isDisabled('RainLab.Pages'))
+        {
+            \RainLab\Pages\Controllers\Index::extend(function ($controller) {
+                $controller->implement[] = 'JanVince.SmallExtensions.Classes.Behaviors.StaticPageCloneController';
+            });
         }
     }
   }
@@ -1284,7 +1295,7 @@ class Plugin extends PluginBase {
         $pluginManager = PluginManager::instance()->findByIdentifier('Rainlab.Translate');
 
         if (!$pluginManager or ($pluginManager and $pluginManager->disabled)) {
-  
+
             $twigExtensions['filters'] = [
 
                 '_' => ['Lang', 'get'],
@@ -1306,22 +1317,22 @@ class Plugin extends PluginBase {
 
   public function twigFilterTruncate($text, $length, $preserveWords = false, $separator = '...') {
 
-      if (mb_strlen($text) <= $length) 
+      if (mb_strlen($text) <= $length)
       {
           return $text;
       }
 
       $text = $text." ";
-      
+
       $text = mb_substr($text, 0, $length);
-      
+
       if($preserveWords)
       {
         $text = mb_substr($text, 0, mb_strrpos($text,' '));
       }
-      
+
       $text = $text.$separator;
-      
+
       return $text;
 
   }
@@ -1358,14 +1369,14 @@ class Plugin extends PluginBase {
           'sme_image_preview' => function($value) {
               if($value){ return "<img src='".$value->getThumb(80, 80)."' style='width: auto; height: auto;'>"; }
           },
-          'sme_json_field' => function($value, $column, $record) 
-          { 
+          'sme_json_field' => function($value, $column, $record)
+          {
               $values = [];
 
               if(is_array($record->custom_repeater) and isset($column->config['repeaterValue']))
               {
                 foreach($record->custom_repeater as $field)
-                
+
                   if(isset($field[$column->config['repeaterValue']]))
                   {
                     $values[] = $field[$column->config['repeaterValue']];
@@ -1378,7 +1389,7 @@ class Plugin extends PluginBase {
     }
 
     public function registerFormWidgets() {
-        
+
         return [
             'JanVince\SmallExtensions\FormWidgets\PostPreview' => 'postpreview',
         ];

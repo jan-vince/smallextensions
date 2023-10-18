@@ -1,0 +1,10 @@
+<div class="form-buttons loading-indicator-container" style="margin-top: 0;">
+    <button
+        type="button"
+        class="btn btn-default oc-icon-files-o <?php if (!isset($objectPath) || !$objectPath): ?>hide oc-hide<?php endif ?>"
+        onclick="onDuplicatePage(this)"
+        data-request-confirm="<?= e(trans('janvince.smallextensions::lang.staticpageclone.duplicate_confirm')) ?>"
+        data-control="duplicate-button">
+        <?= e(trans('janvince.smallextensions::lang.staticpageclone.duplicate')) ?>
+    </button>
+</div>

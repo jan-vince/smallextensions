@@ -23,6 +23,7 @@ return [
         'categories' => 'Kategorie',
         'deprecated' => 'Zastaralé',
         'static_menu' => 'Rozšíření menu',
+        'static_pages' => 'Rozšíření stránek',
         'blog_editor' => 'Editor obsahu (zastaralé)',
         'october_admins' => 'Administrátoři',
         'twig' => 'Rozšíření pro Twig',
@@ -64,6 +65,9 @@ return [
         'enable_menu_image_description' => 'Umožní přidat k položce menu obrázek.',
         'enable_menu_color' => 'Povolit barvu u položky menu',
         'enable_menu_color_description' => 'Umožní nastavit barvu položky.',
+
+        'enable_duplicating' => 'Povolit duplikování stránek',
+        'enable_duplicating_description' => 'Umožní duplikování statických stránek.',
 
         'enable_blog_author' => 'Umožnit změnu autora příspěvku',
         'enable_blog_author_description' => 'Zobrazí seznam administrátorů pro výběr autora příspěvku. Původní (systémový) výběr bude skrytý.',
@@ -113,7 +117,7 @@ return [
 
         'custom_fields_api_code' => 'API kód',
         'custom_fields_api_code_description' => '',
-        
+
         'enable_custom_fields_api_code' => 'Přidat pole pro Add API kód',
         'enable_custom_fields_api_code_description' => 'Twig: {{post.custom_fields.api_code}}',
 
@@ -331,14 +335,15 @@ return [
     ],
 
     'components' => [
-
         'force_login' => [
-
             'name' => 'Vynutit přihlášení',
             'description' => 'Povolit přístup na stránku pouze přihlášeným administrátorům',
-
         ],
+    ],
 
+    'staticpageclone' => [
+        'duplicate' => 'Duplikovat stránku',
+        'duplicate_confirm' => 'Opravdu chcete tuto stránku zkopírovat?',
     ],
 
 ];

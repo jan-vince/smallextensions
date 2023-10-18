@@ -183,3 +183,6 @@
 1.20.0:
     - Added meta_title and meta_description fields to Blog Categories
     - smallextensions_tables_update_08.php
+
+1.21.0:
+    - Static pages duplicating tool

@@ -2,7 +2,7 @@ fields: {  }
 
 tabs:
     fields:
-        
+
         # Rainlab.Blog
 
         editor_section:
@@ -399,7 +399,7 @@ tabs:
                         type: text
                         span: right
                         required: true
-                        preset: 
+                        preset:
                             field: custom_repeater_field_label
                             type: camel
                     custom_repeater_field_type:
@@ -734,6 +734,19 @@ tabs:
             default: false
             type: checkbox
             comment: 'janvince.smallextensions::lang.labels.enable_menu_color_description'
+            tab: 'janvince.smallextensions::lang.tabs.pages'
+
+        pages_section:
+            type: section
+            label: 'janvince.smallextensions::lang.sections.static_pages'
+            tab: 'janvince.smallextensions::lang.tabs.pages'
+
+        static_pages_enable_duplicating:
+            label: 'janvince.smallextensions::lang.labels.enable_duplicating'
+            span: full
+            default: false
+            type: checkbox
+            comment: 'janvince.smallextensions::lang.labels.enable_duplicating_description'
             tab: 'janvince.smallextensions::lang.tabs.pages'
 
         deprecated_section:

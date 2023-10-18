@@ -23,6 +23,7 @@ return [
         'categories' => 'Categories',
         'deprecated' => 'Deprecated',
         'static_menu' => 'Menu extensions',
+        'static_pages' => 'Pages extensions',
         'blog_editor' => 'Content editor (deprecated)',
         'october_admins' => 'Administrators',
         'twig' => 'Twig extensions',
@@ -54,7 +55,7 @@ return [
         'enable_featured_image_upload_description' => 'Add option to upload one preview image.<br>Twig: {{post.featured_image.getPath}}',
         'enable_featured_image_meta' => 'Add title and description to image',
         'enable_featured_image_meta_description' => 'Twig: Title:{{ post.custom_fields.featured_image_title }}, Description: {{ post.custom_fields.featured_image_alt }}.',
-        
+
         'enable_featured_image_both' => 'Display both widgets',
         'enable_featured_image_both_description' => 'Display both original images widget and a new Media selection',
 
@@ -65,6 +66,9 @@ return [
         'enable_menu_image_description' => 'Allows to add image.',
         'enable_menu_color' => 'Enable Menu color',
         'enable_menu_color_description' => 'Allows to set color.',
+
+        'enable_duplicating' => 'Enable Page duplicating',
+        'enable_duplicating_description' => 'Allows to duplicate static pages.',
 
         'enable_blog_author' => 'Enable change of post author',
         'enable_blog_author_description' => 'Dropdown with list of activated administrators will be added to blog post form (and the original dropdown will be removed)',
@@ -281,7 +285,7 @@ return [
                 ]
             ],
         ],
-        
+
         'author' => 'Author',
     ],
     'blog' => [
@@ -339,14 +343,15 @@ return [
     ],
 
     'components' => [
-
         'force_login' => [
-
             'name' => 'Force login',
             'description' => 'Allow access to page to logged in administrators only',
-
         ],
+    ],
 
+    'staticpageclone' => [
+        'duplicate' => 'Duplicate page',
+        'duplicate_confirm' => 'Do you really want to duplicate this page?',
     ],
 
 ];

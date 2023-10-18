@@ -67,6 +67,10 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
     * If on, new tab Notes and a field Note is added to Menu items editing popup window.
     * text is then accessible from page/layout from {{item.viewBag.note}}.
 
+* **Enable Page duplicating**
+
+    * If on, Static Pages can be duplicated by backend user.
+
 ## System Extension
 
 > *OctoberCMS > Backend > Settings > Small Extensions > System*
@@ -89,7 +93,7 @@ Rainlab Blog is a great plugin, but none of my clients is happy with MarkDown sy
   * If Rainlab Translate plugin is not present, bypass trans and choice functions
 
 * **truncate**
-  * {{ text|truncate(20, true, '*') }} 
+  * {{ text|truncate(20, true, '*') }}
   * length, preserve words (default false), separator (default is '...')
 
 ## Report Widgets
@@ -121,9 +125,9 @@ Useful when you need to limit access to several pages or whole site to only admi
 
 
 ----
-> My special thanks goes to:    
-> [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
-> [Joel kyber](https://unsplash.com/@jtkyber1) for his photo I have used in the plugin banner.    
+> My special thanks goes to:
+> [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.
+> [Joel kyber](https://unsplash.com/@jtkyber1) for his photo I have used in the plugin banner.
 > [Font Awesome](http://www.fontawesome.io) for Universal access symbol.
 
 
