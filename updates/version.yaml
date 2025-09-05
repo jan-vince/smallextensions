@@ -186,3 +186,5 @@
 
 1.21.0:
     - Static pages duplicating tool
+1.22.0:
+    - Added Twig dump function d()

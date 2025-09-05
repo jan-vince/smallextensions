@@ -16,6 +16,9 @@ use BackendAuth;
 use Redirect;
 use Schema;
 use Backend\Models\User as UserModel;
+use Illuminate\Support\Debug\Dumper;
+use Symfony\Component\VarDumper\VarDumper as VarDumper;
+use Illuminate\Foundation\Application as Laravel;
 
 
 class Plugin extends PluginBase {
@@ -1285,6 +1288,24 @@ class Plugin extends PluginBase {
                       }
 
                   }
+
+              },
+
+              'd' => function () {
+
+                if (\Config::get('app.debug') === true) {
+
+                  array_map(function ($data) {
+
+                    if (explode(".", Laravel::VERSION)[0] < 6) {
+                      (new Dumper)->dump($data);
+                    } else {
+                      (new VarDumper)->dump($data);
+                    }
+
+                  }, func_get_args());
+
+                }
 
               }
 
